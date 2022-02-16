@@ -13,8 +13,7 @@
     USING DUAL
     ON (ID = #{id})
     WHEN MATCHED THEN
-    UPDATE SET A_FEED = #{a_Feed} ,  A_SNACK=#{a_Feed} , B_DIAGNOSIS=#{b_Diagnosis} , B_VACCIN=#{b_Vaccin} , C_GROOMING=#{c_Grooming} , C_CLOTHES=#{c_Clothes} , D_NUTRIENTS=#{d_Nutrients} , D_POO=#{d_Poo} , E_TRAINNING=#{e_Trainning} , E_HOTEL=#{e_Hotel} , E_KINDERGARTEN=#{e_Kindergarten} , SUBMIT_DATE=TO_DATE(#{date},'YYYY-MM-DD')
-    WHERE A_FEED||A_SNACK||B_DIAGNOSIS||B_VACCIN||C_GROOMING||C_CLOTHES||D_NUTRIENTS||D_POO||E_TRAINNING||E_HOTEL||E_KINDERGARTEN!=00000000000
+    UPDATE SET A_FEED = A_FEED + #{a_Feed} ,  A_SNACK =   A_SNACK +#{a_Snack}  , B_DIAGNOSIS = B_DIAGNOSIS + #{b_Diagnosis} , B_VACCIN = B_VACCIN + #{b_Vaccin} , C_GROOMING = C_GROOMING + #{c_Grooming} , C_CLOTHES = C_CLOTHES + #{c_Clothes} , D_NUTRIENTS = D_NUTRIENTS + #{d_Nutrients} , D_POO = D_POO + #{d_Poo} , E_TRAINNING = E_TRAINNING + #{e_Trainning} , E_HOTEL = E_HOTEL + #{e_Hotel} , E_KINDERGARTEN = E_KINDERGARTEN + #{e_Kindergarten} , SUBMIT_DATE=TO_DATE(#{date},'YYYY-MM-DD')
     WHEN NOT MATCHED THEN
     INSERT(ID , A_FEED , A_SNACK , B_DIAGNOSIS , B_VACCIN , C_GROOMING ,C_CLOTHES , D_NUTRIENTS , D_POO , E_TRAINNING , E_HOTEL , E_KINDERGARTEN , SUBMIT_DATE) 
     VALUES(#{id}, #{a_Feed} , #{a_Snack} , #{b_Diagnosis} , #{b_Vaccin} , #{c_Grooming} , #{c_Clothes} , #{d_Nutrients} , #{d_Poo} , #{e_Trainning} , #{e_Hotel} , #{e_Kindergarten} , TO_DATE(#{date},'YYYY-MM-DD')) 
@@ -29,11 +28,10 @@
 	FROM COST 
  	WHERE  SUBMIT_DATE = TO_DATE(#{date},'YYYY-MM-DD') AND ID = #{id}  
  	AND (A_FEED !=0 OR A_SNACK !=0 OR B_DIAGNOSIS!=0 OR B_VACCIN!= 0 OR C_CLOTHES!=0 OR C_GROOMING !=0 OR D_NUTRIENTS !=0 OR D_POO !=0 OR E_TRAINNING !=0 OR E_HOTEL !=0 OR E_KINDERGARTEN !=0) -->
- 	
- 	SELECT *
- 	FROM COST
- 	<!-- WHERE ID = #{id}  -->
- <!-- 	WHERE  SUBMIT_DATE = TO_DATE(#{date},'YYYY-MM-DD') AND ID = #{id}   -->
+
+	SELECT *
+	FROM COST
+	WHERE SUBMIT_DATE = TO_DATE(#{date},'YYYY-MM-DD') AND ID = #{id} 
  </select>
  
  
