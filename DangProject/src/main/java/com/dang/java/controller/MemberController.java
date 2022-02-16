@@ -58,28 +58,24 @@ public class MemberController {
 //		session.invalidate();
 //		return "dang_main_non";
 //	}
-
 	// 로그인
 	@RequestMapping("login.do")
 	public String login(MemberVO vo, HttpSession session,  Model model) throws Exception {
-		System.out.println("login 컨트롤러 호출");
 		HashMap map = new HashMap();
 		model.addAttribute("boardList", dashBoardService.getDashBoard(map));
 		MemberVO result = memberService.idCheck_Login(vo);
+		System.out.println("login 컨트롤러 호출");
 
 		if (result == null) {
-			System.out.println("[" + result.getId() + "]" + "로그인 실패");
+			System.out.println("로그인 실패");
+//			System.out.println("[" + result.getId() + "]" + "로그인 실패");
 			return "/user/loginForm";
 		} else {
 			System.out.println("[" + result.getId() + "]" + "로그인 성공");
 			session.setAttribute("id", result.getId());
 			session.setAttribute("name", result.getName());
 			session.setAttribute("sessionTime", new Date().toLocaleString());
-			System.out.println("겟네임"+result.getName());
-			System.out.println("겟아이디"+result.getId());
 			return "/user/dang_main_member";
 		}
-
 	}
-
 }

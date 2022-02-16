@@ -6,6 +6,7 @@ if (session.getAttribute("id") == null) {
 	response.sendRedirect("loginForm.do");
 }
 Object id = session.getAttribute("id");
+Object name = session.getAttribute("name");
 %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
@@ -74,11 +75,7 @@ body {
 				style="width: 400px; height: 800px; float: right; border: 1px solid #ff8fab; padding: 30px; box-shadow: 10px 10px 15px #000808;">
 				<div
 					style="width: 400px; height: 200px; border: 1px solid black; margin-bottom: 40px;">
-					당신의 이번달 소비내역은 얼마입니다
-					<form action="/login.do" method="get">
-						<input name="id" value="<%=id%>" readonly="readonly" /> <input
-							type="submit" />
-					</form>
+					<%=name%>님의 이번달 소비내역은 얼마입니다
 				</div>
 				<div
 					style="width: 400px; height: 200px; border: 1px solid black; margin-bottom: 40px;">간식소비가
