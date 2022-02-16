@@ -17,11 +17,13 @@
 		FROM USER_INFO_TEST
 		WHERE ID = #{id} AND PASSWORD = #{password}
 	</select>
+	
 	<select id="dashboard" parameterType="hashmap"
 		resultType="diary">
 		SELECT * FROM COST
 		WHERE id = '재형'
 	</select>
+	
 </mapper>
   
  
