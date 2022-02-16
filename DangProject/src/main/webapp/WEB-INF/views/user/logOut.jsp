@@ -14,7 +14,3 @@ response.sendRedirect("../Dang_main.jsp");
 %>
 </body>
 </html> 
-
-
-한수
-재형

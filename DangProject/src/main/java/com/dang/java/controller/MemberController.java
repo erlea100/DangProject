@@ -65,7 +65,6 @@ public class MemberController {
 		System.out.println("login 컨트롤러 호출");
 		HashMap map = new HashMap();
 		model.addAttribute("boardList", dashBoardService.getDashBoard(map));
-		System.out.println("보드리스트 고고");
 		MemberVO result = memberService.idCheck_Login(vo);
 
 		if (result == null) {

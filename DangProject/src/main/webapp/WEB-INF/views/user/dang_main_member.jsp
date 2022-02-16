@@ -12,7 +12,7 @@ Object id = session.getAttribute("id");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ㅋㅋㅋㅋ</title>
+<title>메인화면</title>
 <link rel="stylesheet" href="/resources/css/Dang_main.css?after"
    type="text/css" />
 </head>
