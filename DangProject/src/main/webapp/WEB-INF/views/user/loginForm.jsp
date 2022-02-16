@@ -131,7 +131,7 @@ img:hover {
 								type="text" required ></td>
 						</tr>
 						<tr>
-							<td><input id="password" name="password"
+							<td><input id="password" name="password" type="password"
 								placeholder="비밀번호 입력" type="text" required></td>
 						</tr>
 						<tr>
