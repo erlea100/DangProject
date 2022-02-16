@@ -14,7 +14,7 @@
     ON (ID = #{id})
     WHEN MATCHED THEN
     UPDATE SET A_FEED = #{a_Feed} ,  A_SNACK=#{a_Feed} , B_DIAGNOSIS=#{b_Diagnosis} , B_VACCIN=#{b_Vaccin} , C_GROOMING=#{c_Grooming} , C_CLOTHES=#{c_Clothes} , D_NUTRIENTS=#{d_Nutrients} , D_POO=#{d_Poo} , E_TRAINNING=#{e_Trainning} , E_HOTEL=#{e_Hotel} , E_KINDERGARTEN=#{e_Kindergarten} , SUBMIT_DATE=TO_DATE(#{date},'YYYY-MM-DD')
-    WHERE A_FEED||A_SNACK||B_DIAGNOSIS||B_VACCIN||C_GROOMING||C_CLOTHES||D_NUTRIENTS||D_POO||E_TRAINNING||E_HOTEL||E_KINDERGARTEN!=00000000000
+    WHERE A_FEED = 0 || A_SNACK || B_DIAGNOSIS||B_VACCIN||C_GROOMING||C_CLOTHES||D_NUTRIENTS||D_POO||E_TRAINNING||E_HOTEL||E_KINDERGARTEN!=00000000000
     WHEN NOT MATCHED THEN
     INSERT(ID , A_FEED , A_SNACK , B_DIAGNOSIS , B_VACCIN , C_GROOMING ,C_CLOTHES , D_NUTRIENTS , D_POO , E_TRAINNING , E_HOTEL , E_KINDERGARTEN , SUBMIT_DATE) 
     VALUES(#{id}, #{a_Feed} , #{a_Snack} , #{b_Diagnosis} , #{b_Vaccin} , #{c_Grooming} , #{c_Clothes} , #{d_Nutrients} , #{d_Poo} , #{e_Trainning} , #{e_Hotel} , #{e_Kindergarten} , TO_DATE(#{date},'YYYY-MM-DD')) 
