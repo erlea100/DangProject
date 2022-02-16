@@ -20,6 +20,7 @@
 		WHERE ID = #{id} AND PASSWORD =
 		#{password}
 	</select>
+	
 	<select id="dashboard" parameterType="hashmap"
 		resultType="diary">
 		<!-- SELECT * FROM COST -->
@@ -41,6 +42,7 @@
 		WHERE
 		id = '1'
 	</select>
+	
 </mapper>
   
  

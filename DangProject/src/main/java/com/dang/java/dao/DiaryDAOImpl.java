@@ -32,4 +32,11 @@ public class DiaryDAOImpl implements DiaryDAO{
 		return mybatis.selectList("costMapper.selectDiary",vo);
 	}
 	
+	//다오임플
+	@Override
+		public void deleteDiary(CostVO vo) {
+			mybatis.delete("costMapper.deleteDiary",vo);
+			
+		}
+	
 }
