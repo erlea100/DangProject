@@ -53,11 +53,11 @@ public class MemberController {
 
 	}
 
-	@RequestMapping("logOut.do" )
-	public String logout(HttpSession session){
-		session.invalidate();
-		return "dang_main_non";
-	}
+//	@RequestMapping("logOut.do" )
+//	public String logout(HttpSession session){
+//		session.invalidate();
+//		return "dang_main_non";
+//	}
 
 	// 로그인
 	@RequestMapping("login.do")

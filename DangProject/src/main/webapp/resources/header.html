@@ -92,13 +92,17 @@ color:black !important;
 			return window.pageYOffset || document.documentElement.scrollTop;
 		}
 	});
+	
+	function reload() {
+		(location || window.location || document.location).reload();
+	}
 </script>
 </head>
 <body>
 	<div class="header">
 		<div class="navi">
 			<ul>
-				<li><a href="Dang_main.html"><img src="/resources/imgs/dang1.png"></a></li>
+				<li><a onclick="reload()"><img src="/resources/imgs/dang1.png"></a></li>
 				<li><a href="user/calendar.do">달력</a></li>
 				<li><a href="user/loginForm.do">로그인</a></li>
 				<li><a href='user/member.do'>회원가입</a></li>

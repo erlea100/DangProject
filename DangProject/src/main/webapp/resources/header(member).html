@@ -5,92 +5,95 @@
 <title>Insert title here</title>
 
 <style>
-
 .header {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   background: rgba(0, 0, 0, 0);
-   z-index: 1000;
-   height: 100px;
-   overflow: hidden;
-   line-height: 100px;
-   -webkit-transition: height 0.3s;
-   -moz-transition: height 0.3s;
-   transition: height 0.3s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0);
+	z-index: 1000;
+	height: 100px;
+	overflow: hidden;
+	line-height: 100px;
+	-webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	transition: height 0.3s;
 }
 
 .header.roll {
-   height: 85px;
-   line-height: 85px;
-   background:white;
-   
+	height: 85px;
+	line-height: 85px;
+	background: white;
 }
-.roll  a{
-color:black !important;
+
+.roll  a {
+	color: black !important;
 }
 
 .header .navi {
-   width: 1200px;
-   margin: 0 auto;
-   -webkit-transition: all 0.3s;
-   -moz-transition: all 0.3s;
-   transition: all 0.3s;
-   background: rgba(0, 0, 0, 0);
+	width: 1200px;
+	margin: 0 auto;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	background: rgba(0, 0, 0, 0);
 }
 
 .header.roll .navi {
-   -webkit-transition: all 0.3s;
-   -moz-transition: all 0.3s;
-   transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 .header h1 {
-   float: left;
+	float: left;
 }
 
 .navi ul {
-   margin: 0 auto;
-   padding: 0;
-   list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
 }
 
 .navi ul li {
-   float: left;
-   font-size: 17px;
-   font-weight: bold;
+	float: left;
+	font-size: 17px;
+	font-weight: bold;
 }
 
 .header .navi ul li a {
-   color: white;
-   height: 105px;
-   display: block;
-   padding: 0 35px;
+	color: white;
+	height: 105px;
+	display: block;
+	padding: 0 35px;
 }
 
 .header .roll .navi ul li a {
-   height: 85px;
+	height: 85px;
 }
 </style>
 
 <script
-   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-   $(function() {
-      var rollHeader = 100;
-      $(window).scroll(function() {
-         var scroll = getCurrentScroll();
-         if (scroll >= rollHeader) {
-            $('.header').addClass('roll');
-         } else {
-            $('.header').removeClass('roll');
-         }
-      });
-      function getCurrentScroll() {
-         return window.pageYOffset || document.documentElement.scrollTop;
-      }
-   });
+	$(function() {
+		var rollHeader = 100;
+		$(window).scroll(function() {
+			var scroll = getCurrentScroll();
+			if (scroll >= rollHeader) {
+				$('.header').addClass('roll');
+			} else {
+				$('.header').removeClass('roll');
+			}
+		});
+		function getCurrentScroll() {
+			return window.pageYOffset || document.documentElement.scrollTop;
+		}
+	});
+
+	function reload() {
+		(location || window.location || document.location).reload();
+	}
 </script>
 
 </head>
@@ -99,7 +102,7 @@ color:black !important;
 	<div class="header">
 		<div class="navi">
 			<ul>
-				<li><a href="../Dang_main.html"><img
+				<li><a onclick="reload()"><img
 						src="/resources/imgs/dang5.png"></a></li>
 				<li><a href="/user/calendar.do">나의 달력 보기</a></li>
 				<li><a href="/user/logOut.do">로그아웃</a></li>
