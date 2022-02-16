@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberMapper">
+
+	<insert id="userInsert" parameterType="member">
+		INSERT INTO
+		USER_INFO_TEST (SEQ_ID, ID, PASSWORD , NAME , E_MAIL)
+		VALUES (user_info_id_seq.nextval, #{id} , #{password} , #{name} , #{e_mail})
+	</insert>
+
+	<select id="memberLogin" parameterType="member"
+		resultType="member">
+		SELECT *
+		FROM USER_INFO_TEST
+		WHERE ID = #{id} AND PASSWORD = #{password}
+	</select>
+	<select id="dashboard" parameterType="hashmap"
+		resultType="diary">
+		SELECT * FROM COST
+		WHERE id = '재형'
+	</select>
+</mapper>
+  
+ 

@@ -1,0 +1,184 @@
+@font-face {
+	font-family: 'GangwonEdu_OTFBoldA';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: 'GangwonEdu_OTFBoldA';
+}
+
+.container {
+	width: 1190px;
+	margin: auto;
+}
+
+html, body {
+	background-color: #fefae0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.header .navi ul {
+	display: flex;
+	justify-content: space-around;
+	font-size: 1.2rem;
+	list-style: none;
+}
+
+video {
+	width: 100%;
+}
+
+.intro {
+	text-align: center;
+	width: 300px;
+	margin: auto;
+}
+
+.header .navi a {
+	color: rgb(255, 255, 255);
+}
+
+.jb-box {
+	margin: 0px auto;
+}
+
+a {
+	text-decoration: none;
+	opacity: 0.8;
+	font-style: black;
+}
+
+a:hover {
+	opacity: 1;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(0, 0, 0, 0);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	z-index: 1000;
+}
+
+.navi {
+	background-color: rgb(0, 0, 0, 0);
+}
+
+.header h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 2rem;
+	padding: 1rem 0;
+	align-self: center;
+}
+
+.jb-text {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+}
+
+.jb-text h1 {
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 3rem;
+}
+
+.jb-text h3 {
+	color: white;
+	font-size: 1.8rem;
+	text-align: center;
+}
+
+.jb-text p {
+	margin-top: -90px;
+	text-align: center;
+	font-size: 48px;
+	color: white;
+	font-family: Georgia;
+}
+
+ul img {
+	width: 70px;
+}
+
+.body-wrapper {
+	border: 1px solid blue;
+	width: 100%;
+	height: 100%;
+}
+
+.section1 {
+	border: 1px solid red;
+}
+
+.section2 {
+	border: 1px solid red;
+}
+
+.body-wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.btm_link li {
+	display: flex;
+}
+
+.footer {
+	display: flex;
+	background-color: #fefae0;
+	border: 1px solid black;
+	width: 100%;
+	font-size: 14px;
+}
+
+.align {
+	vertical-align: top;
+	display: flex;
+}
+
+.align div {
+	vertical-align: top;
+	margin-right: 30px;
+}
+
+@media all and (max-width:1190px) { /* 이거 이상으로는 이것을 지정하겠다 */
+	.header {
+		display: flex;
+		flex-direction: column;
+		background-color: rgba(0, 0, 0, 0);
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+	.header a {
+		color: white;
+	}
+	.header h2 {
+		font-family: 'Roboto', sans-serif;
+		font-size: 2rem;
+		padding: 1rem 0;
+		align-self: center;
+	}
+	.header .navi ul {
+		display: flex;
+		justify-content: space-around;
+		font-size: 1.2rem;
+	}
+}
