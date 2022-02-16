@@ -35,7 +35,7 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-table { 
+table {
 	background-color: white;
 }
 
@@ -57,7 +57,7 @@ button {
 
 #Submit {
 	width: 100%;
-	background-color: #fefae0;  
+	background-color: #fefae0;
 	border: 0;
 	padding: 10px;
 }
@@ -112,32 +112,24 @@ button:not(#Submit).underline:after {
 	transform-origin: 0% 50%;
 }
 
-img:hover{
-	opacity:0.9;
+img:hover {
+	opacity: 0.9;
 }
 </style>
 
 </head>
 
 <body>
-
 	<div class="test">
-
-
 		<div class="center">
-
-
 			<a href="Dang_main.html"><img src="/resources/imgs/dang1.png"></a>
-
 			<div class="table">
 				<form action="login.do" method="post" name="frm">
 					<table width="300" height="120">
-
 						<tr>
 							<td><input id="id" name="id" placeholder="아이디 입력"
 								type="text"></td>
 						</tr>
-
 						<tr>
 							<td><input id="password" name="password"
 								placeholder="비밀번호 입력" type="text" required></td>

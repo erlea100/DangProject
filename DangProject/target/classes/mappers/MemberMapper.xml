@@ -24,7 +24,6 @@
 		resultType="diary">
 		<!-- SELECT * FROM COST -->
 		<!-- WHERE id = #{id} -->
-
 		SELECT
 		SUM(A_FEED) AS A_FEED ,
 		SUM(A_SNACK) AS A_SNACK,
