@@ -245,7 +245,7 @@ button {
 
 						<tr>
 							<td colspan="2"><input id="ph" name="ph"
-								placeholder="핸드폰 번호입력" type="text" required></td>
+								placeholder="핸드폰 번호 입력" type="text" required></td>
 						</tr>
 
 
