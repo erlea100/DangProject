@@ -66,25 +66,19 @@ td {
 					<td colspan="2" width=100>
 						<!-- 년 도--> <a
 						href="/user/calendar.do?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>
-						<span class="year"> <%
- out.print(year);
- %>
+						<span class="year"> <%out.print(year);%>
 					</span>년 <a
 						href="/user/calendar.do?year=<%out.print(year + 1);%>&month=<%out.print(month);%>">▶</a>
 					</td>
 					<td colspan="3" width=100>
 						<!-- 월 --> <a
 						href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month - 1);%>">◀</a>
-						<span class="month"> <%
- out.print(month + 1);
- %>
+						<span class="month"> <%out.print(month + 1);%>
 					</span>월 <a
 						href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month + 1);%>">▶</a>
 					</td>
 					<td colspan="2" width=100>
-						<%
-						out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);
-						%>
+						TODAY : <%out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);%>
 					</td>
 				</tr>
 				<tr>
@@ -197,9 +191,9 @@ td {
 
 		<div class="modal-contents" id="modal-contents1-2">
 			<form name="diary-history" method="post" action="/diary/saveDiary.do">
-				<input class="date-title2" name="date" readonly="readonly" /> <select
-					id="val" name="val" onchange="Change()">
-					<option>선택</option>
+				<input class="date-title2" name="date" readonly="readonly" /> 
+				<select id="val" name="val" onchange="Change()">
+					<option disabled="disabled" selected="selected" >선택</option>
 					<option value="1">사료</option>
 					<option value="2">간식</option>
 					<option value="3">진료</option>
@@ -215,47 +209,47 @@ td {
 
 
 				<div id="d1" style="display: none">
-					<input type="number" name="a_Feed" value="0" min="0"
+					<input type="number" name="a_Feed" value="0" min="0" max="99999999"
 						placeholder="사료" />
 				</div>
 				<div id="d2" style="display: none">
-					<input type="number" name="a_Snack" value="0" min="0"
+					<input type="number" name="a_Snack" value="0" min="0" max="99999999"
 						placeholder="간식" />
 				</div>
 				<div id="d3" style="display: none">
-					<input type="number" name="b_Diagnosis" value="0" min="0"
+					<input type="number" name="b_Diagnosis" value="0" min="0" max="99999999"
 						placeholder="진료" />
 				</div>
 				<div id="d4" style="display: none">
-					<input type="number" name="b_Vaccin" value="0" min="0"
+					<input type="number" name="b_Vaccin" value="0" min="0" max="99999999"
 						placeholder="예방주사" />
 				</div>
 				<div id="d5" style="display: none">
-					<input type="number" name="c_Grooming" value="0" min="0"
+					<input type="number" name="c_Grooming" value="0" min="0" max="99999999"
 						placeholder="미용" />
 				</div>
 				<div id="d6" style="display: none">
-					<input type="number" name="c_Clothes" value="0" min="0"
+					<input type="number" name="c_Clothes" value="0" min="0" max="99999999"
 						placeholder="옷" />
 				</div>
 				<div id="d7" style="display: none">
-					<input type="number" name="d_Nutrients" value="0" min="0"
+					<input type="number" name="d_Nutrients" value="0" min="0" max="99999999"
 						placeholder="영양제" />
 				</div>
 				<div id="d8" style="display: none">
-					<input type="number" name="d_Poo" value="0" min="0"
+					<input type="number" name="d_Poo" value="0" min="0" max="99999999"
 						placeholder="배변" />
 				</div>
 				<div id="d9" style="display: none">
-					<input type="number" name="e_Trainning" value="0" min="0"
+					<input type="number" name="e_Trainning" value="0" min="0" max="99999999"
 						placeholder="훈련" />
 				</div>
 				<div id="d10" style="display: none">
-					<input type="number" name="e_Hotel" value="0" min="0"
+					<input type="number" name="e_Hotel" value="0" min="0" max="99999999"
 						placeholder="호텔" />
 				</div>
 				<div id="d11" style="display: none">
-					<input type="number" name="e_Kindergarten" value="0" min="0"
+					<input type="number" name="e_Kindergarten" value="0" min="0" max="99999999"
 						placeholder="유치원" />
 				</div>
 
