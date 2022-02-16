@@ -30,14 +30,8 @@ Object id = session.getAttribute("id");
 	display: none;
 }
 
-* {
-	background-color: #fec5bb;
-	=======
-	body
-	{
-	background-color
-	:
-	#fef9df;
+body {
+	background-color: #fef9df;
 }
 </style>
 
@@ -75,16 +69,17 @@ Object id = session.getAttribute("id");
 				style="background-color: #ffeef2; width: 400px; height: 500px; float: left; border: 1px solid #ff8fab; padding: 30px;">
 				<!--차트가 그려질 부분-->
 				<canvas id="myChart1" style="background-color: #ffeef2;"></canvas>
-<!-- 				<form action="/login.do" method="get"> -->
-<%-- 					<input name="id" value="<%=id%>" readonly="readonly" />  --%>
-<!-- 					<input type="submit" /> -->
-<!-- 				</form> -->
 			</div>
 			<div
 				style="width: 400px; height: 800px; float: right; border: 1px solid #ff8fab; padding: 30px; box-shadow: 10px 10px 15px #000808;">
 				<div
 					style="width: 400px; height: 200px; border: 1px solid black; margin-bottom: 40px;">
-					당신의 이번달 소비내역은 얼마입니다</div>
+					당신의 이번달 소비내역은 얼마입니다
+					<form action="/login.do" method="get">
+						<input name="id" value="<%=id%>" readonly="readonly" /> <input
+							type="submit" />
+					</form>
+				</div>
 				<div
 					style="width: 400px; height: 200px; border: 1px solid black; margin-bottom: 40px;">간식소비가
 					가장 많네요!멍멍!</div>
@@ -186,15 +181,15 @@ Object id = session.getAttribute("id");
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-													                                                                                                                                                                           {
-													                                                                                                                                                                             label: 'test2',
-													                                                                                                                                                                             fill: false,
-													                                                                                                                                                                                data: [
-													                                                                                                                                                                                    8, 34, 12, 24
-													                                                                                                                                                                                   ],
-													                                                                                                                                                                                   backgroundColor: 'rgb(157, 109, 12)',
-													                                                                                                                                                                                   borderColor: 'rgb(157, 109, 12)'
-													                                                                                                                                                                                   } */
+																									                                                                                                                                                                           {
+																									                                                                                                                                                                             label: 'test2',
+																									                                                                                                                                                                             fill: false,
+																									                                                                                                                                                                                data: [
+																									                                                                                                                                                                                    8, 34, 12, 24
+																									                                                                                                                                                                                   ],
+																									                                                                                                                                                                                   backgroundColor: 'rgb(157, 109, 12)',
+																									                                                                                                                                                                                   borderColor: 'rgb(157, 109, 12)'
+																									                                                                                                                                                                                   } */
 					]
 				},
 				options : {

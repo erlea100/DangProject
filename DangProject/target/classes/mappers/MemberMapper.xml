@@ -39,8 +39,6 @@
 		SUM(E_KINDERGARTEN) AS E_KINDERGARTEN
 		FROM
 		COST
-		WHERE
-		id = '1'
 	</select>
 	
 </mapper>
