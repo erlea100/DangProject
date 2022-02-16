@@ -209,47 +209,47 @@ td {
 
 
 				<div id="d1" style="display: none">
-					<input type="number" name="a_Feed" value="0" min="0"
+					<input type="number" name="a_Feed" value="0" min="0" max="99999999"
 						placeholder="사료" />
 				</div>
 				<div id="d2" style="display: none">
-					<input type="number" name="a_Snack" value="0" min="0"
+					<input type="number" name="a_Snack" value="0" min="0" max="99999999"
 						placeholder="간식" />
 				</div>
 				<div id="d3" style="display: none">
-					<input type="number" name="b_Diagnosis" value="0" min="0"
+					<input type="number" name="b_Diagnosis" value="0" min="0" max="99999999"
 						placeholder="진료" />
 				</div>
 				<div id="d4" style="display: none">
-					<input type="number" name="b_Vaccin" value="0" min="0"
+					<input type="number" name="b_Vaccin" value="0" min="0" max="99999999"
 						placeholder="예방주사" />
 				</div>
 				<div id="d5" style="display: none">
-					<input type="number" name="c_Grooming" value="0" min="0"
+					<input type="number" name="c_Grooming" value="0" min="0" max="99999999"
 						placeholder="미용" />
 				</div>
 				<div id="d6" style="display: none">
-					<input type="number" name="c_Clothes" value="0" min="0"
+					<input type="number" name="c_Clothes" value="0" min="0" max="99999999"
 						placeholder="옷" />
 				</div>
 				<div id="d7" style="display: none">
-					<input type="number" name="d_Nutrients" value="0" min="0"
+					<input type="number" name="d_Nutrients" value="0" min="0" max="99999999"
 						placeholder="영양제" />
 				</div>
 				<div id="d8" style="display: none">
-					<input type="number" name="d_Poo" value="0" min="0"
+					<input type="number" name="d_Poo" value="0" min="0" max="99999999"
 						placeholder="배변" />
 				</div>
 				<div id="d9" style="display: none">
-					<input type="number" name="e_Trainning" value="0" min="0"
+					<input type="number" name="e_Trainning" value="0" min="0" max="99999999"
 						placeholder="훈련" />
 				</div>
 				<div id="d10" style="display: none">
-					<input type="number" name="e_Hotel" value="0" min="0"
+					<input type="number" name="e_Hotel" value="0" min="0" max="99999999"
 						placeholder="호텔" />
 				</div>
 				<div id="d11" style="display: none">
-					<input type="number" name="e_Kindergarten" value="0" min="0"
+					<input type="number" name="e_Kindergarten" value="0" min="0" max="99999999"
 						placeholder="유치원" />
 				</div>
 

@@ -31,8 +31,13 @@ out.print(id);
 	   display: none;
 }
 
+<<<<<<< HEAD
 * {
 	background-color: #fec5bb;
+=======
+body{
+background-color: #fef9df;
+>>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
 }
 </style>
 
