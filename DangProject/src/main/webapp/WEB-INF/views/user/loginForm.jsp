@@ -80,7 +80,7 @@ html, body, * {
                      onclick="location.href='/user/member.do'">회원가입</button></td>
                </tr>
                <tr>
-                  <td><input type="reset" value="취소"> 현경 </td>
+                  <td><input type="reset" value="취소">  </td>
                </tr>
             </table>
          
