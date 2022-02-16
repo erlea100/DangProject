@@ -191,9 +191,9 @@ td {
 
 		<div class="modal-contents" id="modal-contents1-2">
 			<form name="diary-history" method="post" action="/diary/saveDiary.do">
-				<input class="date-title2" name="date" readonly="readonly" /> <select
-					id="val" name="val" onchange="Change()">
-					<option>선택</option>
+				<input class="date-title2" name="date" readonly="readonly" /> 
+				<select id="val" name="val" onchange="Change()">
+					<option disabled="disabled" selected="selected" >선택</option>
 					<option value="1">사료</option>
 					<option value="2">간식</option>
 					<option value="3">진료</option>
