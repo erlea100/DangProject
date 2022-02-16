@@ -187,17 +187,17 @@ ul img {
 /* 슬라이드쇼  */
 .infinity-slide{
   display: flex;
-  width: 50vw;
-  margin: 0 25vw;
+  width: 1190px;
+  margin: 0;
   background: gray;
   overflow: hidden;
 }
 
 #slide {
-  animation: infinity-loop 10s infinite linear 1s both; 
+  animation: infinity-loop 20s infinite linear 1s both; 
   display: flex; 
-  width: 50vw;
-  height: 100px;
+  width: 300px;
+  height: 300px;
   position: relative;
 }
 
@@ -206,13 +206,12 @@ ul img {
   width: auto；
 }
 
-/* 無限ループアニメーション */
 @keyframes infinity-loop {
   from {
     transform: translateX(0vw);
   }
   to {
-    transform: translateX(-50vw);
+    transform: translateX(-100vw);
   }
 }
 
