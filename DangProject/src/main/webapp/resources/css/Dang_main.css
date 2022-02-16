@@ -182,3 +182,38 @@ ul img {
 		font-size: 1.2rem;
 	}
 }
+
+
+/* 슬라이드쇼  */
+.infinity-slide{
+  display: flex;
+  width: 50vw;
+  margin: 0 25vw;
+  background: gray;
+  overflow: hidden;
+}
+
+#slide {
+  animation: infinity-loop 10s infinite linear 1s both; 
+  display: flex; 
+  width: 50vw;
+  height: 100px;
+  position: relative;
+}
+
+#slide img{
+  height: 100%;
+  width: auto；
+}
+
+/* 無限ループアニメーション */
+@keyframes infinity-loop {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(-50vw);
+  }
+}
+
+

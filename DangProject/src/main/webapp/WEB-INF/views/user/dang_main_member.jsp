@@ -34,6 +34,10 @@ Object name = session.getAttribute("name");
 body {
 	background-color: #fef9df;
 }
+
+.dashboard {
+	background-color: white;
+}
 </style>
 
 
@@ -44,97 +48,93 @@ body {
 	<br>
 	<br>
 	<!-- 	데이터 불러오는 부분(display-none) -->
-	<div class="costInform">
-		<c:forEach items="${boardList}" var="board">
-			<a id="a_Feed">${board.a_Feed }</a>
-			<a id="a_Snack">${board.a_Snack }</a>
-			<a id="b_Diagnosis">${board.b_Diagnosis }</a>
-			<a id="b_Vaccin">${board.b_Vaccin }</a>
-			<a id="c_Grooming">${board.c_Grooming }</a>
-			<a id="c_Clothes">${board.c_Clothes }</a>
-			<a id="d_Nutrients">${board.d_Nutrients }</a>
-			<a id="d_Poo">${board.d_Poo }</a>
-			<a id="e_Trainning">${board.e_Trainning }</a>
-			<a id="e_Hotel">${board.e_Hotel }</a>
-			<a id="e_Kindergarten">${board.e_Kindergarten }</a>
-		</c:forEach>
-	</div>
+	<!-- 	<div class="costInform"> -->
+	<%-- 		<c:forEach items="${boardList}" var="board"> --%>
+	<%-- 			<a id="a_Feed">${board.a_Feed }</a> --%>
+	<%-- 			<a id="a_Snack">${board.a_Snack }</a> --%>
+	<%-- 			<a id="b_Diagnosis">${board.b_Diagnosis }</a> --%>
+	<%-- 			<a id="b_Vaccin">${board.b_Vaccin }</a> --%>
+	<%-- 			<a id="c_Grooming">${board.c_Grooming }</a> --%>
+	<%-- 			<a id="c_Clothes">${board.c_Clothes }</a> --%>
+	<%-- 			<a id="d_Nutrients">${board.d_Nutrients }</a> --%>
+	<%-- 			<a id="d_Poo">${board.d_Poo }</a> --%>
+	<%-- 			<a id="e_Trainning">${board.e_Trainning }</a> --%>
+	<%-- 			<a id="e_Hotel">${board.e_Hotel }</a> --%>
+	<%-- 			<a id="e_Kindergarten">${board.e_Kindergarten }</a> --%>
+	<%-- 		</c:forEach> --%>
+	<!-- 	</div> -->
 	<div class="container">
 		<br>
-		<div
-			style="margin: auto; height: 1000px; border: 1px solid red; padding: 30px; padding: 5%; box-shadow: 10px 10px 15px #000808;">
+		<div class="dashboard"
+			style="border-radius: 36px; margin: auto; height: 1000px; border: 1px solid red; padding: 30px; padding: 5%;">
 			<div style="border: solid 1px blue; height: 500px">
-				<div
-					style="background-color: #fef9df; border: 1px solid red; width: 700px; height: 400px; float: left; padding: 30px;">
+				<div class="dashboard"
+					style="border: 1px solid red; width: 700px; height: 400px; float: left; padding: 30px;">
 					<!--차트가 그려질 부분-->
-					<canvas id="myChart1" style="background-color: #fef9df;"></canvas>
+					<canvas id="myChart1"></canvas>
 				</div>
 				<div
-					style="width: 200px; margin-top:5%; height: 300px; float: right; border: 1px solid #ff8fab; padding: 30px; box-shadow: 10px 10px 15px #000808;">
-					<div
-						style="width: 200px; height: 200px; border: 1px solid black; margin-bottom: 40px;">
-						<c:forEach items="${boardList}" var="board">
-							<a id="a_Feed">${board.a_Feed }</a>
-							<br>
-							<a id="a_Snack">${board.a_Snack }</a>
-							<br>
-							<a id="b_Diagnosis">${board.b_Diagnosis }</a>
-							<br>
-							<a id="b_Vaccin">${board.b_Vaccin }</a>
-							<br>
-							<a id="c_Grooming">${board.c_Grooming }</a>
-							<br>
-							<a id="c_Clothes">${board.c_Clothes }</a>
-							<br>
-							<a id="d_Nutrients">${board.d_Nutrients }</a>
-							<br>
-							<a id="d_Poo">${board.d_Poo }</a>
-							<br>
-							<a id="e_Trainning">${board.e_Trainning }</a>
-							<br>
-							<a id="e_Hotel">${board.e_Hotel }</a>
-							<br>
-							<a id="e_Kindergarten">${board.e_Kindergarten }</a>
-							<br>
-						</c:forEach>
-					</div>
+					style="width: 200px; margin-top: 5%; height: 300px; float: right; border: 1px solid #ff8fab; padding: 30px;">
+					<p>요기 문구 추가</p>
+					<c:forEach items="${boardList}" var="board">
+						<a id="a_Feed">${board.a_Feed }</a>
+						<br>
+						<a id="a_Snack">${board.a_Snack }</a>
+						<br>
+						<a id="b_Diagnosis">${board.b_Diagnosis }</a>
+						<br>
+						<a id="b_Vaccin">${board.b_Vaccin }</a>
+						<br>
+						<a id="c_Grooming">${board.c_Grooming }</a>
+						<br>
+						<a id="c_Clothes">${board.c_Clothes }</a>
+						<br>
+						<a id="d_Nutrients">${board.d_Nutrients }</a>
+						<br>
+						<a id="d_Poo">${board.d_Poo }</a>
+						<br>
+						<a id="e_Trainning">${board.e_Trainning }</a>
+						<br>
+						<a id="e_Hotel">${board.e_Hotel }</a>
+						<br>
+						<a id="e_Kindergarten">${board.e_Kindergarten }</a>
+						<br>
+					</c:forEach>
 				</div>
 			</div>
 			<div style="border: solid 1px blue; height: 500px; display: flex">
-				<div
-					style="background-color: #fef9df; border: 1px solid red; width: 400px; height: 400px; margin-left: 15%;">
+				<div class="dashboard"
+					style="border: 1px solid red; width: 500px; height: 500px; margin-left: 15%;">
 					<!--차트가 그려질 부분-->
-					<canvas id="myChart2" style="background-color: #fef9df;"></canvas>
+					<canvas id="myChart2"></canvas>
 				</div>
 				<div
-					style="margin-left:15% ; margin-top:5%; width: 200px; height: 300px;border: 1px solid #ff8fab; box-shadow: 10px 10px 15px #000808;">
-					<div
-						style=" width: 200px; height: 200px; border: 1px solid black; margin-bottom: 40px;">
-						<c:forEach items="${boardList}" var="board">
-							<a id="a_Feed">${board.a_Feed }</a>
-							<br>
-							<a id="a_Snack">${board.a_Snack }</a>
-							<br>
-							<a id="b_Diagnosis">${board.b_Diagnosis }</a>
-							<br>
-							<a id="b_Vaccin">${board.b_Vaccin }</a>
-							<br>
-							<a id="c_Grooming">${board.c_Grooming }</a>
-							<br>
-							<a id="c_Clothes">${board.c_Clothes }</a>
-							<br>
-							<a id="d_Nutrients">${board.d_Nutrients }</a>
-							<br>
-							<a id="d_Poo">${board.d_Poo }</a>
-							<br>
-							<a id="e_Trainning">${board.e_Trainning }</a>
-							<br>
-							<a id="e_Hotel">${board.e_Hotel }</a>
-							<br>
-							<a id="e_Kindergarten">${board.e_Kindergarten }</a>
-							<br>
-						</c:forEach>
-					</div>
+					style="margin-left: 10%; margin-top: 5%; width: 200px; height: 300px; border: 1px solid #ff8fab; padding: 30px">
+					<p>요기 문구 추가</p>
+					<c:forEach items="${boardList}" var="board">
+						<a id="a_Feed">${board.a_Feed }</a>
+						<br>
+						<a id="a_Snack">${board.a_Snack }</a>
+						<br>
+						<a id="b_Diagnosis">${board.b_Diagnosis }</a>
+						<br>
+						<a id="b_Vaccin">${board.b_Vaccin }</a>
+						<br>
+						<a id="c_Grooming">${board.c_Grooming }</a>
+						<br>
+						<a id="c_Clothes">${board.c_Clothes }</a>
+						<br>
+						<a id="d_Nutrients">${board.d_Nutrients }</a>
+						<br>
+						<a id="d_Poo">${board.d_Poo }</a>
+						<br>
+						<a id="e_Trainning">${board.e_Trainning }</a>
+						<br>
+						<a id="e_Hotel">${board.e_Hotel }</a>
+						<br>
+						<a id="e_Kindergarten">${board.e_Kindergarten }</a>
+						<br>
+					</c:forEach>
 				</div>
 			</div>
 			<!-- 				<div -->
@@ -150,45 +150,37 @@ body {
 				
       </div> -->
 		</div>
+		<br> <br> <br> <br> <br> <br>
+		<div class="intro">"Pets, Just Enjoy The Life!" DangDangDiary
+			aims to create a happy lifestyle. We respect and value healthy
+			companionship between pets and people and we continuously strive to
+			sustain this value through sincere communication. DangDangDiary는 즐거운
+			라이프스타일을 지향합니다. 또한 이 가치가 지속 가능하도록 건강한 반려생활을 중시하고 배려하며, 반려 동물 및 반려인들과
+			진정성 있는 소통을 합니다</div>
 		<br> <br> <br>
-
+		<div class="section1">
+			사이트 소개 DANGDANGDIARY<br /> ―
+			<p>
+				<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
+			</p>
+			<p>mon - fri am 11:00 - pm 4:00</p>
+			<p>lunch time pm 1:00 - pm 2:00</p>
+			<p>
+				<strong>sat, sun, holiday off</strong> DANGDANGDIARY<br /> ―
+			<p>
+				<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
+			</p>
+			<p>mon - fri am 11:00 - pm 4:00</p>
+			<p>lunch time pm 1:00 - pm 2:00</p>
+			<p>
+				<strong>sat, sun, holiday off</strong>
+		</div>
+		<div class="section2">
+			사료 광고 슬라이드 <br> <br> <br> <br> <br> <br>
+			<br>
+		</div>
+		<div id="footers"></div>
 	</div>
-	<br>
-	<br>
-	<br>
-	<div class="intro">"Pets, Just Enjoy The Life!" DangDangDiary
-		aims to create a happy lifestyle. We respect and value healthy
-		companionship between pets and people and we continuously strive to
-		sustain this value through sincere communication. DangDangDiary는 즐거운
-		라이프스타일을 지향합니다. 또한 이 가치가 지속 가능하도록 건강한 반려생활을 중시하고 배려하며, 반려 동물 및 반려인들과
-		진정성 있는 소통을 합니다</div>
-	<br>
-	<br>
-	<br>
-	<div class="section1">
-		사이트 소개 DANGDANGDIARY<br /> ―
-		</h3>
-		<p>
-			<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
-		</p>
-		<p>mon - fri am 11:00 - pm 4:00</p>
-		<p>lunch time pm 1:00 - pm 2:00</p>
-		<p>
-			<strong>sat, sun, holiday off</strong> DANGDANGDIARY<br /> ―
-		</h3>
-		<p>
-			<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
-		</p>
-		<p>mon - fri am 11:00 - pm 4:00</p>
-		<p>lunch time pm 1:00 - pm 2:00</p>
-		<p>
-			<strong>sat, sun, holiday off</strong>
-	</div>
-	<div class="section2">
-		사료 광고 슬라이드 <br> <br> <br> <br> <br> <br>
-		<br>
-	</div>
-	<div id="footers"></div>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
@@ -243,18 +235,16 @@ body {
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-																																																													                                                                                                                                                                           {
-																																																													                                                                                                                                                                             label: 'test2',
-																																																													                                                                                                                                                                             fill: false,
-																																																													                                                                                                                                                                                data: [
-																																																													                                                                                                                                                                                    8, 34, 12, 24
-																																																													                                                                                                                                                                                   ],
-																																																													                                                                                                                                                                                   backgroundColor: 'rgb(157, 109, 12)',
-																																																													                                                                                                                                                                                   borderColor: 'rgb(157, 109, 12)'
-																																																													                                                                                                                                                                                   } */
+																																					} */
 					]
 				},
 				options : {
+					title : {
+						display : true,
+						text : '',
+						fontSize : 30,
+						fontColor : 'rgba(46, 49, 49, 1)'
+					},
 					scales : {
 						yAxes : [ {
 							ticks : {
@@ -313,15 +303,13 @@ body {
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-																																																													                                                                                                                                                                           {
-																																																													                                                                                                                                                                             label: 'test2',
-																																																													                                                                                                                                                                             fill: false,
-																																																													                                                                                                                                                                                data: [
-																																																													                                                                                                                                                                                    8, 34, 12, 24
-																																																													                                                                                                                                                                                   ],
-																																																													                                                                                                                                                                                   backgroundColor: 'rgb(157, 109, 12)',
-																																																													                                                                                                                                                                                   borderColor: 'rgb(157, 109, 12)'
-																																																													                                                                                                                                                                                   } */
+																																																																																																	                                                                                                                                                                           {
+																																					      label: 'test2', 
+																																					      fill: false,
+																																					      data: [8, 34, 12, 24],
+																																					      backgroundColor: 'rgb(157, 109, 12)', 
+																																					      borderColor: 'rgb(157, 109, 12)'
+																																					      } */
 					]
 				},
 				options : {
