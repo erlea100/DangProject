@@ -2,8 +2,8 @@
 <!-- <form  action="login.do" method="post" name="frm">
            
                 <input id="id" name="id" placeholder="ID입력" type="text" required >
-           		
-           		<input id="password" name="password" placeholder="비밀번호 입력" type="text"  required>
+                 
+                 <input id="password" name="password" placeholder="비밀번호 입력" type="text"  required>
               
                 <button type="submit">가입완료</button> 
                
@@ -72,12 +72,12 @@ html, body, * {
                <tr>
                   <td colspan=2><button type="submit" name="Submit" id="Submit"
                      value="로그인">로그인</button></td>
-				
+            
                </tr>
                <tr>
           </form>  
-                  <td><input type="button" value="회원가입"
-                     onclick="location.href='/user/member.do'"></td>
+                  <td><button
+                     onclick="location.href='/user/member.do'">회원가입</button></td>
                </tr>
                <tr>
                   <td><input type="reset" value="취소"></td>
