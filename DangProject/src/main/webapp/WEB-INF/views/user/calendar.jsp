@@ -19,19 +19,11 @@ Object id = session.getAttribute("id");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>calendar</title>
+<link rel="stylesheet" href="/resources/css/Dang_main.css?after" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/css/main.css">
 </head>
-<style type="text/css">
-
-td {
-	width: 150px;
-	height: 100px;
-	text-align: center;
-}
-
-</style>
 <body>
 	<%
 	java.util.Calendar cal = java.util.Calendar.getInstance(); //Calendar객체 cal생성
@@ -66,25 +58,19 @@ td {
 					<td colspan="2" width=100>
 						<!-- 년 도--> <a
 						href="/user/calendar.do?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>
-						<span class="year"> <%
- out.print(year);
- %>
+						<span class="year"> <%out.print(year);%>
 					</span>년 <a
 						href="/user/calendar.do?year=<%out.print(year + 1);%>&month=<%out.print(month);%>">▶</a>
 					</td>
 					<td colspan="3" width=100>
 						<!-- 월 --> <a
 						href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month - 1);%>">◀</a>
-						<span class="month"> <%
- out.print(month + 1);
- %>
+						<span class="month"> <%out.print(month + 1);%>
 					</span>월 <a
 						href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month + 1);%>">▶</a>
 					</td>
 					<td colspan="2" width=100>
-						<%
-						out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);
-						%>
+						TODAY : <%out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);%>
 					</td>
 				</tr>
 				<tr>
