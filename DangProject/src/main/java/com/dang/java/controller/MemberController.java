@@ -72,9 +72,11 @@ public class MemberController {
 			return "/user/loginForm";
 		} else {
 			System.out.println("[" + result.getId() + "]" + "로그인 성공");
-			session.setAttribute("id", result.getName());
-			session.setAttribute("name", result.getId());
+			session.setAttribute("id", result.getId());
+			session.setAttribute("name", result.getName());
 			session.setAttribute("sessionTime", new Date().toLocaleString());
+			System.out.println("겟네임"+result.getName());
+			System.out.println("겟아이디"+result.getId());
 			return "/user/dang_main_member";
 		}
 
