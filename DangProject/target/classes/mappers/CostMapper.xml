@@ -34,7 +34,7 @@
 	WHERE SUBMIT_DATE = TO_DATE(#{date},'YYYY-MM-DD') AND ID = #{id} 
  </select>
  
- 
+ <!-- cost mapper 수정  -->
  
   </mapper>
   
