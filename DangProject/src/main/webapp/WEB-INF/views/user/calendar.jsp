@@ -31,6 +31,9 @@ td {
 	text-align: center;
 }
 
+body {
+	background-color: #fef9df;
+}
 </style>
 <body>
 	<%
@@ -59,7 +62,7 @@ td {
 	%>
 	<center>
 		<div>
-			<table border=1 cellspacing=0>
+			<table border=3 cellspacing=0>
 
 				<!-- 달력 부분 -->
 				<tr>
@@ -111,9 +114,7 @@ td {
 							out.println("<br>");
 						}
 					}
-
 					for (int i = 1; i <= end; i++) { //날짜출력
-
 						out.println("<td>" + "<button id='date' value =" + i + ">" + i + "</button>" + "<br>");
 						//메모(일정) 추가 부
 					%>

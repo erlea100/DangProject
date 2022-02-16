@@ -67,9 +67,9 @@ body {
 		<div
 			style="margin: auto; height: 1000px; border: 1px solid black; padding: 30px; padding: 5%; box-shadow: 10px 10px 15px #000808;">
 			<div
-				style="background-color: #ffeef2; width: 400px; height: 500px; float: left; border: 1px solid #ff8fab; padding: 30px;">
+				style="background-color: #fef9df; width: 400px; height: 500px; float: left; padding: 30px;">
 				<!--차트가 그려질 부분-->
-				<canvas id="myChart1" style="background-color: #ffeef2;"></canvas>
+				<canvas id="myChart1" style="background-color: #fef9df;"></canvas>
 			</div>
 			<div
 				style="width: 400px; height: 800px; float: right; border: 1px solid #ff8fab; padding: 30px; box-shadow: 10px 10px 15px #000808;">
@@ -135,13 +135,13 @@ body {
 	var myChart = new Chart(
 			context,
 			{
-				type : 'doughnut', // 차트의 형태
+				type : 'bar', // 차트의 형태
 				data : { // 차트에 들어갈 데이터
 					labels : [
 					//x 축
 					'식대', '병원', '미용', '복지', '기타' ],
 					datasets : [ { //데이터
-						label : document.getElementById('id') + '님의 차트', //차트 제목
+						label : '전체 소비 동향', //차트 제목
 						fill : false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
 						data : [
 								parseInt(document.getElementById('a_Feed').innerHTML)
