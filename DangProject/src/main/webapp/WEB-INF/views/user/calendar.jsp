@@ -23,6 +23,15 @@ Object id = session.getAttribute("id");
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/css/main.css">
 </head>
+<style type="text/css">
+
+td {
+	width: 150px;
+	height: 100px;
+	text-align: center;
+}
+
+</style>
 <body>
 	<%
 	java.util.Calendar cal = java.util.Calendar.getInstance(); //Calendar객체 cal생성
@@ -49,105 +58,104 @@ Object id = session.getAttribute("id");
 	}
 	%>
 	<center>
-		<table border=0>
-			<!-- 달력 상단 부분, 더 좋은 방법이 없을까? -->
-			<tr>
-				<td align=left width=200>
-					<!-- 년 도--> <a
-					href="/user/calendar.do?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>
-					<span class="year"> <%
+		<div>
+			<table border=1 cellspacing=0>
+
+				<!-- 달력 부분 -->
+				<tr>
+					<td colspan="2" width=100>
+						<!-- 년 도--> <a
+						href="/user/calendar.do?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>
+						<span class="year"> <%
  out.print(year);
  %>
-				</span>년 <a
-					href="/user/calendar.do?year=<%out.print(year + 1);%>&month=<%out.print(month);%>">▶</a>
-				</td>
-				<td align=center width=300>
-					<!-- 월 --> <a
-					href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month - 1);%>">◀</a>
-					<span class="month"> <%
+					</span>년 <a
+						href="/user/calendar.do?year=<%out.print(year + 1);%>&month=<%out.print(month);%>">▶</a>
+					</td>
+					<td colspan="3" width=100>
+						<!-- 월 --> <a
+						href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month - 1);%>">◀</a>
+						<span class="month"> <%
  out.print(month + 1);
  %>
-				</span>월 <a
-					href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month + 1);%>">▶</a>
-				</td>
-				<td align=right width=200>
+					</span>월 <a
+						href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month + 1);%>">▶</a>
+					</td>
+					<td colspan="2" width=100>
+						<%
+						out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);
+						%>
+					</td>
+				</tr>
+				<tr>
+
+					<td width=100>일</td>
+					<!-- 일=1 -->
+					<td width=100>월</td>
+					<!-- 월=2 -->
+					<td width=100>화</td>
+					<!-- 화=3 -->
+					<td width=100>수</td>
+					<!-- 수=4 -->
+					<td width=100>목</td>
+					<!-- 목=5 -->
+					<td width=100>금</td>
+					<!-- 금=6 -->
+					<td width=100>토</td>
+					<!-- 토=7 -->
+				</tr>
+				<tr height=30>
 					<%
-					out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);
-					%>
-				</td>
-			</tr>
-		</table>
-		<table border=1 cellspacing=0>
-			<!-- 달력 부분 -->
-			<tr>
-				<td width=100>일</td>
-				<!-- 일=1 -->
-				<td width=100>월</td>
-				<!-- 월=2 -->
-				<td width=100>화</td>
-				<!-- 화=3 -->
-				<td width=100>수</td>
-				<!-- 수=4 -->
-				<td width=100>목</td>
-				<!-- 목=5 -->
-				<td width=100>금</td>
-				<!-- 금=6 -->
-				<td width=100>토</td>
-				<!-- 토=7 -->
-			</tr>
-			<tr height=30>
-				<%
-				cal.set(year, month, 1); //현재 날짜를 현재 월의 1일로 설정
-				int startDay = cal.get(java.util.Calendar.DAY_OF_WEEK); //현재날짜(1일)의 요일
-				int end = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH); //이 달의 끝나는 날
-				int br = 0; //7일마다 줄 바꾸기
-				for (int i = 0; i < (startDay - 1); i++) { //빈칸출력
-					out.println("<td>&nbsp;</td>");
-					br++;
-					if ((br % 7) == 0) {
-						out.println("<br>");
+					cal.set(year, month, 1); //현재 날짜를 현재 월의 1일로 설정
+					int startDay = cal.get(java.util.Calendar.DAY_OF_WEEK); //현재날짜(1일)의 요일
+					int end = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH); //이 달의 끝나는 날
+					int br = 0; //7일마다 줄 바꾸기
+					for (int i = 0; i < (startDay - 1); i++) { //빈칸출력
+						out.println("<td>&nbsp;</td>");
+						br++;
+						if ((br % 7) == 0) {
+							out.println("<br>");
+						}
 					}
-				}
 
-				for (int i = 1; i <= end; i++) { //날짜출력
+					for (int i = 1; i <= end; i++) { //날짜출력
 
-					out.println("<td>" + "<button id='date' value =" + i + ">" + i + "</button>" + "<br>");
-					//메모(일정) 추가 부
-				%>
-				<%
-				out.println("</td>");
-				br++;
-				if ((br % 7) == 0 && i != end) {
-					out.println("</tr><tr height=30>");
-				}
-				}
-				while ((br++) % 7 != 0) //말일 이후 빈칸출력
-				out.println("<td>&nbsp;</td>");
-				%>
-			</tr>
-		</table>
+						out.println("<td>" + "<button id='date' value =" + i + ">" + i + "</button>" + "<br>");
+						//메모(일정) 추가 부
+					%>
+					<%
+					out.println("</td>");
+					br++;
+					if ((br % 7) == 0 && i != end) {
+						out.println("</tr><tr height=30>");
+					}
+					}
+					while ((br++) % 7 != 0) //말일 이후 빈칸출력
+					out.println("<td>&nbsp;</td>");
+					%>
+				</tr>
+			</table>
+		</div>
 	</center>
-	
+
 	<div class="modal-overlay hidden" id="modal" />
 	<div class="modal hidden" id="modal">
 		<div class="modal-title" style="text-align: center;">날짜</div>
 		<ul class="modal-tabs">
-		
+
 			<li>
-			
-			<form action="/diary/selectDiary.do" method="get" >
-			<input class="date-title" name="date" readonly="readonly"/>
-			<input name="id" value="<%=id %>" readonly="readonly"/>
-			
-			<a href="#modal-contents1-1" class="on" >조회</a>
-			<input type="submit"/>
-			</form>
+
+				<form action="/diary/selectDiary.do" method="get">
+					<input class="date-title" name="date" readonly="readonly" /> <input
+						name="id" value="<%=id%>" readonly="readonly" /> <a
+						href="#modal-contents1-1" class="on">조회</a> <input type="submit" />
+				</form>
 			</li>
-			
+
 			<li><a href="#modal-contents1-2">추가/수정</a></li>
 		</ul>
 		<div class="modal-contents" id="modal-contents1-1">
-				<%-- <c:forEach items="${list}" var="vo">
+			<%-- <c:forEach items="${list}" var="vo">
 					<a id="a_Feed">사료 : ${vo.a_Feed }</a><br/>
 					<a id="a_Snack">간식 : ${vo.a_Snack }</a><br/>
 					<a id="b_Diagnosis">진료 : ${vo.b_Diagnosis }</a><br/>
@@ -160,26 +168,36 @@ Object id = session.getAttribute("id");
 					<a id="e_Hotel">호텔 : ${vo.e_Hotel }</a><br/>
 					<a id="e_Kindergarten">유치원 : ${vo.e_Kindergarten }</a>
 				</c:forEach> --%>
-				
-				<c:forEach items="${list}" var="vo">
-					<a id="a_Feed">사료 : ${vo.a_Feed }</a><br/>
-					<a id="a_Snack">간식 : ${vo.a_Snack }</a><br/>
-					<a id="b_Diagnosis">진료 : ${vo.b_Diagnosis }</a><br/>
-					<a id="b_Vaccin">예방주사 : ${vo.b_Vaccin }</a><br/>
-					<a id="c_Grooming">미용 : ${vo.c_Grooming }</a><br/>
-					<a id="c_Clothes">옷 : ${vo.c_Clothes }</a><br/>
-					<a id="d_Nutrients">영양제 : ${vo.d_Nutrients }</a><br/>
-					<a id="d_Poo">배변 : ${vo.d_Poo }</a><br/>
-					<a id="e_Trainning">훈련 : ${vo.e_Trainning }</a><br/>
-					<a id="e_Hotel">호텔 : ${vo.e_Hotel }</a><br/>
-					<a id="e_Kindergarten">유치원 : ${vo.e_Kindergarten }</a>
-				</c:forEach> 
-	</div>	
-		
+
+			<c:forEach items="${list}" var="vo">
+				<a id="a_Feed">사료 : ${vo.a_Feed }</a>
+				<br />
+				<a id="a_Snack">간식 : ${vo.a_Snack }</a>
+				<br />
+				<a id="b_Diagnosis">진료 : ${vo.b_Diagnosis }</a>
+				<br />
+				<a id="b_Vaccin">예방주사 : ${vo.b_Vaccin }</a>
+				<br />
+				<a id="c_Grooming">미용 : ${vo.c_Grooming }</a>
+				<br />
+				<a id="c_Clothes">옷 : ${vo.c_Clothes }</a>
+				<br />
+				<a id="d_Nutrients">영양제 : ${vo.d_Nutrients }</a>
+				<br />
+				<a id="d_Poo">배변 : ${vo.d_Poo }</a>
+				<br />
+				<a id="e_Trainning">훈련 : ${vo.e_Trainning }</a>
+				<br />
+				<a id="e_Hotel">호텔 : ${vo.e_Hotel }</a>
+				<br />
+				<a id="e_Kindergarten">유치원 : ${vo.e_Kindergarten }</a>
+			</c:forEach>
+		</div>
+
 		<div class="modal-contents" id="modal-contents1-2">
 			<form name="diary-history" method="post" action="/diary/saveDiary.do">
-			<input class="date-title2" name="date" readonly="readonly"/>
-				<select id="val" name="val" onchange="Change()">
+				<input class="date-title2" name="date" readonly="readonly" /> <select
+					id="val" name="val" onchange="Change()">
 					<option>선택</option>
 					<option value="1">사료</option>
 					<option value="2">간식</option>
@@ -192,44 +210,55 @@ Object id = session.getAttribute("id");
 					<option value="9">훈련</option>
 					<option value="10">호텔</option>
 					<option value="11">유치원</option>
-					</select>
-				
-				
+				</select>
+
+
 				<div id="d1" style="display: none">
-					<input type="number" name="a_Feed" value="0" min="0" placeholder="사료"/>
+					<input type="number" name="a_Feed" value="0" min="0"
+						placeholder="사료" />
 				</div>
 				<div id="d2" style="display: none">
-					<input type="number" name="a_Snack" value="0" min="0" placeholder="간식"/>
+					<input type="number" name="a_Snack" value="0" min="0"
+						placeholder="간식" />
 				</div>
 				<div id="d3" style="display: none">
-					<input type="number" name="b_Diagnosis" value="0" min="0" placeholder="진료"/>
+					<input type="number" name="b_Diagnosis" value="0" min="0"
+						placeholder="진료" />
 				</div>
 				<div id="d4" style="display: none">
-					<input type="number" name="b_Vaccin" value="0" min="0" placeholder="예방주사"/>
+					<input type="number" name="b_Vaccin" value="0" min="0"
+						placeholder="예방주사" />
 				</div>
 				<div id="d5" style="display: none">
-					<input type="number" name="c_Grooming" value="0" min="0" placeholder="미용"/>
+					<input type="number" name="c_Grooming" value="0" min="0"
+						placeholder="미용" />
 				</div>
 				<div id="d6" style="display: none">
-					<input type="number" name="c_Clothes" value="0" min="0" placeholder="옷"/>
+					<input type="number" name="c_Clothes" value="0" min="0"
+						placeholder="옷" />
 				</div>
 				<div id="d7" style="display: none">
-					<input type="number" name="d_Nutrients" value="0" min="0" placeholder="영양제"/>
+					<input type="number" name="d_Nutrients" value="0" min="0"
+						placeholder="영양제" />
 				</div>
 				<div id="d8" style="display: none">
-					<input type="number" name="d_Poo" value="0" min="0" placeholder="배변"/>
+					<input type="number" name="d_Poo" value="0" min="0"
+						placeholder="배변" />
 				</div>
 				<div id="d9" style="display: none">
-					<input type="number" name="e_Trainning" value="0" min="0" placeholder="훈련"/>
+					<input type="number" name="e_Trainning" value="0" min="0"
+						placeholder="훈련" />
 				</div>
 				<div id="d10" style="display: none">
-					<input type="number" name="e_Hotel" value="0" min="0" placeholder="호텔"/>
+					<input type="number" name="e_Hotel" value="0" min="0"
+						placeholder="호텔" />
 				</div>
 				<div id="d11" style="display: none">
-					<input type="number" name="e_Kindergarten" value="0" min="0" placeholder="유치원"/>
+					<input type="number" name="e_Kindergarten" value="0" min="0"
+						placeholder="유치원" />
 				</div>
 
-				
+
 				<input type="hidden" name=id value="<%=id%>" /> <input
 					type="submit" onclick="Submit()">
 			</form>
@@ -237,170 +266,167 @@ Object id = session.getAttribute("id");
 	</div>
 	<script type="module" src="/resources/index.js"></script>
 	<script type="text/javascript">
-  
- 
+		/* 1차 선택 - 셀렉트 */
+		function Change() {
+			alert("체인지 이벤트")
+			var key = val.value;
 
-			/* 1차 선택 - 셀렉트 */
-			function Change() {
-				alert("체인지 이벤트")
-				var key = val.value;
-
-				if (key == 1) {
-					document.all["d1"].style.display = "block";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-
-				}
-
-				if (key == 2) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "block";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 3) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "block";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 4) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "block";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 5) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "block";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 6) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "block";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 7) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "block";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 8) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "block";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 9) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "block";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 10) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "block";
-					document.all["d11"].style.display = "none";
-				}
-
-				if (key == 11) {
-					document.all["d1"].style.display = "none";
-					document.all["d2"].style.display = "none";
-					document.all["d3"].style.display = "none";
-					document.all["d4"].style.display = "none";
-					document.all["d5"].style.display = "none";
-					document.all["d6"].style.display = "none";
-					document.all["d7"].style.display = "none";
-					document.all["d8"].style.display = "none";
-					document.all["d9"].style.display = "none";
-					document.all["d10"].style.display = "none";
-					document.all["d11"].style.display = "block";
-				}
+			if (key == 1) {
+				document.all["d1"].style.display = "block";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
 
 			}
-		</script>
+
+			if (key == 2) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "block";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 3) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "block";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 4) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "block";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 5) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "block";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 6) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "block";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 7) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "block";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 8) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "block";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 9) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "block";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 10) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "block";
+				document.all["d11"].style.display = "none";
+			}
+
+			if (key == 11) {
+				document.all["d1"].style.display = "none";
+				document.all["d2"].style.display = "none";
+				document.all["d3"].style.display = "none";
+				document.all["d4"].style.display = "none";
+				document.all["d5"].style.display = "none";
+				document.all["d6"].style.display = "none";
+				document.all["d7"].style.display = "none";
+				document.all["d8"].style.display = "none";
+				document.all["d9"].style.display = "none";
+				document.all["d10"].style.display = "none";
+				document.all["d11"].style.display = "block";
+			}
+
+		}
+	</script>
 </body>
 </html>
