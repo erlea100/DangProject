@@ -6,7 +6,6 @@ if (session.getAttribute("id") == null) {
 	response.sendRedirect("loginForm.do");
 }
 Object id = session.getAttribute("id");
-out.print(id);
 %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
@@ -28,16 +27,17 @@ out.print(id);
 
 <style>
 .costInform {
-	   display: none;
+	display: none;
 }
 
-<<<<<<< HEAD
 * {
 	background-color: #fec5bb;
-=======
-body{
-background-color: #fef9df;
->>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
+	=======
+	body
+	{
+	background-color
+	:
+	#fef9df;
 }
 </style>
 
@@ -48,7 +48,7 @@ background-color: #fef9df;
 	<br>
 	<br>
 	<br>
-<!-- 	데이터 불러오는 부분(display-none) -->
+	<!-- 	데이터 불러오는 부분(display-none) -->
 	<div class="costInform">
 		<c:forEach items="${boardList}" var="board">
 			<a id="a_Feed">${board.a_Feed }</a>
@@ -64,6 +64,9 @@ background-color: #fef9df;
 			<a id="e_Kindergarten">${board.e_Kindergarten }</a>
 		</c:forEach>
 	</div>
+
+
+
 	<div class="container">
 		<br>
 		<div
@@ -72,6 +75,10 @@ background-color: #fef9df;
 				style="background-color: #ffeef2; width: 400px; height: 500px; float: left; border: 1px solid #ff8fab; padding: 30px;">
 				<!--차트가 그려질 부분-->
 				<canvas id="myChart1" style="background-color: #ffeef2;"></canvas>
+<!-- 				<form action="/login.do" method="get"> -->
+<%-- 					<input name="id" value="<%=id%>" readonly="readonly" />  --%>
+<!-- 					<input type="submit" /> -->
+<!-- 				</form> -->
 			</div>
 			<div
 				style="width: 400px; height: 800px; float: right; border: 1px solid #ff8fab; padding: 30px; box-shadow: 10px 10px 15px #000808;">
@@ -179,15 +186,15 @@ background-color: #fef9df;
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-									                                                                                                                                                                           {
-									                                                                                                                                                                             label: 'test2',
-									                                                                                                                                                                             fill: false,
-									                                                                                                                                                                                data: [
-									                                                                                                                                                                                    8, 34, 12, 24
-									                                                                                                                                                                                   ],
-									                                                                                                                                                                                   backgroundColor: 'rgb(157, 109, 12)',
-									                                                                                                                                                                                   borderColor: 'rgb(157, 109, 12)'
-									                                                                                                                                                                                   } */
+													                                                                                                                                                                           {
+													                                                                                                                                                                             label: 'test2',
+													                                                                                                                                                                             fill: false,
+													                                                                                                                                                                                data: [
+													                                                                                                                                                                                    8, 34, 12, 24
+													                                                                                                                                                                                   ],
+													                                                                                                                                                                                   backgroundColor: 'rgb(157, 109, 12)',
+													                                                                                                                                                                                   borderColor: 'rgb(157, 109, 12)'
+													                                                                                                                                                                                   } */
 					]
 				},
 				options : {

@@ -20,11 +20,11 @@
 		WHERE ID = #{id} AND PASSWORD =
 		#{password}
 	</select>
+	
 	<select id="dashboard" parameterType="hashmap"
 		resultType="diary">
 		<!-- SELECT * FROM COST -->
 		<!-- WHERE id = #{id} -->
-
 		SELECT
 		SUM(A_FEED) AS A_FEED ,
 		SUM(A_SNACK) AS A_SNACK,
@@ -42,6 +42,7 @@
 		WHERE
 		id = '1'
 	</select>
+	
 </mapper>
   
  

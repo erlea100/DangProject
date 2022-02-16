@@ -143,7 +143,8 @@ td {
 				<form action="/diary/selectDiary.do" method="get">
 					<input class="date-title" name="date" readonly="readonly" /> 
 					<input name="id" value="<%=id%>" readonly="readonly" /> 
-					<a href="#modal-contents1-1" class="on">조회</a> <input type="submit" />
+					<a href="#modal-contents1-1" class="on">조회</a> 
+					<input type="submit"/>
 				</form>
 			</li>
 
