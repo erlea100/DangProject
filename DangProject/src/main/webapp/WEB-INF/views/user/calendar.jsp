@@ -140,6 +140,7 @@ td {
 
 	<div class="modal-overlay hidden" id="modal" />
 	<div class="modal hidden" id="modal">
+	<div style="display: flex; justify-content: flex-end; "><button class="modal-close" id="jsCloseBtn"> X </button></div>
 		<div class="modal-title" style="text-align: center;">날짜</div>
 		<ul class="modal-tabs">
 

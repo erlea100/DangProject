@@ -31,8 +31,8 @@ Object id = session.getAttribute("id");
    display: none;
 }
 
-*{
-background-color: #fec5bb;
+body{
+background-color: #fef9df;
 }
 
 </style>

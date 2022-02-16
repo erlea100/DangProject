@@ -58,7 +58,7 @@ button {
 
 #Submit {
 	width: 100%;
-	background-color: #fefae0;
+	background-color: #fefae0;  
 	border: 0;
 	padding: 10px;
 }
@@ -97,8 +97,25 @@ a {
 	justify-content: center;
 }
 
+button:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #fff6cc;
+	transform: scaleX(0);
+	transition: transform 190ms ease-in-out;
+}
 
+button:hover:after {
+	transform: scaleX(1);
+}
 
+button.underline:after {
+	transform-origin: 0% 50%;
+}
+
+img:hover{
+	opacity:0.9;
+}
 </style>
 
 </head>
@@ -135,8 +152,8 @@ a {
 				</form>
 				<table>
 					<tr>
-						<td><button onclick="location.href='/user/member.do'">아이디가
-								없으신가요? 댕댕 다이어리의 가족이 되어주세요!</button></td>
+						<td><button onclick="location.href='/user/member.do'"
+								class="underline">아이디가 없으신가요? 댕댕 다이어리의 가족이 되어주세요!</button></td>
 					</tr>
 				</table>
 
