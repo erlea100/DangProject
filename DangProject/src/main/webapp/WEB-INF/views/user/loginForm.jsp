@@ -35,14 +35,13 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-table {
+table { 
 	background-color: white;
 }
 
 input {
 	width: 93%;
 	background-color: #fcfcfc;
-	border: 0;
 	border-bottom: 2px solid lightgrey;
 	padding: 10px;
 	border: 0;
@@ -97,7 +96,7 @@ a {
 	justify-content: center;
 }
 
-button:after {
+button:not(#Submit):after {
 	display: block;
 	content: '';
 	border-bottom: solid 3px #fff6cc;
@@ -105,11 +104,11 @@ button:after {
 	transition: transform 190ms ease-in-out;
 }
 
-button:hover:after {
+button:not(#Submit):hover:after {
 	transform: scaleX(1);
 }
 
-button.underline:after {
+button:not(#Submit).underline:after {
 	transform-origin: 0% 50%;
 }
 
