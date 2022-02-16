@@ -135,7 +135,7 @@ img:hover{
 
 						<tr>
 							<td><input id="id" name="id" placeholder="아이디 입력"
-								type="text"></td>
+								type="text" required ></td>
 						</tr>
 
 						<tr>

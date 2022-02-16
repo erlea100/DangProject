@@ -1,78 +1,276 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-#idmessage{
-   display:inline-block;
+.userinput { /* id 입력칸 길이 */
+	width: 148px;
 }
+
+#userinput {
+	width: 400px;
+}
+
+#idmessage {
+	display: inline-block;
+}
+
+.center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 700px;
+	justify-content: center;
+}
+
+
+
+
+@font-face {
+	font-family: 'GangwonEdu_OTFBoldA';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: 'GangwonEdu_OTFBoldA';
+}
+
+body {
+	background-color: #fefae0;
+}
+
+.table {
+	position: absolute;
+	left: 54%;
+	top: 53%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	background-color: white;
+	width: 350px;
+	display: flex;
+	align-items: center;
+}
+
+input {
+	width: 245px;
+	background-color: #fcfcfc;
+	border-bottom: 2px solid lightgrey;
+	padding: 10px;
+	border: 0;
+	border-radius: 36px;
+}
+
+button {
+	border-style: none;
+	cursor: pointer;
+	background-color: white;
+	border-radius: 36px;
+	text-align:center;
+}
+
+#Submit {
+	width: 100%;
+	background-color: #fefae0;
+	border: 0;
+	padding: 10px;
+}
+
+#Submit:hover {
+	width: 100%;
+	background-color: #fff6cc;
+	border: 0;
+	padding: 10px;
+}
+
+a {
+	position: absolute;
+	left: 50%;
+	top: 24%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	background-color: white;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 450px;
+	height: 650px;
+	align-item: center;
+	margin: auto;
+	background-color: white;
+	border-radius: 36px;
+}
+
+.test {
+	height: 700px;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+button:hover:after {
+	transform: scaleX(1);
+}
+
+
+.button{
+	display:flex;
+	justify-content: center;
+	width:265px;
+}
+img:hover {
+	opacity: 0.9;
+}
+
+
+
+/* ------------------------------- */
+
+
+button {
+	border-style: none;
+	cursor: pointer;
+	background-color: white;
+	border-radius: 36px;
+}
+
+#submit {
+	width: 100%;
+	background-color: #fefae0;  
+	border: 0;
+	padding: 10px;
+}
+
+#submit:hover {
+	width: 100%;
+	background-color: #fff6cc;
+	border: 0;
+	padding: 10px;
+}
+
+
+
+
+
+/* ------------------------------- */
+
+
+
+
 </style>
 <script type="text/javascript"
-   src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-   $(function() {
+	$(function() {
 
-         $('.userinput').keyup(function(){
-         var id = $('input[name=id]').val();
-         // 제이쿼리에서 제공하는 메소드. 화면과 무관하게 폼태그에서 강제로 서브밋되는 과정
-         $.ajax( {
-            url:'checkId.do', // STS라면 *.do
-            type:'get',
-            data:{userid:id}, // 미리 변수화 시켜도 상관없음 input 태그로 만든 변수다. {키:값} 같이..
-            dataType:'text', // 응답 데이터. VO의 형태면 무조건 json으로 받는다. 내가즈는건 데이터. 받는 건 데이터 타입(서버 응답데이터)
-            success: function (data) { // 저곳의 예스 오어 노가 바로 이거
-               
-               // 서버에 접속하여 처리가 다 완료되었을 때 실행.  /cont - db - cont - view 까지 정상적으로 왔을 때
-               if(data.trim()=='YES'){
-                  $('#idmessage').text("이미 사용중");
-                  $('#idmessage').show();
-               }else{
-                  $('#idmessage').text("가능");
-                  $('#idmessage').show();
-                  $('#submit').attr('disabled', false);
-               }
-            },
-            error:function(err){
-               alert('에러발생'+err);
-            }
-         }); 
-      });
+		$('.userinput').keyup(function() {
+			var id = $('input[name=id]').val();
+			// 제이쿼리에서 제공하는 메소드. 화면과 무관하게 폼태그에서 강제로 서브밋되는 과정
+			$.ajax({
+				url : 'checkId.do', // STS라면 *.do
+				type : 'get',
+				data : {
+					userid : id
+				}, // 미리 변수화 시켜도 상관없음 input 태그로 만든 변수다. {키:값} 같이..
+				dataType : 'text', // 응답 데이터. VO의 형태면 무조건 json으로 받는다. 내가즈는건 데이터. 받는 건 데이터 타입(서버 응답데이터)
+				success : function(data) { // 저곳의 예스 오어 노가 바로 이거
 
-   });
+					// 서버에 접속하여 처리가 다 완료되었을 때 실행.  /cont - db - cont - view 까지 정상적으로 왔을 때
+					if (data.trim() == 'YES') {
+						$('#idmessage').text("이미 사용중입니다.");
+						$('#idmessage').show();
+					} else {
+						$('#idmessage').text("사용 가능합니다.");
+						$('#idmessage').show();
+						$('#submit').attr('disabled', false);
+					}
+				},
+				error : function(err) {
+					alert('에러발생' + err);
+				}
+			});
+		});
+
+	});
 </script>
 
 </head>
 <body>
 
 
+	<div class="test">
+
+		<div class="center">
+
+			<a href="Dang_main.html"><img src="/resources/imgs/dang1.png"></a>
+	
+			<div class="table">
+				<form method="post" action="userInsert.do" name="userinput"
+					id="userinput">
+
+					<table>
+						<tr>
+							<td><input type="text" name="id" id="id"
+								placeholder="아이디 입력" class="userinput" size="20" required /></td>
+							<td>
+								<div id="idmessage" style="display: none;"></div>
+							</td>
+							<td></td>
+						</tr>
+
+
+						<tr>
+							<td colspan="2"><input id="password" name="password"
+								placeholder="비밀번호 입력" type="text" required></td>
+						</tr>
+
+
+						<tr>
+							<td colspan="2"><input id="name" name="name"
+								placeholder="이름 입력" type="text" required></td>
+						</tr>
+
+						<tr>
+							<td colspan="2"><input id="ph" name="ph"
+								placeholder="핸드폰 번호입력" type="text" required></td>
+						</tr>
 
 
 
+						<tr>
+							<td colspan="2"><input id="e_mail" name="e_mail"
+								placeholder="Email 입력" type="text" required>
+							<td>
+						</tr>
 
-<form method="post" action="userInsert.do" name="userinput" id="userinput">
-				<div style="display: inline-block ;">
-          		<input type="text" name="id" id="id" placeholder="아이디 입력" class="userinput" size="20" required />
-  		 		<div id="idmessage" style="display: none;"></div>
-  		 		</div>
-       				 <br>	
-                <input id="password" name="password" placeholder="비밀번호 입력" type="text"  required>
-             		 <br>
-                <input id="name" name="name" placeholder="이름 입력"  type="text" required>
-             			 <br>
-                <input id="ph" name="ph" placeholder="핸드폰 번호입력"  type="text" required>
-              		 <br>
-                <input id="e_mail" name="e_mail" placeholder="Email 입력"  type="text" required>
-             		 <br>
-     			 <input type="submit" id="submit" value="가입하기" disabled="disabled" />
-				   
-</form>
+					</table>
+				
+						<div class=button>
+							<button type="submit" id="submit"
+								disabled="disabled">가입하기</button>
+						</div>
+
+		
+
+				</form>
 
 
-
+			</div>
+		</div>
+	</div>
 
 
 </body>
