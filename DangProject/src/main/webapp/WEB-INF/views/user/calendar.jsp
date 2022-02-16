@@ -19,11 +19,19 @@ Object id = session.getAttribute("id");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>calendar</title>
-<link rel="stylesheet" href="/resources/css/Dang_main.css?after" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/css/main.css">
 </head>
+<style type="text/css">
+
+td {
+	width: 150px;
+	height: 100px;
+	text-align: center;
+}
+
+</style>
 <body>
 	<%
 	java.util.Calendar cal = java.util.Calendar.getInstance(); //Calendar객체 cal생성
