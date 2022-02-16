@@ -32,7 +32,7 @@ Object id = session.getAttribute("id");
 }
 
 *{
-background-color: #f4bbd3;
+background-color: #fec5bb;
 }
 
 </style>
