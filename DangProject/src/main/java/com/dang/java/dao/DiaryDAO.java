@@ -8,7 +8,7 @@ public interface DiaryDAO {
 
 	public void insertDiary(CostVO vo);
 	
-	// 다오 글 삭제
+	// 글 삭제
 	public void deleteDiary(CostVO vo);
 	
 	public List<CostVO> selectDiary(CostVO vo);
