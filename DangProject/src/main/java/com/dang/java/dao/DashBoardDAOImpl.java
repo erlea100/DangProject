@@ -18,6 +18,7 @@ public class DashBoardDAOImpl implements DashBoardDAO {
 
 	@Override
 	public List<DiaryVO> getDashBoard(HashMap map) {
+		System.out.println("다오 추력");
 		return mybatis.selectList("memberMapper.dashboard", map);
 	}
 

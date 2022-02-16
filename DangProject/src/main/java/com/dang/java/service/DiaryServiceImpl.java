@@ -30,4 +30,10 @@ public class DiaryServiceImpl implements DiaryService{
 		return diaryDAO.selectDiary(vo);
 	}
 	
+	// 서비스 임플
+	@Override
+	   public void deleteDiary(CostVO vo) {
+		   diaryDAO.deleteDiary(vo);
+	   }
+	
 }

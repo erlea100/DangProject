@@ -42,7 +42,6 @@ public class DiaryController {
 	@RequestMapping("/selectDiary.do")
 	public ModelAndView selectDiary(HttpSession session,CostVO vo) {
 		System.out.println("셀렉 컨트롤 호출");
-		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/user/calendar");
 		mv.addObject("list", diaryService.selectDiary(vo));
