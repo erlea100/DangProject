@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
 <%@page import="java.lang.ProcessBuilder.Redirect"%>
 <%@page import="com.dang.java.controller.DiaryController"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"
@@ -150,17 +146,12 @@ body {
 					</c:forEach>
                --%>
                
-               <%
-=======
 
-					<!-- cost 테이블에 값 가져오기  -->
 					<input type="hidden" name="id" value="<%=id%>">
 					<input type="hidden" name="date"
 						value="<%=year%><%=month+1%><%=i%>">
 
 
-					<%
->>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
                out.println("</td>");
                br++;
                if ((br % 7) == 0 && i != end) {
@@ -254,15 +245,12 @@ body {
 						max="99999999" placeholder="유치원" />
 				</div>
 
-<<<<<<< HEAD
                <!-- cost 테이블에 값 넘겨주기  -->
-                <input name="id" value="<%=id%>" type="hidden" >
+                <input name="id" value="<%=id %>" type="hidden" />
                 <input class="date-title" name="date" type="hidden" />
                 
             <input type="submit" onclick="Submit()">
          </form>
-         
-         
       </div>
    </div>
    
