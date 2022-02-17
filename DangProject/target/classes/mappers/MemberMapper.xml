@@ -42,7 +42,6 @@
 <!-- 		WHERE ID = #{id} -->
 	</select>
 	
-<<<<<<< HEAD
 	<!--  -->
 	<select id="find_id" parameterType="String" resultType="String">
 		select id from USER_INFO_TEST where E_MAIL = #{e_mail}
@@ -51,11 +50,7 @@
 	<select id="find_password" parameterType="String" resultType="String">
 		select password from USER_INFO_TEST where E_MAIL = #{e_mail}
 	</select>
-	<!--   -->
 	
 </mapper>
-=======
-	</mapper>
->>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
   
  
