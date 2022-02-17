@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-.userinput { /* id 입력칸 길이 */
+.userinput, #password_chk{ /* id 입력칸 길이 */
 	width: 148px;
 }
 
@@ -215,11 +215,14 @@ button {
             var pwd2=$("#password_chk").val();
             if(pwd1 != "" || pwd2 != ""){
                 if(pwd1 == pwd2){
+                	
+                    $("#alert-success").text("비밀번호가 일치합니다.");
                     $("#alert-success").show();
                     $("#alert-danger").hide();
                     $("#submit").removeAttr("disabled");
                 }else{
                     $("#alert-success").hide();
+                    $("#alert-danger").text("비밀번호가 일치하지 않습니다.");
                     $("#alert-danger").show();
                     $("#submit").attr("disabled", "disabled");
                 }    
@@ -248,7 +251,7 @@ button {
 							<td>
 								<div id="idmessage" style="display: none;"></div>
 							</td>
-							<td></td>
+					
 						</tr>
 
 
@@ -258,12 +261,13 @@ button {
 						</tr>
 		
 						<tr>
-							<td colspan="2"><input class="pw" id="password_chk" name="password_chk" type="password"
-								placeholder="비밀번호 확인" type="text" required>
-								<div class="alert alert-success" id="alert-success">&nbsp;&nbsp;비밀번호가 일치합니다.</div>
-								<div class="alert alert-danger" id="alert-danger">&nbsp;&nbsp;비밀번호가 일치하지 않습니다.</div>
+							<td><input class="pw" id="password_chk" name="password_chk" type="password"
+								placeholder="비밀번호 확인" type="text" required><td>
+								<td colspan="2">
+								<div class="alert alert-success" id="alert-success"></div>
+								<div class="alert alert-danger" id="alert-danger"></div>
 								</td>
-								​
+								
 						</tr>
 		
 						<tr>
