@@ -122,11 +122,11 @@ ul img {
 }
 
 .section1 {
-	border: 1px solid red;
+/* 	border: 1px solid red; */
 }
 
 .section2 {
-	border: 1px solid red;
+/* 	border: 1px solid red; */
 }
 
 .body-wrapper {
@@ -141,7 +141,6 @@ ul img {
 .footer {
 	display: flex;
 	background-color: #fefae0;
-	border: 1px solid black;
 	width: 100%;
 	font-size: 14px;
 }

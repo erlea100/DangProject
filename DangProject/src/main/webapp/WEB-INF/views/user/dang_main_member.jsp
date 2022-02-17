@@ -35,7 +35,7 @@ Object name = session.getAttribute("name");
 </script>
 
 <style>
-.costInform {
+.costInform a {
 	display: none;
 }
 
@@ -57,48 +57,22 @@ body {
 	<br>
 	<div class="container">
 		<br>
-		<div style="float: right; border: 1px solid red;">
-			<!-- 		 <form> -->
-			<%-- 				<input type="hidden" name=id value="<%=id%>" /> <input --%>
-			<!-- 					style="border: 1px solid red; background-color: white" -->
-			<!-- 					type="submit" value="내정보" onclick="Submit()"> -->
-			<!-- 			</form>  -->
-			<!-- 			<div id="ex1" class="modal"> -->
-			<!-- 				<p>안녕하세요. 모달창안의 내용부분입니다.</p> -->
-			<!-- 				<a href="#" rel="modal:close">닫기</a> -->
-			<!-- 			</div> -->
-			<!-- 			<p> -->
-			<!-- 				<a href="#ex1" rel="modal:open"></a> -->
-			<!-- 			</p> -->
-<!-- 				<form action="/user/dashboard.do" method="post"> -->
-<!-- 				<button  onclick="window.open('test.do','window_name','width=1000,height=1000,location=no,status=no,scrollbars=yes');"> test</button>  -->
-<%-- 				<input type="hidden" id="id" name="id" value="<%=id%>"> --%>
-<!-- 				</form> -->
-		</div>
-		<script type="text/javascript">
-		var popupWidth = 200;
-		var popupHeight = 300;
-		var popupX = (window.screen.width / 2) - (popupWidth / 2);
-		var popupY= (window.screen.height / 2) - (popupHeight / 2);
-		
-		function window(){
-		window.open('', '_blank', 'status=no, height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY);
-  		$("#tesidt").submit();
-    	console.log('id');
-		}
-		</script>
 		<div class="dashboard"
-			style="border-radius: 36px; margin: auto; height: 1000px; border: 1px solid red; padding: 30px; padding: 5%;">
+			style="border-radius: 36px; margin: auto; height: 1000px; padding: 30px; padding: 5%;">
 
-			<div style="border: solid 1px blue; height: 500px">
+			<div style="height: 500px">
 				<div class="dashboard"
-					style="border: 1px solid red; width: 700px; height: 400px; float: left; padding: 30px;">
+					style="width: 700px; height: 400px; float: left; padding: 30px;">
 					<!--차트가 그려질 부분-->
 					<canvas id="myChart1"></canvas>
 				</div>
 				<div
-					style="width: 200px; margin-top: 5%; height: 300px; float: right; border: 1px solid #ff8fab; padding: 30px;">
+					style="width: 200px; margin-top: 5%; height: 300px; float: right; padding: 30px;">
 					<p>요기 문구 추가</p>
+					<a id="first">소비1위</a><br> <br> 
+					<a id="second">소비2위</a>
+					<a id="third">소비3위</a><br> <br>
+					<div class="costInform">
 					<c:forEach items="${boardList}" var="board">
 						<a id="a_Feed">${board.a_Feed }</a>
 						<br>
@@ -123,17 +97,20 @@ body {
 						<a id="e_Kindergarten">${board.e_Kindergarten }</a>
 						<br>
 					</c:forEach>
+					</div>
 				</div>
 			</div>
-			<div style="border: solid 1px blue; height: 500px; display: flex">
+
+			<div style="height: 500px; display: flex">
 				<div class="dashboard"
-					style="border: 1px solid red; width: 500px; height: 500px; margin-left: 15%;">
+					style="width: 500px; height: 500px; margin-left: 15%;">
 					<!--차트가 그려질 부분-->
 					<canvas id="myChart2"></canvas>
 				</div>
 				<div
-					style="margin-left: 10%; margin-top: 5%; width: 200px; height: 300px; border: 1px solid #ff8fab; padding: 30px">
+					style="margin-left: 10%; margin-top: 5%; width: 200px; height: 300px; padding: 30px">
 					<p>요기 문구 추가</p>
+					<div class="costInform">
 					<c:forEach items="${boardList}" var="board">
 						<a id="a_Feed">${board.a_Feed }</a>
 						<br>
@@ -158,6 +135,7 @@ body {
 						<a id="e_Kindergarten">${board.e_Kindergarten }</a>
 						<br>
 					</c:forEach>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -227,9 +205,7 @@ body {
 			{
 				type : 'bar', // 차트의 형태
 				data : { // 차트에 들어갈 데이터
-					labels : [
-					//x 축
-					'식대', '병원', '미용', '복지', '기타' ],
+					labels : [ '식대', '병원', '미용', '복지', '기타' ],
 					datasets : [ { //데이터
 						label : '카테고리별 소비 동향', //차트 제목
 						fill : false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
@@ -268,7 +244,7 @@ body {
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-																																													} */
+																																																																	} */
 					]
 				},
 				options : {
@@ -287,13 +263,12 @@ body {
 					}
 				}
 			});
-
 	// ===================차트 2 =======================
 	var context = document.getElementById('myChart2').getContext('2d');
 	var myChart = new Chart(
 			context,
 			{
-				type : 'pie', // 차트의 형태
+				type : 'polarArea', // 차트의 형태
 				data : { // 차트에 들어갈 데이터
 					labels : [
 					//x 축
@@ -336,13 +311,13 @@ body {
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-																																																																																																									                                                                                                                                                                           {
-																																													      label: 'test2', 
-																																													      fill: false,
-																																													      data: [8, 34, 12, 24],
-																																													      backgroundColor: 'rgb(157, 109, 12)', 
-																																													      borderColor: 'rgb(157, 109, 12)'
-																																													      } */
+													  {
+														label: 'test2', 
+														fill: false,
+														data: [8, 34, 12, 24],
+														backgroundColor: 'rgb(157, 109, 12)', 
+														borderColor: 'rgb(157, 109, 12)'
+													} */
 					]
 				},
 				options : {
@@ -355,6 +330,68 @@ body {
 					}
 				}
 			});
+	const a = parseInt(document.getElementById('a_Feed').innerHTML)
+			+ parseInt(document.getElementById('a_Snack').innerHTML);
+	const b = parseInt(document.getElementById('b_Diagnosis').innerHTML)
+			+ parseInt(document.getElementById('b_Vaccin').innerHTML);
+	const c = parseInt(document.getElementById('c_Grooming').innerHTML)
+			+ parseInt(document.getElementById('c_Clothes').innerHTML);
+	const d = parseInt(document.getElementById('d_Nutrients').innerHTML)
+			+ parseInt(document.getElementById('d_Poo').innerHTML);
+	const e = parseInt(document.getElementById('e_Trainning').innerHTML)
+			+ parseInt(document.getElementById('e_Hotel').innerHTML)
+			+ parseInt(document.getElementById('e_Kindergarten').innerHTML);
+	const arr = [ a, b, c, d, e ];
+	arr.sort(function(a, b) {
+		return b - a;
+	});
+	const first = arr[0];
+	const second = arr[1];
+	const third = arr[2];
+	var category1;
+	var category2;
+	var category3;
+
+	if (first == a) {
+		category1 = '식';
+	} else if (first == b) {
+		category1 = '병원';
+	} else if (first == c) {
+		category1 = '미용';
+	} else if (first == d) {
+		category = '기타';
+	} else {
+		category1 = '복지';
+	}
+	
+	if (second == b) {
+		category2 = '식';
+	} else if (second == b) {
+		category2 = '병원';
+	} else if (second == c) {
+		category2 = '미용';
+	} else if (second == d) {
+		category2 = '기타';
+	} else {
+		category2 = '복지';
+	}
+	
+	if (third == c) {
+		category3 = '식';
+	} else if (third == b) {
+		category3 = '병원';
+	} else if (third == c) {
+		category3 = '미용';
+	} else if (third == d) {
+		category3 = '기타';
+	} else {
+		category3 = '복지';
+	}
+	document.getElementById('first').innerHTML = '견주들의 가장 많은 소비카테고리는 '
+			+ category1 + '비에요~';
+	document.getElementById('second').innerHTML = '그다음으로는 ' + category2 +',';
+			+ category2 + '비네요~';
+	document.getElementById('third').innerHTML = '세번째로는 ' + category3 + '비가 있어요~';
 </script>
 
 
