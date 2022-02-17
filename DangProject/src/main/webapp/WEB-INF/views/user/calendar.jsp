@@ -35,6 +35,7 @@ Object id = session.getAttribute("id");
 <title>calendar</title>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="https://kit.fontawesome.com/bd65a83372.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/resources/css/main.css">
 </head>
 <style type="text/css">
@@ -131,23 +132,41 @@ body {
 					
 					int day = 0;
 					for (int i = 1; i <= end; i++) { //날짜출력
-<<<<<<< HEAD
 						out.println("<td>" + "<button id='date' value =" + i + ">" + i + "</button>" + "<br>");
 					//메모(일정) 추가 부분
-					int memoyear, memomonth, memoday;
+					String memoyear, memomonth, memoday;
+					int sub_date;
 					try {
 						// select 문장을 문자열 형태로 구성한다.
-						String sql = "SELECT calendarmemo_year, calendarmemo_month, calendarmemo_day, calendarmemo_contents FROM calendarmemo";
+						String sql = "SELECT * FROM COST";
 						pstmt = conn.prepareStatement(sql);
 						// select 를 수행하면 데이터 정보가 ResultSet 클래스의 인스턴스로 리턴
 						ResultSet rs = pstmt.executeQuery();
 						while (rs.next()) { // 마지막 데이터까지 반복함.
 					//날짜가 같으면 데이터 출력
-					memoyear = rs.getInt("calendarmemo_year");
-					memomonth = rs.getInt("calendarmemo_month");
-					memoday = rs.getInt("calendarmemo_day");
-					if (year == memoyear && month + 1 == memomonth && i == memoday) {
-						out.println(rs.getString("calendarmemo_contents") + "<br>");
+					memoyear = String.valueOf(year);
+					memomonth = String.valueOf(month);
+					memoday = String.valueOf(i);
+					memoyear += memomonth;
+					memoyear += memoday;
+					sub_date = rs.getInt("submit_date");
+					if (sub_date == Integer.parseInt(memoyear)) {
+						if(rs.getInt("a_feed") > 0 || rs.getInt("a_snack") > 0){
+						%><i class="fa-solid fa-bone"></i><%
+						}
+						if(rs.getInt("b_diagnosis") > 0 || rs.getInt("b_vaccin") > 0){
+						%><i class="fa-solid fa-syringe"></i><%
+						}
+						if(rs.getInt("c_grooming") > 0 || rs.getInt("c_clothes") > 0){
+						%><i class="fa-solid fa-dog"></i><%
+						}
+						if(rs.getInt("d_nutrients") > 0 || rs.getInt("d_poo") > 0){
+						%><i class="fa-solid fa-heart"></i><%
+						}
+						if(rs.getInt("e_trainning") > 0 || rs.getInt("e_hotel") > 0 || rs.getInt("e_kindergarten") > 0){
+						%><i class="fa-solid fa-poop"></i><%
+						}
+							
 					}
 						}
 						rs.close();
