@@ -131,7 +131,6 @@ body {
 					
 					int day = 0;
 					for (int i = 1; i <= end; i++) { //날짜출력
-<<<<<<< HEAD
 						out.println("<td>" + "<button id='date' value =" + i + ">" + i + "</button>" + "<br>");
 					//메모(일정) 추가 부분
 					int memoyear, memomonth, memoday;
