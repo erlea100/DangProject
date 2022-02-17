@@ -165,43 +165,7 @@ body {
 			<li><a href="#modal-contents1-2">추가/수정</a></li>
 		</ul>
 		<div class="modal-contents" id="modal-contents1-1">
-			<%-- <c:forEach items="${list}" var="vo">
-					<a id="a_Feed">사료 : ${vo.a_Feed }</a><br/>
-					<a id="a_Snack">간식 : ${vo.a_Snack }</a><br/>
-					<a id="b_Diagnosis">진료 : ${vo.b_Diagnosis }</a><br/>
-					<a id="b_Vaccin">예방주사 : ${vo.b_Vaccin }</a><br/>
-					<a id="c_Grooming">미용 : ${vo.c_Grooming }</a><br/>
-					<a id="c_Clothes">옷 : ${vo.c_Clothes }</a><br/>
-					<a id="d_Nutrients">영양제 : ${vo.d_Nutrients }</a><br/>
-					<a id="d_Poo">배변 : ${vo.d_Poo }</a><br/>
-					<a id="e_Trainning">훈련 : ${vo.e_Trainning }</a><br/>
-					<a id="e_Hotel">호텔 : ${vo.e_Hotel }</a><br/>
-					<a id="e_Kindergarten">유치원 : ${vo.e_Kindergarten }</a>
-				</c:forEach> --%>
-
-<%-- 			<c:forEach items="${list}" var="vo"> --%>
-<%-- 				<a id="a_Feed">사료 : ${vo.a_Feed }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="a_Snack">간식 : ${vo.a_Snack }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="b_Diagnosis">진료 : ${vo.b_Diagnosis }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="b_Vaccin">예방주사 : ${vo.b_Vaccin }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="c_Grooming">미용 : ${vo.c_Grooming }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="c_Clothes">옷 : ${vo.c_Clothes }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="d_Nutrients">영양제 : ${vo.d_Nutrients }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="d_Poo">배변 : ${vo.d_Poo }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="e_Trainning">훈련 : ${vo.e_Trainning }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="e_Hotel">호텔 : ${vo.e_Hotel }</a> --%>
-<!-- 				<br /> -->
-<%-- 				<a id="e_Kindergarten">유치원 : ${vo.e_Kindergarten }</a> --%>
-<%-- 			</c:forEach> --%>
+		
 		</div>
 
 		<div class="modal-contents" id="modal-contents1-2">
@@ -299,14 +263,22 @@ body {
 					success : function(data){
 						
 						console.log("data  " +data);
+// 						data.length()==0
 						
-						for ( var d in data){
-							$('#modal-contents1-1').children().remove();
-// 							console.log(data[d].a_Feed);
-						$('#modal-contents1-1').append("<a id=a_Feed>사료 : "+data[d].a_Feed+"</a><br />");
-						$('#modal-contents1-1').append("<a id=a_Snack>간식 : "+data[d].a_Snack+"</a><br />");
-						
+						if(data.length == 0){  //데이터가 없으면
+// 							modal-contents1-1
+							console.log('데이터없음')
+							document.getElementById('modal-contents1-1').innerHTML = "";
+							console.log('수정완료')
+						}else{
+							for ( var d in data){
+								$('#modal-contents1-1').children().remove();
+//	 							console.log(data[d].a_Feed);
+								$('#modal-contents1-1').append("<a id=a_Feed>사료 : "+data[d].a_Feed+"</a><br />");
+								$('#modal-contents1-1').append("<a id=a_Snack>간식 : "+data[d].a_Snack+"</a><br />");
+							}
 						}
+					
 					},
 					error : function(e){
 						alert('error : ' + e);
