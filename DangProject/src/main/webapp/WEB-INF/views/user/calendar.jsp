@@ -140,7 +140,6 @@ body {
 		<ul class="modal-tabs">
 
 			<li>
-
 				<form action="/diary/selectDiary.do" method="get">
 					<input class="date-title" name="date" readonly="readonly" /> 
 					<input name="id" value="<%=id%>" readonly="readonly" /> 
