@@ -35,9 +35,24 @@ Object name = session.getAttribute("name");
 </script>
 
 <style>
+
+@font-face {
+    font-family: 'HSYuji-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSYuji-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+b:not(#footers b){
+	    font-family: 'HSYuji-Regular';
+	    font-size: 38px;
+	    color:#d4a373;
+}
+
 .costInform a {
    display: none;
 }
+
 
 body {
    background-color: #fef9df;
@@ -67,8 +82,8 @@ body {
                <canvas id="myChart1"></canvas>
             </div>
             <div
-               style="width: 200px; margin-top: 5%; height: 300px; float: right; padding: 30px;">
-               <p>요기 문구 추가</p>
+               style="width: 250px; margin-top: 5%; height: 300px; float: right; padding: 30px;">
+               
                <a id="first">소비1위</a><br> <br> 
                <a id="second">소비2위</a>
                <a id="third">소비3위</a><br> <br>
@@ -103,13 +118,14 @@ body {
 
          <div style="height: 500px; display: flex">
             <div class="dashboard"
-               style="width: 500px; height: 500px; margin-left: 15%;">
+               style="width: 400px; height: 400px; margin-left: 10%;">
                <!--차트가 그려질 부분-->
                <canvas id="myChart2"></canvas>
             </div>
             <div
-               style="margin-left: 10%; margin-top: 5%; width: 200px; height: 300px; padding: 30px">
-               <p>요기 문구 추가</p>
+               style="margin-left: 20%; width: 300px; height: 300px; padding: 30px">
+               <p>5개의 피자 모양의 크기가 비슷하다면 <br><br>균형있는 소비를 한 것입니다.<br><br><b>나의 달력보기로 <br>집사님의 가계부도 확인해볼까요?<br>&rarr;
+               <a href="/user/calendar.do"><b>go!</b></a></b></p>
                <div class="costInform">
                <c:forEach items="${boardList}" var="board">
                   <a id="a_Feed">${board.a_Feed }</a>
@@ -140,30 +156,7 @@ body {
          </div>
       </div>
       <br> <br> <br> <br> <br> <br>
-      <div class="intro">"Pets, Just Enjoy The Life!" DangDangDiary
-         aims to create a happy lifestyle. We respect and value healthy
-         companionship between pets and people and we continuously strive to
-         sustain this value through sincere communication. DangDangDiary는 즐거운
-         라이프스타일을 지향합니다. 또한 이 가치가 지속 가능하도록 건강한 반려생활을 중시하고 배려하며, 반려 동물 및 반려인들과
-         진정성 있는 소통을 합니다</div>
-      <br> <br> <br>
-      <div class="section1">
-         사이트 소개 DANGDANGDIARY<br /> ―
-         <p>
-            <b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
-         </p>
-         <p>mon - fri am 11:00 - pm 4:00</p>
-         <p>lunch time pm 1:00 - pm 2:00</p>
-         <p>
-            <strong>sat, sun, holiday off</strong> DANGDANGDIARY<br /> ―
-         <p>
-            <b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
-         </p>
-         <p>mon - fri am 11:00 - pm 4:00</p>
-         <p>lunch time pm 1:00 - pm 2:00</p>
-         <p>
-            <strong>sat, sun, holiday off</strong>
-      </div>
+    
       <div class="section2">
          <div class="infinity-slide">
             <div id="slide">
@@ -389,9 +382,10 @@ body {
 	console.log(category1);
 	console.log(category2);
 	console.log(category3);
-	document.getElementById('first').innerHTML = '견주들의 가장 많은 소비카테고리는 '
-			+ category1 + '비에요~';
-	document.getElementById('second').innerHTML = '그다음으로는 ' + category2 +',';
-			+ category2 + '비네요~';
-	document.getElementById('third').innerHTML = '세번째로는 ' + category3 + '비가 있어요~';
+	document.getElementById('first').innerHTML = '<br><br><b>다른 집사님들은 <br>'
+			+ category1 + '비에 많이 <br>지출하고 있어요!</b><br>';
+	document.getElementById('second').innerHTML = '두번째는 ' + category2 +',<br><br>';
+	document.getElementById('third').innerHTML = '세번째는 ' + category3 + '비군요.';
 </script>
+<script>history.scrollRestoration = "manual"</script>
+<a style="display:scroll;position:fixed;bottom:0px;right:10px; " href="#" title=”맨위로"><img src="/resources/imgs/top.PNG" style="border-radius: 70%;"></a>
