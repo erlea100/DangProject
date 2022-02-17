@@ -14,8 +14,7 @@ Object name = session.getAttribute("name");
 <head>
 <meta charset="UTF-8">
 <title>메인화면</title>
-<link rel="stylesheet" href="/resources/css/Dang_main.css?after"
-	type="text/css" />
+<link rel="stylesheet" href="/resources/css/Dang_main.css?after" type="text/css" />
 </head>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
