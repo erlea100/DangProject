@@ -1,10 +1,12 @@
 // event handler의 매개변수로 오는 값은 event
+
 function showPopup(event) {
 	// event를 발생시킨 element(target)의 value
 	const day = event.target.value
 
 	// modal open
 	const elementsList = document.querySelectorAll('#modal')
+		
 	elementsList.forEach((ele) => {
 		ele.classList.remove('hidden')
 	})
@@ -31,7 +33,7 @@ function showPopup(event) {
 	buttonElementList.forEach(button => {
 		button.addEventListener('click', showPopup)
 	})
-
+	
 	const modalCloseHandler = (event) => {
 		if (event.keyCode === 27) {
 			const elementsList = document.querySelectorAll('#modal')
