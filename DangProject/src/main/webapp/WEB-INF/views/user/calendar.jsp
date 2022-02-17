@@ -305,22 +305,18 @@ body {
                   alert("조회시작")
                   
                   $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>사료 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>간식 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=a_Feed>진료 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=a_Feed>예방주사 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>미용 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>옷 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>영양제 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>배변 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>훈련 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>호텔 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>유치원 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Snack>간식 | "+data[d].a_Snack+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=b_Diagnosis>진료 | "+data[d].b_Diagnosis+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=b_Vaccin>예방주사 | "+data[d].b_Vaccin+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>"+" | <a id=c_Grooming>미용 | "+data[d].c_Grooming+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>   >"+" | <a id=c_Clothes>옷 | "+data[d].c_Clothes+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+" | <a id=d_Nutrients>영양제 | "+data[d].d_Nutrients+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+" | <a id=d_Poo>배변 | "+data[d].d_Poo+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Trainning>훈련 | "+data[d].e_Trainning+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Hotel>호텔 | "+data[d].e_Hotel+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Kindergarten>유치원 | "+data[d].e_Kindergarten+" 원"+"</a>"+"<br />");
                   
-                  
-                  
-                  
-                  
-                  
+               
                }
             }
                },
