@@ -226,7 +226,7 @@ button {
 
 		<div class="center">
 
-			<a href="/Dang_main.html"><img src="/resources/imgs/dang1.png"></a>
+			<a href="/Dang_main.jsp"><img src="/resources/imgs/dang1.png"></a>
 
 			<div class="table">
 				<form method="post" action="userInsert.do" name="userinput"

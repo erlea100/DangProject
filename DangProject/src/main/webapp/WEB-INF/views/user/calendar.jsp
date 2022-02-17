@@ -1,12 +1,7 @@
-
-
-
-
-
 <%@page import="java.lang.ProcessBuilder.Redirect"%>
 <%@page import="com.dang.java.controller.DiaryController"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"
-   import="java.sql.*"%>
+	import="java.sql.*"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%
 request.setCharacterEncoding("UTF-8");
@@ -29,19 +24,18 @@ Object id = session.getAttribute("id");
 <link rel="stylesheet" href="/resources/css/main.css">
 </head>
 <style type="text/css">
-
 td {
-   width: 150px;
-   height: 100px;
-   text-align: center;
+	width: 150px;
+	height: 100px;
+	text-align: center;
 }
 
 body {
-   background-color: #fef9df;
+	background-color: #fef9df;
 }
 </style>
 <body>
-   <%
+	<%
    java.util.Calendar cal = java.util.Calendar.getInstance(); //Calendar객체 cal생성
    int currentYear = cal.get(java.util.Calendar.YEAR); //현재 날짜 기억
    int currentMonth = cal.get(java.util.Calendar.MONTH);
@@ -65,49 +59,48 @@ body {
       }
    }
    %>
-   <center>
-      <div>
-         <table border=3 cellspacing=0>
+	<center>
+		<div>
+			<table border=3 cellspacing=0>
 
-            <!-- 달력 부분 -->
-            <tr>
-               <td colspan="2" width=100>
-                  <!-- 년 도--> <a
-                  href="/user/calendar.do?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>
-                  <span class="year"> <%out.print(year);%>
-               </span>년 <a
-                  href="/user/calendar.do?year=<%out.print(year + 1);%>&month=<%out.print(month);%>">▶</a>
-               </td>
-               <td colspan="3" width=100>
-                  <!-- 월 --> <a
-                  href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month - 1);%>">◀</a>
-                  <span class="month"> <%out.print(month + 1);%>
-               </span>월 <a
-                  href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month + 1);%>">▶</a>
-               </td>
-               <td colspan="2" width=100>
-                  TODAY : <%out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);%>
-               </td>
-            </tr>
-            <tr>
+				<!-- 달력 부분 -->
+				<tr>
+					<td colspan="2" width=100>
+						<!-- 년 도--> <a
+						href="/user/calendar.do?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>
+						<span class="year"> <%out.print(year);%>
+					</span>년 <a
+						href="/user/calendar.do?year=<%out.print(year + 1);%>&month=<%out.print(month);%>">▶</a>
+					</td>
+					<td colspan="3" width=100>
+						<!-- 월 --> <a
+						href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month - 1);%>">◀</a>
+						<span class="month"> <%out.print(month + 1);%>
+					</span>월 <a
+						href="/user/calendar.do?year=<%out.print(year);%>&month=<%out.print(month + 1);%>">▶</a>
+					</td>
+					<td colspan="2" width=100>TODAY : <%out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);%>
+					</td>
+				</tr>
+				<tr>
 
-               <td width=100>일</td>
-               <!-- 일=1 -->
-               <td width=100>월</td>
-               <!-- 월=2 -->
-               <td width=100>화</td>
-               <!-- 화=3 -->
-               <td width=100>수</td>
-               <!-- 수=4 -->
-               <td width=100>목</td>
-               <!-- 목=5 -->
-               <td width=100>금</td>
-               <!-- 금=6 -->
-               <td width=100>토</td>
-               <!-- 토=7 -->
-            </tr>
-            <tr height=30>
-               <%
+					<td width=100>일</td>
+					<!-- 일=1 -->
+					<td width=100>월</td>
+					<!-- 월=2 -->
+					<td width=100>화</td>
+					<!-- 화=3 -->
+					<td width=100>수</td>
+					<!-- 수=4 -->
+					<td width=100>목</td>
+					<!-- 목=5 -->
+					<td width=100>금</td>
+					<!-- 금=6 -->
+					<td width=100>토</td>
+					<!-- 토=7 -->
+				</tr>
+				<tr height=30>
+					<%
                cal.set(year, month, 1); //현재 날짜를 현재 월의 1일로 설정
                int startDay = cal.get(java.util.Calendar.DAY_OF_WEEK); //현재날짜(1일)의 요일
                int end = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH); //이 달의 끝나는 날
@@ -126,13 +119,14 @@ body {
                   out.println("<td>" + "<button id='date' class='dateBtn' onclick='dateClick()' value =" + i + ">" + i + "</button>");
                   //메모(일정) 추가 부
                %>
-               
-               <!-- cost 테이블에 값 가져오기  -->
-               <input type="hidden" name="id" value="<%=id%>">
-               <input type="hidden" name="date" value="<%=year%><%=month+1%><%=i%>">
-              
-               
-               <%
+
+					<!-- cost 테이블에 값 가져오기  -->
+					<input type="hidden" name="id" value="<%=id%>">
+					<input type="hidden" name="date"
+						value="<%=year%><%=month+1%><%=i%>">
+
+
+					<%
                out.println("</td>");
                br++;
                if ((br % 7) == 0 && i != end) {
@@ -142,103 +136,102 @@ body {
                while ((br++) % 7 != 0) //말일 이후 빈칸출력
                out.println("<td>&nbsp;</td>");
                %>
-            </tr>
-         </table>
-      </div>
-   </center>
+				</tr>
+			</table>
+		</div>
+	</center>
 
-   <div class="modal-overlay hidden" id="modal" />
-   <div class="modal hidden" id="modal">
-   <div style="display: flex; justify-content: flex-end; "><button class="modal-close" id="jsCloseBtn"> X </button></div>
-      <div class="modal-title" style="text-align: center;">날짜</div>
-      <ul class="modal-tabs">
+	<div class="modal-overlay hidden" id="modal" />
+	<div class="modal hidden" id="modal">
+		<div style="display: flex; justify-content: flex-end;">
+			<button class="modal-close" id="jsCloseBtn">X</button>
+		</div>
+		<div class="modal-title" style="text-align: center;">날짜</div>
+		<ul class="modal-tabs">
 
-         <li>
-               <a href="#modal-contents1-1" class="on">조회</a> 
-         </li>
+			<li><a href="#modal-contents1-1" class="on">조회</a></li>
 
-         <li><a href="#modal-contents1-2">추가/수정</a></li>
-      </ul>
-      <div class="modal-contents" id="modal-contents1-1">
-        <!-- 조회 데이터 append  -->
-      </div>
+			<li><a href="#modal-contents1-2">추가/수정</a></li>
+		</ul>
+		<div class="modal-contents" id="modal-contents1-1">
+			<!-- 조회 데이터 append  -->
+		</div>
 
-      <div class="modal-contents" id="modal-contents1-2">
-         <form name="diary-history" method="post" action="/diary/saveDiary.do">
-            <select id="val" name="val" onchange="Change()">
-               <option disabled="disabled" selected="selected" >선택</option>
-               <option value="1">사료</option>
-               <option value="2">간식</option>
-               <option value="3">진료</option>
-               <option value="4">예방주사</option>
-               <option value="5">미용</option>
-               <option value="6">옷</option>
-               <option value="7">영양제</option>
-               <option value="8">배변</option>
-               <option value="9">훈련</option>
-               <option value="10">호텔</option>
-               <option value="11">유치원</option>
-            </select>
+		<div class="modal-contents" id="modal-contents1-2">
+			<form name="diary-history" method="post" action="/diary/saveDiary.do">
+				<select id="val" name="val" onchange="Change()">
+					<option disabled="disabled" selected="selected">선택</option>
+					<option value="1">사료</option>
+					<option value="2">간식</option>
+					<option value="3">진료</option>
+					<option value="4">예방주사</option>
+					<option value="5">미용</option>
+					<option value="6">옷</option>
+					<option value="7">영양제</option>
+					<option value="8">배변</option>
+					<option value="9">훈련</option>
+					<option value="10">호텔</option>
+					<option value="11">유치원</option>
+				</select>
 
 
-            <div id="d1" style="display: none">
-               <input type="number" name="a_Feed" value="0" min="0" max="99999999"
-                  placeholder="사료" />
-            </div>
-            <div id="d2" style="display: none">
-               <input type="number" name="a_Snack" value="0" min="0" max="99999999"
-                  placeholder="간식" />
-            </div>
-            <div id="d3" style="display: none">
-               <input type="number" name="b_Diagnosis" value="0" min="0" max="99999999"
-                  placeholder="진료" />
-            </div>
-            <div id="d4" style="display: none">
-               <input type="number" name="b_Vaccin" value="0" min="0" max="99999999"
-                  placeholder="예방주사" />
-            </div>
-            <div id="d5" style="display: none">
-               <input type="number" name="c_Grooming" value="0" min="0" max="99999999"
-                  placeholder="미용" />
-            </div>
-            <div id="d6" style="display: none">
-               <input type="number" name="c_Clothes" value="0" min="0" max="99999999"
-                  placeholder="옷" />
-            </div>
-            <div id="d7" style="display: none">
-               <input type="number" name="d_Nutrients" value="0" min="0" max="99999999"
-                  placeholder="영양제" />
-            </div>
-            <div id="d8" style="display: none">
-               <input type="number" name="d_Poo" value="0" min="0" max="99999999"
-                  placeholder="배변" />
-            </div>
-            <div id="d9" style="display: none">
-               <input type="number" name="e_Trainning" value="0" min="0" max="99999999"
-                  placeholder="훈련" />
-            </div>
-            <div id="d10" style="display: none">
-               <input type="number" name="e_Hotel" value="0" min="0" max="99999999"
-                  placeholder="호텔" />
-            </div>
-            <div id="d11" style="display: none">
-               <input type="number" name="e_Kindergarten" value="0" min="0" max="99999999"
-                  placeholder="유치원" />
-            </div>
+				<div id="d1" style="display: none">
+					<input type="number" name="a_Feed" value="0" min="0" max="99999999"
+						placeholder="사료" />
+				</div>
+				<div id="d2" style="display: none">
+					<input type="number" name="a_Snack" value="0" min="0"
+						max="99999999" placeholder="간식" />
+				</div>
+				<div id="d3" style="display: none">
+					<input type="number" name="b_Diagnosis" value="0" min="0"
+						max="99999999" placeholder="진료" />
+				</div>
+				<div id="d4" style="display: none">
+					<input type="number" name="b_Vaccin" value="0" min="0"
+						max="99999999" placeholder="예방주사" />
+				</div>
+				<div id="d5" style="display: none">
+					<input type="number" name="c_Grooming" value="0" min="0"
+						max="99999999" placeholder="미용" />
+				</div>
+				<div id="d6" style="display: none">
+					<input type="number" name="c_Clothes" value="0" min="0"
+						max="99999999" placeholder="옷" />
+				</div>
+				<div id="d7" style="display: none">
+					<input type="number" name="d_Nutrients" value="0" min="0"
+						max="99999999" placeholder="영양제" />
+				</div>
+				<div id="d8" style="display: none">
+					<input type="number" name="d_Poo" value="0" min="0" max="99999999"
+						placeholder="배변" />
+				</div>
+				<div id="d9" style="display: none">
+					<input type="number" name="e_Trainning" value="0" min="0"
+						max="99999999" placeholder="훈련" />
+				</div>
+				<div id="d10" style="display: none">
+					<input type="number" name="e_Hotel" value="0" min="0"
+						max="99999999" placeholder="호텔" />
+				</div>
+				<div id="d11" style="display: none">
+					<input type="number" name="e_Kindergarten" value="0" min="0"
+						max="99999999" placeholder="유치원" />
+				</div>
 
-               <!-- cost 테이블에 값 넘겨주기  -->
-                <input name="id" value="<%=id%>" type="hidden" >
-                <input class="date-title" name="date" type="hidden" />
-                
-            <input type="submit" onclick="Submit()">
-         </form>
-      </div>
-   </div>
-   
-   
-   
-   <script type="module" src="/resources/index.js"></script>
-   <script type="text/javascript">
+				<!-- cost 테이블에 값 넘겨주기  -->
+				<input name="id" value="<%=id%>" type="hidden"> <input
+					class="date-title" name="date" type="hidden" /> <input
+					type="submit" onclick="Submit()">
+			</form>
+		</div>
+	</div>
+
+
+
+	<script type="module" src="/resources/index.js"></script>
+	<script type="text/javascript">
       $(function(){
          $('.dateBtn').on("click",function(){
             alert('1');
@@ -272,8 +265,9 @@ body {
    
    
    <script type="module" src="/resources/index.js"></script>
-   <script src="https://kit.fontawesome.com/bd65a83372.js" crossorigin="anonymous"></script>
-   <script type="text/javascript">
+	<script src="https://kit.fontawesome.com/bd65a83372.js"
+		crossorigin="anonymous"></script>
+	<script type="text/javascript">
       $(function(){
          $('.dateBtn').on("click",function(){
             alert('1');

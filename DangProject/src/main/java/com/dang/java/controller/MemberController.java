@@ -61,8 +61,6 @@ public class MemberController {
 	// 로그인
 	@RequestMapping("login.do")
 	public String login(MemberVO vo, HttpSession session,  Model model) throws Exception {
-		HashMap map = new HashMap();
-		model.addAttribute("boardList", dashBoardService.getDashBoard(map));
 		MemberVO result = memberService.idCheck_Login(vo);
 		System.out.println("login 컨트롤러 호출");
 
@@ -75,6 +73,8 @@ public class MemberController {
 			session.setAttribute("id", result.getId());
 			session.setAttribute("name", result.getName());
 			session.setAttribute("sessionTime", new Date().toLocaleString());
+			HashMap map = new HashMap();
+			model.addAttribute("boardList", dashBoardService.getDashBoard(map));
 			return "/user/dang_main_member";
 		}
 	}

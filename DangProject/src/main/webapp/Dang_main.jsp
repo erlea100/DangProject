@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,9 +101,9 @@ td img{
 <body>
 
 	<div id="headers"></div>
-
+	<% int num = (int)(Math.random()*5+1);%>
 	<video muted autoplay loop>
-		<source src="/resources/imgs/dog2.mp4" type="video/mp4">
+		<source src="/resources/imgs/dog<%=num%>.mp4" type="video/mp4">
 	</video>
 	<div class="jb-text">
 		<h1 style="text-shadow: 0 0 6px grey">For your lovely pet</h1>

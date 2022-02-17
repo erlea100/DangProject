@@ -70,23 +70,8 @@ body {
 			<!-- 			<p> -->
 			<!-- 				<a href="#ex1" rel="modal:open"></a> -->
 			<!-- 			</p> -->
-<!-- 				<form action="/user/dashboard.do" method="post"> -->
-<!-- 				<button  onclick="window.open('test.do','window_name','width=1000,height=1000,location=no,status=no,scrollbars=yes');"> test</button>  -->
-<%-- 				<input type="hidden" id="id" name="id" value="<%=id%>"> --%>
-<!-- 				</form> -->
+			<!-- 				
 		</div>
-		<script type="text/javascript">
-		var popupWidth = 200;
-		var popupHeight = 300;
-		var popupX = (window.screen.width / 2) - (popupWidth / 2);
-		var popupY= (window.screen.height / 2) - (popupHeight / 2);
-		
-		function window(){
-		window.open('', '_blank', 'status=no, height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY);
-  		$("#tesidt").submit();
-    	console.log('id');
-		}
-		</script>
 		<div class="dashboard"
 			style="border-radius: 36px; margin: auto; height: 1000px; border: 1px solid red; padding: 30px; padding: 5%;">
 
@@ -94,125 +79,132 @@ body {
 				<div class="dashboard"
 					style="border: 1px solid red; width: 700px; height: 400px; float: left; padding: 30px;">
 					<!--차트가 그려질 부분-->
-					<canvas id="myChart1"></canvas>
-				</div>
-				<div
-					style="width: 200px; margin-top: 5%; height: 300px; float: right; border: 1px solid #ff8fab; padding: 30px;">
-					<p>요기 문구 추가</p>
-					<c:forEach items="${boardList}" var="board">
-						<a id="a_Feed">${board.a_Feed }</a>
-						<br>
-						<a id="a_Snack">${board.a_Snack }</a>
-						<br>
-						<a id="b_Diagnosis">${board.b_Diagnosis }</a>
-						<br>
-						<a id="b_Vaccin">${board.b_Vaccin }</a>
-						<br>
-						<a id="c_Grooming">${board.c_Grooming }</a>
-						<br>
-						<a id="c_Clothes">${board.c_Clothes }</a>
-						<br>
-						<a id="d_Nutrients">${board.d_Nutrients }</a>
-						<br>
-						<a id="d_Poo">${board.d_Poo }</a>
-						<br>
-						<a id="e_Trainning">${board.e_Trainning }</a>
-						<br>
-						<a id="e_Hotel">${board.e_Hotel }</a>
-						<br>
-						<a id="e_Kindergarten">${board.e_Kindergarten }</a>
-						<br>
-					</c:forEach>
-				</div>
-			</div>
-			<div style="border: solid 1px blue; height: 500px; display: flex">
-				<div class="dashboard"
-					style="border: 1px solid red; width: 500px; height: 500px; margin-left: 15%;">
-					<!--차트가 그려질 부분-->
-					<canvas id="myChart2"></canvas>
-				</div>
-				<div
-					style="margin-left: 10%; margin-top: 5%; width: 200px; height: 300px; border: 1px solid #ff8fab; padding: 30px">
-					<p>요기 문구 추가</p>
-					<c:forEach items="${boardList}" var="board">
-						<a id="a_Feed">${board.a_Feed }</a>
-						<br>
-						<a id="a_Snack">${board.a_Snack }</a>
-						<br>
-						<a id="b_Diagnosis">${board.b_Diagnosis }</a>
-						<br>
-						<a id="b_Vaccin">${board.b_Vaccin }</a>
-						<br>
-						<a id="c_Grooming">${board.c_Grooming }</a>
-						<br>
-						<a id="c_Clothes">${board.c_Clothes }</a>
-						<br>
-						<a id="d_Nutrients">${board.d_Nutrients }</a>
-						<br>
-						<a id="d_Poo">${board.d_Poo }</a>
-						<br>
-						<a id="e_Trainning">${board.e_Trainning }</a>
-						<br>
-						<a id="e_Hotel">${board.e_Hotel }</a>
-						<br>
-						<a id="e_Kindergarten">${board.e_Kindergarten }</a>
-						<br>
-					</c:forEach>
-				</div>
+			<canvas id="myChart1"></canvas>
+		</div>
+		<div
+			style="width: 200px; margin-top: 5%; height: 300px; float: right; border: 1px solid #ff8fab; padding: 30px;">
+			<p>요기 문구 추가</p>
+			<c:forEach items="${boardList}" var="board">
+				<a id="a_Feed">${board.a_Feed }</a>
+				<br>
+				<a id="a_Snack">${board.a_Snack }</a>
+				<br>
+				<a id="b_Diagnosis">${board.b_Diagnosis }</a>
+				<br>
+				<a id="b_Vaccin">${board.b_Vaccin }</a>
+				<br>
+				<a id="c_Grooming">${board.c_Grooming }</a>
+				<br>
+				<a id="c_Clothes">${board.c_Clothes }</a>
+				<br>
+				<a id="d_Nutrients">${board.d_Nutrients }</a>
+				<br>
+				<a id="d_Poo">${board.d_Poo }</a>
+				<br>
+				<a id="e_Trainning">${board.e_Trainning }</a>
+				<br>
+				<a id="e_Hotel">${board.e_Hotel }</a>
+				<br>
+				<a id="e_Kindergarten">${board.e_Kindergarten }</a>
+				<br>
+			</c:forEach>
+		</div>
+	</div>
+	<div style="border: solid 1px blue; height: 500px; display: flex">
+		<div class="dashboard"
+			style="border: 1px solid red; width: 500px; height: 500px; margin-left: 15%;">
+			<!--차트가 그려질 부분-->
+			<canvas id="myChart2"></canvas>
+		</div>
+		<div
+			style="margin-left: 10%; margin-top: 5%; width: 200px; height: 300px; border: 1px solid #ff8fab; padding: 30px">
+			<p>요기 문구 추가</p>
+			<c:forEach items="${boardList}" var="board">
+				<a id="a_Feed">${board.a_Feed }</a>
+				<br>
+				<a id="a_Snack">${board.a_Snack }</a>
+				<br>
+				<a id="b_Diagnosis">${board.b_Diagnosis }</a>
+				<br>
+				<a id="b_Vaccin">${board.b_Vaccin }</a>
+				<br>
+				<a id="c_Grooming">${board.c_Grooming }</a>
+				<br>
+				<a id="c_Clothes">${board.c_Clothes }</a>
+				<br>
+				<a id="d_Nutrients">${board.d_Nutrients }</a>
+				<br>
+				<a id="d_Poo">${board.d_Poo }</a>
+				<br>
+				<a id="e_Trainning">${board.e_Trainning }</a>
+				<br>
+				<a id="e_Hotel">${board.e_Hotel }</a>
+				<br>
+				<a id="e_Kindergarten">${board.e_Kindergarten }</a>
+				<br>
+			</c:forEach>
+		</div>
+	</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="intro">"Pets, Just Enjoy The Life!" DangDangDiary
+		aims to create a happy lifestyle. We respect and value healthy
+		companionship between pets and people and we continuously strive to
+		sustain this value through sincere communication. DangDangDiary는 즐거운
+		라이프스타일을 지향합니다. 또한 이 가치가 지속 가능하도록 건강한 반려생활을 중시하고 배려하며, 반려 동물 및 반려인들과
+		진정성 있는 소통을 합니다</div>
+	<br>
+	<br>
+	<br>
+	<div class="section1">
+		사이트 소개 DANGDANGDIARY<br /> ―
+		<p>
+			<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
+		</p>
+		<p>mon - fri am 11:00 - pm 4:00</p>
+		<p>lunch time pm 1:00 - pm 2:00</p>
+		<p>
+			<strong>sat, sun, holiday off</strong> DANGDANGDIARY<br /> ―
+		<p>
+			<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
+		</p>
+		<p>mon - fri am 11:00 - pm 4:00</p>
+		<p>lunch time pm 1:00 - pm 2:00</p>
+		<p>
+			<strong>sat, sun, holiday off</strong>
+	</div>
+	<div class="section2">
+		<div class="infinity-slide">
+			<div id="slide">
+				<img src="/resources/imgs/1.PNG"
+					onclick='window.open("http://prod.danawa.com/info/?pcode=11334894");'>
+				<img src="/resources/imgs/2.PNG"
+					onclick='window.open("http://prod.danawa.com/info/?pcode=11334894");'>
+				<img src="/resources/imgs/3.PNG"
+					onclick='window.open("https://www.11st.co.kr/products/2493461985?gclid=EAIaIQobChMIv6P56ZWE9gIVilVgCh3yXwvfEAYYASABEgLhKfD_BwE&utm_term=&utm_campaign=%B1%B8%B1%DB%BC%EE%C7%CEPC+%C3%DF%B0%A1%C0%DB%BE%F7&utm_source=%B1%B8%B1%DB_PC_S_%BC%EE%C7%CE&utm_medium=%B0%CB%BB%F6");'>
+				<img src="/resources/imgs/4.PNG"
+					onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=9000&inflow=naver&gclid=EAIaIQobChMI8dKv95WE9gIVMdWWCh3dNgEsEAYYASABEgKZGfD_BwE");'>
+				<img src="/resources/imgs/6.PNG"
+					onclick='window.open("https://www.terracanis.com/en-uk/dry-food-chicken-1554.html");'>
+				<img src="/resources/imgs/7.PNG"
+					onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=8223&inflow=naver&gclid=EAIaIQobChMI6b7ynJaE9gIVBq2WCh0Wlwk5EAQYBCABEgKwsvD_BwE");'>
+				<img src="/resources/imgs/8.PNG"
+					onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=8729&inflow=naver&gclid=EAIaIQobChMIs7bjp5aE9gIVTrGWCh1MKgJgEAQYASABEgKpS_D_BwE");'>
+				<img src="/resources/imgs/9.PNG"
+					onclick='window.open("https://m.biteme.co.kr/goods/goods_view.php?goodsNo=1000011356");'>
+				<img src="/resources/imgs/10.PNG"
+					onclick='window.open("https://shopping.interpark.com/product/productInfo.do?prdNo=6811234125&goods_no=6811234125&gclid=EAIaIQobChMIxLrW7JaE9gIVEXkqCh3cuAGGEAQYAiABEgLhpvD_BwE");'>
+				<img src="/resources/imgs/11.PNG" onclick='window.open("");'>
+				<img src="/resources/imgs/12.PNG" onclick='window.open("");'>
 			</div>
 		</div>
-		<br> <br> <br> <br> <br> <br>
-		<div class="intro">"Pets, Just Enjoy The Life!" DangDangDiary
-			aims to create a happy lifestyle. We respect and value healthy
-			companionship between pets and people and we continuously strive to
-			sustain this value through sincere communication. DangDangDiary는 즐거운
-			라이프스타일을 지향합니다. 또한 이 가치가 지속 가능하도록 건강한 반려생활을 중시하고 배려하며, 반려 동물 및 반려인들과
-			진정성 있는 소통을 합니다</div>
-		<br> <br> <br>
-		<div class="section1">
-			사이트 소개 DANGDANGDIARY<br /> ―
-			<p>
-				<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
-			</p>
-			<p>mon - fri am 11:00 - pm 4:00</p>
-			<p>lunch time pm 1:00 - pm 2:00</p>
-			<p>
-				<strong>sat, sun, holiday off</strong> DANGDANGDIARY<br /> ―
-			<p>
-				<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
-			</p>
-			<p>mon - fri am 11:00 - pm 4:00</p>
-			<p>lunch time pm 1:00 - pm 2:00</p>
-			<p>
-				<strong>sat, sun, holiday off</strong>
-		</div>
-		<div class="section2">
-			<div class="infinity-slide">
-				<div id="slide">
-					<img src="/resources/imgs/1.PNG"
-						onclick='window.open("http://prod.danawa.com/info/?pcode=11334894");'>
-					<img src="/resources/imgs/2.PNG"
-						onclick='window.open("http://prod.danawa.com/info/?pcode=11334894");'>
-					<img src="/resources/imgs/3.PNG"
-						onclick='window.open("https://www.11st.co.kr/products/2493461985?gclid=EAIaIQobChMIv6P56ZWE9gIVilVgCh3yXwvfEAYYASABEgLhKfD_BwE&utm_term=&utm_campaign=%B1%B8%B1%DB%BC%EE%C7%CEPC+%C3%DF%B0%A1%C0%DB%BE%F7&utm_source=%B1%B8%B1%DB_PC_S_%BC%EE%C7%CE&utm_medium=%B0%CB%BB%F6");'>
-					<img src="/resources/imgs/4.PNG"
-						onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=9000&inflow=naver&gclid=EAIaIQobChMI8dKv95WE9gIVMdWWCh3dNgEsEAYYASABEgKZGfD_BwE");'>
-					<img src="/resources/imgs/6.PNG"
-						onclick='window.open("https://www.terracanis.com/en-uk/dry-food-chicken-1554.html");'>
-					<img src="/resources/imgs/7.PNG"
-						onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=8223&inflow=naver&gclid=EAIaIQobChMI6b7ynJaE9gIVBq2WCh0Wlwk5EAQYBCABEgKwsvD_BwE");'>
-					<img src="/resources/imgs/8.PNG"
-						onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=8729&inflow=naver&gclid=EAIaIQobChMIs7bjp5aE9gIVTrGWCh1MKgJgEAQYASABEgKpS_D_BwE");'>
-					<img src="/resources/imgs/9.PNG"
-						onclick='window.open("https://m.biteme.co.kr/goods/goods_view.php?goodsNo=1000011356");'>
-					<img src="/resources/imgs/10.PNG"
-						onclick='window.open("https://shopping.interpark.com/product/productInfo.do?prdNo=6811234125&goods_no=6811234125&gclid=EAIaIQobChMIxLrW7JaE9gIVEXkqCh3cuAGGEAQYAiABEgLhpvD_BwE");'>
-					<img src="/resources/imgs/11.PNG" onclick='window.open("");'>
-					<img src="/resources/imgs/12.PNG" onclick='window.open("");'>
-				</div>
-			</div>
-		</div>
-		<div id="footers"></div>
+	</div>
+	<div id="footers"></div>
 	</div>
 </body>
 </html>
@@ -268,7 +260,7 @@ body {
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-																																													} */
+																																																	} */
 					]
 				},
 				options : {
@@ -336,13 +328,13 @@ body {
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-																																																																																																									                                                                                                                                                                           {
-																																													      label: 'test2', 
-																																													      fill: false,
-																																													      data: [8, 34, 12, 24],
-																																													      backgroundColor: 'rgb(157, 109, 12)', 
-																																													      borderColor: 'rgb(157, 109, 12)'
-																																													      } */
+																																																																																																													                                                                                                                                                                           {
+																																																	      label: 'test2', 
+																																																	      fill: false,
+																																																	      data: [8, 34, 12, 24],
+																																																	      backgroundColor: 'rgb(157, 109, 12)', 
+																																																	      borderColor: 'rgb(157, 109, 12)'
+																																																	      } */
 					]
 				},
 				options : {
