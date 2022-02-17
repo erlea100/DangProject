@@ -269,41 +269,6 @@ body {
             </div>
 
 
-
-				
-					<input type="hidden" name="id" value="<%=id%>">
-					<input type="hidden" name="date" value="<%=year%><%=month+1%><%=day%>">
-				<input type="submit" onclick="Submit()">
-			</form>
-		</div>
-	</div>
-	
-	
-	
-	<script type="module" src="/resources/index.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('.dateBtn').on("click",function(){
-				alert('1');
-				var id =  $(this).next().val() ;
-				var dd =  $(this).next().next().val() ;
-				
-				var cal_data = { "id" : id , "date" : dd}; // json : object형
-				
-				// sumbit
-				$.ajax({
-					url : "/diary/selectDiary.do",
-					post : "post",
-					data : cal_data, // 컨트롤러로 이동한 대아터 ( input 태그의 기술 )
-					dataType : "json",
-					success : function(data){
-						
-						console.log("data  " +data);
-						
-						for ( var d in data){
-							$('#modal-contents1-1').children().remove();
-// 							console.log(data[d].a_Feed);
-
             
                <input type="hidden" name="id" value="<%=id%>">
                <input type="hidden" name="date" value="<%=year%><%=month+1%><%=day%>">
@@ -318,10 +283,8 @@ body {
    <script type="text/javascript">
       $(function(){
          $('.dateBtn').on("click",function(){
-            alert('1');
             var id =  $(this).next().val() ;
             var dd =  $(this).next().next().val() ;
-            
             var cal_data = { "id" : id , "date" : dd}; // json : object형
             
             // sumbit
@@ -336,16 +299,22 @@ body {
                   
               	if(data.length == 0){  //데이터가 없으면
 //						modal-contents1-1
-					console.log('데이터없음')
 					document.getElementById('modal-contents1-1').innerHTML = "";
-					console.log('수정완료')
 				}else{
 					for ( var d in data){
 						$('#modal-contents1-1').children().remove();
 //							console.log(data[d].a_Feed);
-
 						$('#modal-contents1-1').append("<a id=a_Feed>사료 : "+data[d].a_Feed+"</a><br />");
 						$('#modal-contents1-1').append("<a id=a_Snack>간식 : "+data[d].a_Snack+"</a><br />");
+						$('#modal-contents1-1').append("<a id=b_Diagnosis>약 : "+data[d].b_Diagnosis+"</a><br />");
+						$('#modal-contents1-1').append("<a id=b_Vaccin>예방접종 : "+data[d].b_Vaccin+"</a><br />");
+						$('#modal-contents1-1').append("<a id=c_Grooming>미용 : "+data[d].c_Grooming+"</a><br />");
+						$('#modal-contents1-1').append("<a id=c_Clothes>옷 : "+data[d].c_Clothes+"</a><br />");
+						$('#modal-contents1-1').append("<a id=d_Nutrients>영양제 : "+data[d].d_Nutrients+"</a><br />");
+						$('#modal-contents1-1').append("<a id=d_Poo>배변패드 : "+data[d].d_Poo+"</a><br />");
+						$('#modal-contents1-1').append("<a id=e_Trainning>훈련 : "+data[d].e_Trainning+"</a><br />");
+						$('#modal-contents1-1').append("<a id=e_Hotel>호텔 : "+data[d].e_Hotel+"</a><br />");
+						$('#modal-contents1-1').append("<a id=e_Kindergarten>유치원 : "+data[d].e_Kindergarten+"</a><br />");
 					}
 				}
                },
