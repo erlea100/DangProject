@@ -1,8 +1,3 @@
-
-
-
-
-
 <%@page import="java.lang.ProcessBuilder.Redirect"%>
 <%@page import="com.dang.java.controller.DiaryController"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"
@@ -36,9 +31,86 @@ td {
    text-align: center;
 }
 
+@font-face {
+   font-family: 'GangwonEdu_OTFBoldA';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+* {
+   font-family: 'GangwonEdu_OTFBoldA';
+}
+
 body {
    background-color: #fef9df;
 }
+
+.modal-tabs > li {
+ list-style: none;
+ float: left;
+ display: block;
+ width: 105px;
+ height: 30px;
+ text-align: center;
+}
+.modal-tabs > li > a {
+ font-size: 20px;
+ text-decoration-line: none; 
+}
+a:link, a:visited, a:hover , a:active {
+  color: black;
+}
+
+#modal-contents1-1 > * {
+ font-size: 18px;
+}
+
+#val {
+	width: 200px;
+	height: 30px;
+	font-size: 15px; 
+	margin-left: 15px;
+	text-align: center;
+}
+
+#submit-box {
+	width: 50px;
+	height: 30px;
+	font-size: 15px; 
+	margin: 15px 10px 10px 15px;
+}
+
+.select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.selected-d {
+	width: 260px;
+	height: 40px;
+	align-self: center;
+	margin: 15px 10px 10px 15px;
+	font-size: 16px;
+	text-align: center;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#dangdang {
+	
+	width: 280px;
+	height: 100px;
+	bottom:0;
+}
+
 </style>
 <body>
    <%
@@ -158,6 +230,7 @@ body {
          </li>
 
          <li><a href="#modal-contents1-2">추가/수정</a></li>
+         <br>
       </ul>
       <div class="modal-contents" id="modal-contents1-1">
         <!-- 조회 데이터 append  -->
@@ -165,7 +238,7 @@ body {
 
       <div class="modal-contents" id="modal-contents1-2">
          <form name="diary-history" method="post" action="/diary/saveDiary.do">
-            <select id="val" name="val" onchange="Change()">
+            <select id="val" class="select" name="val" onchange="Change()">
                <option disabled="disabled" selected="selected" >선택</option>
                <option value="1">사료</option>
                <option value="2">간식</option>
@@ -180,49 +253,50 @@ body {
                <option value="11">유치원</option>
             </select>
 
+			<input type="submit" id="submit-box" onclick="Submit()" value="저장">
 
             <div id="d1" style="display: none">
-               <input type="number" name="a_Feed" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="a_Feed" value="0" min="0" max="99999999"
                   placeholder="사료" />
             </div>
             <div id="d2" style="display: none">
-               <input type="number" name="a_Snack" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="a_Snack" value="0" min="0" max="99999999"
                   placeholder="간식" />
             </div>
             <div id="d3" style="display: none">
-               <input type="number" name="b_Diagnosis" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="b_Diagnosis" value="0" min="0" max="99999999"
                   placeholder="진료" />
             </div>
             <div id="d4" style="display: none">
-               <input type="number" name="b_Vaccin" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="b_Vaccin" value="0" min="0" max="99999999"
                   placeholder="예방주사" />
             </div>
             <div id="d5" style="display: none">
-               <input type="number" name="c_Grooming" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="c_Grooming" value="0" min="0" max="99999999"
                   placeholder="미용" />
             </div>
             <div id="d6" style="display: none">
-               <input type="number" name="c_Clothes" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="c_Clothes" value="0" min="0" max="99999999"
                   placeholder="옷" />
             </div>
             <div id="d7" style="display: none">
-               <input type="number" name="d_Nutrients" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="d_Nutrients" value="0" min="0" max="99999999"
                   placeholder="영양제" />
             </div>
             <div id="d8" style="display: none">
-               <input type="number" name="d_Poo" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="d_Poo" value="0" min="0" max="99999999"
                   placeholder="배변" />
             </div>
             <div id="d9" style="display: none">
-               <input type="number" name="e_Trainning" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="e_Trainning" value="0" min="0" max="99999999"
                   placeholder="훈련" />
             </div>
             <div id="d10" style="display: none">
-               <input type="number" name="e_Hotel" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="e_Hotel" value="0" min="0" max="99999999"
                   placeholder="호텔" />
             </div>
             <div id="d11" style="display: none">
-               <input type="number" name="e_Kindergarten" value="0" min="0" max="99999999"
+               <input type="number" class="selected-d" name="e_Kindergarten" value="0" min="0" max="99999999"
                   placeholder="유치원" />
             </div>
 
@@ -230,7 +304,8 @@ body {
                 <input name="id" value="<%=id%>" type="hidden" >
                 <input class="date-title" name="date" type="hidden" />
                 
-            <input type="submit" onclick="Submit()">
+                <img id="dangdang" src="/resources/imgs/001.gif">
+                
          </form>
       </div>
    </div>
@@ -305,22 +380,18 @@ body {
                   alert("조회시작")
                   
                   $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>사료 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>간식 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=a_Feed>진료 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=a_Feed>예방주사 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>미용 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>옷 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>영양제 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>배변 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>훈련 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>호텔 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>유치원 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Snack>간식 | "+data[d].a_Snack+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=b_Diagnosis>진료 | "+data[d].b_Diagnosis+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=b_Vaccin>예방주사 | "+data[d].b_Vaccin+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>"+" | <a id=c_Grooming>미용 | "+data[d].c_Grooming+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>   >"+" | <a id=c_Clothes>옷 | "+data[d].c_Clothes+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+" | <a id=d_Nutrients>영양제 | "+data[d].d_Nutrients+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+" | <a id=d_Poo>배변 | "+data[d].d_Poo+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Trainning>훈련 | "+data[d].e_Trainning+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Hotel>호텔 | "+data[d].e_Hotel+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Kindergarten>유치원 | "+data[d].e_Kindergarten+" 원"+"</a>"+"<br />");
                   
-                  
-                  
-                  
-                  
-                  
+               
                }
             }
                },

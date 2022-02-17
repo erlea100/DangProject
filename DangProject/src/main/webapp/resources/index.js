@@ -12,24 +12,19 @@ function showPopup(event) {
 	})
 
 	// modal 값 주입
-	/*const year = document.querySelector('.year').innerHTML
-	const month = document.querySelector('.month').innerHTML*/
+	const year = document.querySelector('.year').innerHTML
+	const month = document.querySelector('.month').innerHTML
 	const modalTitle = document.querySelector('.modal-title')
-	modalTitle.innerHTML = `${day}`
+	modalTitle.innerHTML = `${year}년${month}월 ${day} 일`
 
-	/*// input에 데이터 가져오기
-	const year2 = document.querySelector('.year').innerHTML
-	const month2 = document.querySelector('.month').innerHTML
+	// input에 modal데이터 가져오기
+	const text_year = document.querySelector('.year').innerHTML
+	const text_month = document.querySelector('.month').innerHTML
 	const dataValue = document.querySelector('.date-title')
 
-	dataValue.value = `${year2}-${month2}-${day}`.replace(/(\s*)/g, "")
+	dataValue.value = `${text_year}${text_month}${day}`.replace(/(\s*)/g, "")
 
-	// input에 데이터 가져오기
-	const year3 = document.querySelector('.year').innerHTML
-	const month3 = document.querySelector('.month').innerHTML
-	const dataValue2 = document.querySelector('.date-title2')
-
-	dataValue2.value = `${year3}-${month3}-${day}`.replace(/(\s*)/g, "")*/
+	
 }
 
 (function init() {
