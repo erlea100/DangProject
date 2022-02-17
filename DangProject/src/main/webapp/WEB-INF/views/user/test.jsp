@@ -7,6 +7,7 @@ if (session.getAttribute("id") == null) {
 }
 Object id = session.getAttribute("id");
 Object name = session.getAttribute("name");
+out.print(id);
 %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
@@ -70,10 +71,6 @@ body {
 			<!-- 			<p> -->
 			<!-- 				<a href="#ex1" rel="modal:open"></a> -->
 			<!-- 			</p> -->
-			<a href="dashboard.do"
-				onclick="window.open(this.href, '_blank', 'width=가로사이즈px,height=세로사이즈px,toolbars=no,scrollbars=no'); return false;">완전
-				간단하게 팝업 띄우기!!</a>
-
 		</div>
 		<div class="dashboard"
 			style="border-radius: 36px; margin: auto; height: 1000px; border: 1px solid red; padding: 30px; padding: 5%;">

@@ -38,7 +38,8 @@
 		SUM(E_HOTEL) AS E_HOTEL,
 		SUM(E_KINDERGARTEN) AS E_KINDERGARTEN
 		FROM
-		COST
+		COST 
+<!-- 		WHERE ID = #{id} -->
 	</select>
 	
 </mapper>
