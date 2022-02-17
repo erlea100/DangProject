@@ -30,9 +30,28 @@ Object id = session.getAttribute("id");
 </head>
 <style type="text/css">
 
+@font-face {
+	font-family: 'GangwonEdu_OTFBoldA';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: 'GangwonEdu_OTFBoldA';
+	font-style: #d4a373 !important;
+
+}
+
+a{
+	text-decoration : none;
+}
+
 td {
    width: 150px;
-   height: 100px;
+   height: 95px;
    text-align: center;
 }
 
