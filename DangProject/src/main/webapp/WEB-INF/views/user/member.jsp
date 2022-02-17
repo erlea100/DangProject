@@ -6,8 +6,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-.userinput, #password_chk{ /* id 입력칸 길이 */
-	width: 148px;
+.small {
+	width: 120px;
+}
+
+.userinput, #password_chk { /* id 입력칸 길이 */
+	width: 120px;
 }
 
 #userinput {
@@ -25,9 +29,6 @@
 	height: 700px;
 	justify-content: center;
 }
-
-
-
 
 @font-face {
 	font-family: 'GangwonEdu_OTFBoldA';
@@ -48,8 +49,8 @@ body {
 
 .table {
 	position: absolute;
-	left: 54%;
-	top: 53%;
+	left: 53.5%;
+	top: 56%;
 	transform: translate(-50%, -50%);
 }
 
@@ -61,7 +62,7 @@ table {
 }
 
 input {
-	width: 245px;
+	width: 280px;
 	background-color: #fcfcfc;
 	border-bottom: 2px solid lightgrey;
 	padding: 10px;
@@ -74,7 +75,7 @@ button {
 	cursor: pointer;
 	background-color: white;
 	border-radius: 36px;
-	text-align:center;
+	text-align: center;
 }
 
 #Submit {
@@ -118,27 +119,21 @@ a {
 	justify-content: center;
 }
 
-
-
 button:hover:after {
 	transform: scaleX(1);
 }
 
-
-.button{
-	display:flex;
+.button {
+	display: flex;
 	justify-content: center;
-	width:265px;
+	width: 300px;
 }
+
 img:hover {
 	opacity: 0.9;
 }
 
-
-
 /* ------------------------------- */
-
-
 button {
 	border-style: none;
 	cursor: pointer;
@@ -148,7 +143,7 @@ button {
 
 #submit {
 	width: 100%;
-	background-color: #fefae0;  
+	background-color: #fefae0;
 	border: 0;
 	padding: 10px;
 }
@@ -160,15 +155,7 @@ button {
 	padding: 10px;
 }
 
-
-
-
-
 /* ------------------------------- */
-
-
-
-
 </style>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -207,29 +194,30 @@ button {
 	});
 </script>
 <script type="text/javascript">
-    $(function(){
-        $("#alert-success").hide();
-        $("#alert-danger").hide();
-        $(".pw").keyup(function(){
-            var pwd1=$("#password").val();
-            var pwd2=$("#password_chk").val();
-            if(pwd1 != "" || pwd2 != ""){
-                if(pwd1 == pwd2){
-                	
-                    $("#alert-success").text("비밀번호가 일치합니다.");
-                    $("#alert-success").show();
-                    $("#alert-danger").hide();
-                    $("#submit").removeAttr("disabled");
-                }else{
-                    $("#alert-success").hide();
-                    $("#alert-danger").text("비밀번호가 일치하지 않습니다.");
-                    $("#alert-danger").show();
-                    $("#submit").attr("disabled", "disabled");
-                }    
-            }
-        });
-    });
-</script>​
+	$(function() {
+		$("#alert-success").hide();
+		$("#alert-danger").hide();
+		$(".pw").keyup(function() {
+			var pwd1 = $("#password").val();
+			var pwd2 = $("#password_chk").val();
+			if (pwd1 != "" || pwd2 != "") {
+				if (pwd1 == pwd2) {
+
+					$("#alert-success").text("비밀번호가 일치합니다.");
+					$("#alert-success").show();
+					$("#alert-danger").hide();
+					$("#submit").removeAttr("disabled");
+				} else {
+					$("#alert-success").hide();
+					$("#alert-danger").text("비밀번호가 일치하지 않습니다.");
+					$("#alert-danger").show();
+					$("#submit").attr("disabled", "disabled");
+				}
+			}
+		});
+	});
+</script>
+​
 </head>
 <body>
 
@@ -239,37 +227,39 @@ button {
 		<div class="center">
 
 			<a href="/Dang_main.html"><img src="/resources/imgs/dang1.png"></a>
-	
+
 			<div class="table">
 				<form method="post" action="userInsert.do" name="userinput"
 					id="userinput">
 
 					<table>
 						<tr>
-							<td><input type="text" name="id" id="id"
+							<td class="small"><input type="text" name="id" id="id"
 								placeholder="아이디 입력" class="userinput" size="20" required /></td>
 							<td>
 								<div id="idmessage" style="display: none;"></div>
 							</td>
-					
+
 						</tr>
 
 
 						<tr>
-							<td colspan="2"><input class="pw" id="password" name="password" type="password"
-								placeholder="비밀번호 입력" type="text" required></td>
+							<td colspan="2"><input class="pw" id="password"
+								name="password" type="password" placeholder="비밀번호 입력"
+								type="text" required></td>
 						</tr>
-		
+
 						<tr>
-							<td><input class="pw" id="password_chk" name="password_chk" type="password"
-								placeholder="비밀번호 확인" type="text" required><td>
-								<td colspan="2">
+							<td class="small"><input class="pw" id="password_chk"
+								name="password_chk" type="password" placeholder="비밀번호 확인"
+								type="text" required></td>
+							<td colspan="2">
 								<div class="alert alert-success" id="alert-success"></div>
 								<div class="alert alert-danger" id="alert-danger"></div>
-								</td>
-								
+							</td>
+
 						</tr>
-		
+
 						<tr>
 							<td colspan="2"><input id="name" name="name"
 								placeholder="이름 입력" type="text" required></td>
@@ -289,13 +279,12 @@ button {
 						</tr>
 
 					</table>
-				
-						<div class=button>
-							<button type="submit" id="submit"
-								disabled="disabled">가입하기</button>
-						</div>
 
-		
+					<div class=button>
+						<button type="submit" id="submit" disabled="disabled">가입하기</button>
+					</div>
+
+
 
 				</form>
 
