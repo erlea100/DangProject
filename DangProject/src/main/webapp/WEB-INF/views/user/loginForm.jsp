@@ -122,7 +122,7 @@ img:hover {
 <body>
 	<div class="test">
 		<div class="center">
-			<a href="Dang_main.html"><img src="/resources/imgs/dang1.png"></a>
+			<a href="/Dang_main.html"><img src="/resources/imgs/dang1.png"></a>
 			<div class="table">
 				<form action="login.do" method="post" name="frm">
 					<table width="300" height="120">
