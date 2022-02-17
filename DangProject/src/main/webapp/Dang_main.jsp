@@ -14,7 +14,7 @@
 <style>
 main {
 	display: flex;
-}
+}	
 
 section {
 	display: flex;

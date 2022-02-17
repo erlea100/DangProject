@@ -27,8 +27,6 @@ public class DiaryDAOImpl implements DiaryDAO{
 	public List<CostVO> selectDiary(CostVO vo) {
 		System.out.println("셀렉 다오 호출");
 		
-	
-		
 		return mybatis.selectList("costMapper.selectDiary",vo);
 	}
 	

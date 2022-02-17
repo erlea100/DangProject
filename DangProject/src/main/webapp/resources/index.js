@@ -21,9 +21,24 @@ function showPopup(event) {
 	const text_year = document.querySelector('.year').innerHTML
 	const text_month = document.querySelector('.month').innerHTML
 	const dataValue = document.querySelector('.date-title')
-
+	
 	dataValue.value = `${text_year}${text_month}${day}`.replace(/(\s*)/g, "")
+	
+	
+	// input에 modal데이터 가져오기
+	const memo_year = document.querySelector('.year').innerHTML
+	const memo_month = document.querySelector('.month').innerHTML
+	
+	const dayValue = document.querySelector('.dayValue')
+	const monthValue = document.querySelector('.monthValue')
+	const yearValue = document.querySelector('.yearValue')
+	
+	dayValue.value = `${day}`
+	monthValue.value = `${memo_month}`
+	yearValue.value = `${memo_year}`
 
+	
+	
 	
 }
 
