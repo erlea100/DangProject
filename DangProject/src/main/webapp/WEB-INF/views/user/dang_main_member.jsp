@@ -57,32 +57,17 @@ body {
 	<br>
 	<div class="container">
 		<br>
-		<div style="float: right; border: 1px solid red;">
-			<!-- 		 <form> -->
-			<%-- 				<input type="hidden" name=id value="<%=id%>" /> <input --%>
-			<!-- 					style="border: 1px solid red; background-color: white" -->
-			<!-- 					type="submit" value="내정보" onclick="Submit()"> -->
-			<!-- 			</form>  -->
-			<!-- 			<div id="ex1" class="modal"> -->
-			<!-- 				<p>안녕하세요. 모달창안의 내용부분입니다.</p> -->
-			<!-- 				<a href="#" rel="modal:close">닫기</a> -->
-			<!-- 			</div> -->
-			<!-- 			<p> -->
-			<!-- 				<a href="#ex1" rel="modal:open"></a> -->
-			<!-- 			</p> -->
-			<!-- 				
-		</div>
 		<div class="dashboard"
-			style="border-radius: 36px; margin: auto; height: 1000px; border: 1px solid red; padding: 30px; padding: 5%;">
+			style="border-radius: 36px; margin: auto; height: 1000px;padding: 30px; padding: 5%;">
 
-			<div style="border: solid 1px blue; height: 500px">
+			<div style="height: 500px">
 				<div class="dashboard"
-					style="border: 1px solid red; width: 700px; height: 400px; float: left; padding: 30px;">
+					style="width: 700px; height: 400px; float: left; padding: 30px;">
 					<!--차트가 그려질 부분-->
 			<canvas id="myChart1"></canvas>
 		</div>
 		<div
-			style="width: 200px; margin-top: 5%; height: 300px; float: right; border: 1px solid #ff8fab; padding: 30px;">
+			style="width: 200px; margin-top: 5%; height: 300px; float: right; padding: 30px;">
 			<p>요기 문구 추가</p>
 			<c:forEach items="${boardList}" var="board">
 				<a id="a_Feed">${board.a_Feed }</a>
@@ -110,14 +95,15 @@ body {
 			</c:forEach>
 		</div>
 	</div>
-	<div style="border: solid 1px blue; height: 500px; display: flex">
+	
+	<div style=" height: 500px; display: flex">
 		<div class="dashboard"
-			style="border: 1px solid red; width: 500px; height: 500px; margin-left: 15%;">
+			style=" width: 500px; height: 500px; margin-left: 15%;">
 			<!--차트가 그려질 부분-->
 			<canvas id="myChart2"></canvas>
 		</div>
 		<div
-			style="margin-left: 10%; margin-top: 5%; width: 200px; height: 300px; border: 1px solid #ff8fab; padding: 30px">
+			style="margin-left: 10%; margin-top: 5%; width: 200px; height: 300px;  padding: 30px">
 			<p>요기 문구 추가</p>
 			<c:forEach items="${boardList}" var="board">
 				<a id="a_Feed">${board.a_Feed }</a>
@@ -214,14 +200,11 @@ body {
 	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript">
 	var context = document.getElementById('myChart1').getContext('2d');
-	var myChart = new Chart(
-			context,
+	var myChart = new Chart(context,
 			{
 				type : 'bar', // 차트의 형태
 				data : { // 차트에 들어갈 데이터
-					labels : [
-					//x 축
-					'식대', '병원', '미용', '복지', '기타' ],
+					labels : ['식대', '병원', '미용', '복지', '기타' ],
 					datasets : [ { //데이터
 						label : '카테고리별 소비 동향', //차트 제목
 						fill : false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
@@ -285,7 +268,7 @@ body {
 	var myChart = new Chart(
 			context,
 			{
-				type : 'pie', // 차트의 형태
+				type : 'polarArea', // 차트의 형태
 				data : { // 차트에 들어갈 데이터
 					labels : [
 					//x 축
