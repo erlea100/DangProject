@@ -14,9 +14,18 @@ Object name = session.getAttribute("name");
 <head>
 <meta charset="UTF-8">
 <title>메인화면</title>
-<link rel="stylesheet" href="/resources/css/Dang_main.css?after" type="text/css" />
+<link rel="stylesheet" href="/resources/css/Dang_main.css?after"
+	type="text/css" />
 </head>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- 추가 -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#headers").load("/resources/header(member).html"); //헤더 인클루드
@@ -46,27 +55,29 @@ body {
 	<br>
 	<br>
 	<br>
-	<!-- 	데이터 불러오는 부분(display-none) -->
-	<!-- 	<div class="costInform"> -->
-	<%-- 		<c:forEach items="${boardList}" var="board"> --%>
-	<%-- 			<a id="a_Feed">${board.a_Feed }</a> --%>
-	<%-- 			<a id="a_Snack">${board.a_Snack }</a> --%>
-	<%-- 			<a id="b_Diagnosis">${board.b_Diagnosis }</a> --%>
-	<%-- 			<a id="b_Vaccin">${board.b_Vaccin }</a> --%>
-	<%-- 			<a id="c_Grooming">${board.c_Grooming }</a> --%>
-	<%-- 			<a id="c_Clothes">${board.c_Clothes }</a> --%>
-	<%-- 			<a id="d_Nutrients">${board.d_Nutrients }</a> --%>
-	<%-- 			<a id="d_Poo">${board.d_Poo }</a> --%>
-	<%-- 			<a id="e_Trainning">${board.e_Trainning }</a> --%>
-	<%-- 			<a id="e_Hotel">${board.e_Hotel }</a> --%>
-	<%-- 			<a id="e_Kindergarten">${board.e_Kindergarten }</a> --%>
-	<%-- 		</c:forEach> --%>
-	<!-- 	</div> -->
 	<div class="container">
 		<br>
+		<div style="float: right; border: 1px solid red;">
+			<!-- 		 <form> -->
+			<%-- 				<input type="hidden" name=id value="<%=id%>" /> <input --%>
+			<!-- 					style="border: 1px solid red; background-color: white" -->
+			<!-- 					type="submit" value="내정보" onclick="Submit()"> -->
+			<!-- 			</form>  -->
+			<!-- 			<div id="ex1" class="modal"> -->
+			<!-- 				<p>안녕하세요. 모달창안의 내용부분입니다.</p> -->
+			<!-- 				<a href="#" rel="modal:close">닫기</a> -->
+			<!-- 			</div> -->
+			<!-- 			<p> -->
+			<!-- 				<a href="#ex1" rel="modal:open"></a> -->
+			<!-- 			</p> -->
+			<a href="dashboard.do"
+				onclick="window.open(this.href, '_blank', 'width=가로사이즈px,height=세로사이즈px,toolbars=no,scrollbars=no'); return false;">완전
+				간단하게 팝업 띄우기!!</a>
+
+		</div>
 		<div class="dashboard"
 			style="border-radius: 36px; margin: auto; height: 1000px; border: 1px solid red; padding: 30px; padding: 5%;">
-			
+
 			<div style="border: solid 1px blue; height: 500px">
 				<div class="dashboard"
 					style="border: 1px solid red; width: 700px; height: 400px; float: left; padding: 30px;">
@@ -137,18 +148,6 @@ body {
 					</c:forEach>
 				</div>
 			</div>
-			<!-- 				<div -->
-			<!-- 					style="width: 400px; height: 200px; border: 1px solid black; margin-bottom: 40px;">간식소비가 -->
-			<!-- 					가장 많네요!멍멍!</div> -->
-			<!-- 				<div style="width: 400px; height: 200px; border: 1px solid black;">저희 -->
-			<!-- 					사이트 달력 가계부 기능을 사용해보세요</div> -->
-			<!-- 			</div> -->
-			<!-- <div
-         style="width: 300px; height: 300px; float: left; margin-left: 50px;>
-          <!-- 차트가 그려질 부분-->
-			<!-- <canvas id="myChart2"></canvas>
-				
-      </div> -->
 		</div>
 		<br> <br> <br> <br> <br> <br>
 		<div class="intro">"Pets, Just Enjoy The Life!" DangDangDiary
@@ -175,21 +174,30 @@ body {
 			<p>
 				<strong>sat, sun, holiday off</strong>
 		</div>
-		<div class="section2">			
-				<div class="infinity-slide">
-					<div id="slide">
-						    <img src="/resources/imgs/1.PNG" onclick='window.open("http://prod.danawa.com/info/?pcode=11334894");'> 
-						    <img src="/resources/imgs/2.PNG" onclick='window.open("http://prod.danawa.com/info/?pcode=11334894");'> 
-							<img src="/resources/imgs/3.PNG" onclick='window.open("https://www.11st.co.kr/products/2493461985?gclid=EAIaIQobChMIv6P56ZWE9gIVilVgCh3yXwvfEAYYASABEgLhKfD_BwE&utm_term=&utm_campaign=%B1%B8%B1%DB%BC%EE%C7%CEPC+%C3%DF%B0%A1%C0%DB%BE%F7&utm_source=%B1%B8%B1%DB_PC_S_%BC%EE%C7%CE&utm_medium=%B0%CB%BB%F6");'> 
-							<img src="/resources/imgs/4.PNG" onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=9000&inflow=naver&gclid=EAIaIQobChMI8dKv95WE9gIVMdWWCh3dNgEsEAYYASABEgKZGfD_BwE");'> 
-							<img src="/resources/imgs/6.PNG" onclick='window.open("https://www.terracanis.com/en-uk/dry-food-chicken-1554.html");'> 
-							<img src="/resources/imgs/7.PNG" onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=8223&inflow=naver&gclid=EAIaIQobChMI6b7ynJaE9gIVBq2WCh0Wlwk5EAQYBCABEgKwsvD_BwE");'> 
-							<img src="/resources/imgs/8.PNG" onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=8729&inflow=naver&gclid=EAIaIQobChMIs7bjp5aE9gIVTrGWCh1MKgJgEAQYASABEgKpS_D_BwE");'> 
-							<img src="/resources/imgs/9.PNG" onclick='window.open("https://m.biteme.co.kr/goods/goods_view.php?goodsNo=1000011356");'> 
-							<img src="/resources/imgs/10.PNG" onclick='window.open("https://shopping.interpark.com/product/productInfo.do?prdNo=6811234125&goods_no=6811234125&gclid=EAIaIQobChMIxLrW7JaE9gIVEXkqCh3cuAGGEAQYAiABEgLhpvD_BwE");'> 
-							<img src="/resources/imgs/11.PNG" onclick='window.open("");'> 
-							<img src="/resources/imgs/12.PNG" onclick='window.open("");'>
-					</div>
+		<div class="section2">
+			<div class="infinity-slide">
+				<div id="slide">
+					<img src="/resources/imgs/1.PNG"
+						onclick='window.open("http://prod.danawa.com/info/?pcode=11334894");'>
+					<img src="/resources/imgs/2.PNG"
+						onclick='window.open("http://prod.danawa.com/info/?pcode=11334894");'>
+					<img src="/resources/imgs/3.PNG"
+						onclick='window.open("https://www.11st.co.kr/products/2493461985?gclid=EAIaIQobChMIv6P56ZWE9gIVilVgCh3yXwvfEAYYASABEgLhKfD_BwE&utm_term=&utm_campaign=%B1%B8%B1%DB%BC%EE%C7%CEPC+%C3%DF%B0%A1%C0%DB%BE%F7&utm_source=%B1%B8%B1%DB_PC_S_%BC%EE%C7%CE&utm_medium=%B0%CB%BB%F6");'>
+					<img src="/resources/imgs/4.PNG"
+						onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=9000&inflow=naver&gclid=EAIaIQobChMI8dKv95WE9gIVMdWWCh3dNgEsEAYYASABEgKZGfD_BwE");'>
+					<img src="/resources/imgs/6.PNG"
+						onclick='window.open("https://www.terracanis.com/en-uk/dry-food-chicken-1554.html");'>
+					<img src="/resources/imgs/7.PNG"
+						onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=8223&inflow=naver&gclid=EAIaIQobChMI6b7ynJaE9gIVBq2WCh0Wlwk5EAQYBCABEgKwsvD_BwE");'>
+					<img src="/resources/imgs/8.PNG"
+						onclick='window.open("https://www.gegomall.com/goods/goods_view.php?goodsNo=8729&inflow=naver&gclid=EAIaIQobChMIs7bjp5aE9gIVTrGWCh1MKgJgEAQYASABEgKpS_D_BwE");'>
+					<img src="/resources/imgs/9.PNG"
+						onclick='window.open("https://m.biteme.co.kr/goods/goods_view.php?goodsNo=1000011356");'>
+					<img src="/resources/imgs/10.PNG"
+						onclick='window.open("https://shopping.interpark.com/product/productInfo.do?prdNo=6811234125&goods_no=6811234125&gclid=EAIaIQobChMIxLrW7JaE9gIVEXkqCh3cuAGGEAQYAiABEgLhpvD_BwE");'>
+					<img src="/resources/imgs/11.PNG" onclick='window.open("");'>
+					<img src="/resources/imgs/12.PNG" onclick='window.open("");'>
+				</div>
 			</div>
 		</div>
 		<div id="footers"></div>
@@ -248,7 +256,7 @@ body {
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-																																					} */
+																																													} */
 					]
 				},
 				options : {
@@ -316,13 +324,13 @@ body {
 						borderWidth : 1
 					//경계선 굵기
 					} /* ,
-																																																																																																	                                                                                                                                                                           {
-																																					      label: 'test2', 
-																																					      fill: false,
-																																					      data: [8, 34, 12, 24],
-																																					      backgroundColor: 'rgb(157, 109, 12)', 
-																																					      borderColor: 'rgb(157, 109, 12)'
-																																					      } */
+																																																																																																									                                                                                                                                                                           {
+																																													      label: 'test2', 
+																																													      fill: false,
+																																													      data: [8, 34, 12, 24],
+																																													      backgroundColor: 'rgb(157, 109, 12)', 
+																																													      borderColor: 'rgb(157, 109, 12)'
+																																													      } */
 					]
 				},
 				options : {
