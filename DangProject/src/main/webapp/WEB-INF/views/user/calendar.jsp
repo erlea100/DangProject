@@ -280,7 +280,6 @@ body {
 	
 	
 	<script type="module" src="/resources/index.js"></script>
-	
 	<script type="text/javascript">
 		$(function(){
 			$('.dateBtn').on("click",function(){
