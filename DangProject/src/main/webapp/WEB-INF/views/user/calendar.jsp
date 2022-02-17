@@ -6,7 +6,21 @@
 <%
 request.setCharacterEncoding("UTF-8");
 %>
-
+<%
+//데이터베이스를 연결하는 관련 변수를 선언한다
+Connection conn = null;
+PreparedStatement pstmt = null;
+//데이터베이스를 연결하는 관련 정보를 문자열로 선언한다.
+String jdbc_driver = "oracle.jdbc.driver.OracleDriver"; //JDBC 드라이버의 클래스 경로
+String jdbc_url = "jdbc:oracle:thin:@@129.154.201.125:1521:xe"; //접속하려는 데이터베이스의 정보
+//JDBC 드라이버 클래스를 로드한다.
+Class.forName("oracle.jdbc.driver.OracleDriver");
+//데이터베이스 연결 정보를 이용해서 Connection 인스턴스를 확보한다.
+conn = DriverManager.getConnection("jdbc:oracle:thin:@129.154.201.125:1521:xe", "team", "1234");
+if (conn == null) {
+	out.println("No connection is made!");
+}
+%>
 <%
 // 세션 연결
 if (session.getAttribute("id") == null) {
@@ -116,9 +130,28 @@ body {
 					}
 					for (int i = 1; i <= end; i++) { //날짜출력
 						out.println("<td>" + "<button id='date' value =" + i + ">" + i + "</button>" + "<br>");
-						//메모(일정) 추가 부
-					%>
-					<%
+					//메모(일정) 추가 부분
+					int memoyear, memomonth, memoday;
+					try {
+						// select 문장을 문자열 형태로 구성한다.
+						String sql = "SELECT calendarmemo_year, calendarmemo_month, calendarmemo_day, calendarmemo_contents FROM calendarmemo";
+						pstmt = conn.prepareStatement(sql);
+						// select 를 수행하면 데이터 정보가 ResultSet 클래스의 인스턴스로 리턴
+						ResultSet rs = pstmt.executeQuery();
+						while (rs.next()) { // 마지막 데이터까지 반복함.
+					//날짜가 같으면 데이터 출력
+					memoyear = rs.getInt("calendarmemo_year");
+					memomonth = rs.getInt("calendarmemo_month");
+					memoday = rs.getInt("calendarmemo_day");
+					if (year == memoyear && month + 1 == memomonth && i == memoday) {
+						out.println(rs.getString("calendarmemo_contents") + "<br>");
+					}
+						}
+						rs.close();
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+					;
 					out.println("</td>");
 					br++;
 					if ((br % 7) == 0 && i != end) {
