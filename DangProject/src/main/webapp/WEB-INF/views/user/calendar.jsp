@@ -296,7 +296,6 @@ body {
                   $('#modal-contents1-1').children().remove();
 //                     console.log(data[d].a_Feed);
 
-<<<<<<< HEAD
 						alert("조회시작")
 						
 						$('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>사료 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
@@ -314,7 +313,6 @@ body {
 					
 					}
 				}
-=======
                   alert("조회시작")
                   
                   $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>사료 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
@@ -332,7 +330,6 @@ body {
                
                }
             }
->>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
                },
                error : function(e){
                   alert('error : ' + e);
