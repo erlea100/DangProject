@@ -17,7 +17,7 @@ public class CostVO {
 	private int e_Trainning;
 	private int e_Hotel;
 	private int e_Kindergarten;
-	private Date date;
+	private String date;
 
 
 
@@ -121,13 +121,15 @@ public class CostVO {
 		this.e_Kindergarten = e_Kindergarten;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
+
+	
 
 	
 	

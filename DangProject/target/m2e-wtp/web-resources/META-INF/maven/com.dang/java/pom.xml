@@ -184,6 +184,12 @@
         <version>1.2.5</version>
     </dependency> 
 		       
+		       <!-- JSON 형변환해주는 DEPEND -->
+		       <dependency>
+		       		<groupId>com.fasterxml.jackson.core</groupId>
+		       		<artifactId>jackson-databind</artifactId>
+		       		<version>2.8.9</version>
+		       </dependency>
 	</dependencies>
     <build>
         <plugins>

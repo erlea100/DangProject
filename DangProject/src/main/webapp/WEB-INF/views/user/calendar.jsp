@@ -128,7 +128,10 @@ body {
 							out.println("<br>");
 						}
 					}
+					
+					int day = 0;
 					for (int i = 1; i <= end; i++) { //날짜출력
+<<<<<<< HEAD
 						out.println("<td>" + "<button id='date' value =" + i + ">" + i + "</button>" + "<br>");
 					//메모(일정) 추가 부분
 					int memoyear, memomonth, memoday;
@@ -152,6 +155,22 @@ body {
 						System.out.println(e);
 					}
 					;
+						day = i;
+						out.println("<td>" + "<button id='date' class='dateBtn' onclick='dateClick()' value =" + i + ">" + i + "</button>");
+						//메모(일정) 추가 부
+					%>
+					<input type="readonly" name="id" value="<%=id%>">
+					<input type="readonly" name="date" value="<%=year%><%=month+1%><%=i%>">
+					
+					
+					<form action="/diary/selectDiary.do" id="date" name="date" method="post">
+					<input type="hidden" name="id" value="<%=id%>">
+					<input type="hidden" name="date" value="<%=year%><%=month+1%><%=i%>">
+					<input type="submit">
+					</form>
+					
+					
+					<%
 					out.println("</td>");
 					br++;
 					if ((br % 7) == 0 && i != end) {
@@ -174,7 +193,7 @@ body {
 
 			<li>
 				<form action="/diary/selectDiary.do" method="get">
-					<input class="date-title" name="date" readonly="readonly" /> 
+				<!-- 	<input class="date-title" name="date" readonly="readonly" />  -->
 					<input name="id" value="<%=id%>" readonly="readonly" /> 
 					<a href="#modal-contents1-1" class="on">조회</a> 
 					<input type="submit"/>
@@ -198,34 +217,34 @@ body {
 					<a id="e_Kindergarten">유치원 : ${vo.e_Kindergarten }</a>
 				</c:forEach> --%>
 
-			<c:forEach items="${list}" var="vo">
-				<a id="a_Feed">사료 : ${vo.a_Feed }</a>
-				<br />
-				<a id="a_Snack">간식 : ${vo.a_Snack }</a>
-				<br />
-				<a id="b_Diagnosis">진료 : ${vo.b_Diagnosis }</a>
-				<br />
-				<a id="b_Vaccin">예방주사 : ${vo.b_Vaccin }</a>
-				<br />
-				<a id="c_Grooming">미용 : ${vo.c_Grooming }</a>
-				<br />
-				<a id="c_Clothes">옷 : ${vo.c_Clothes }</a>
-				<br />
-				<a id="d_Nutrients">영양제 : ${vo.d_Nutrients }</a>
-				<br />
-				<a id="d_Poo">배변 : ${vo.d_Poo }</a>
-				<br />
-				<a id="e_Trainning">훈련 : ${vo.e_Trainning }</a>
-				<br />
-				<a id="e_Hotel">호텔 : ${vo.e_Hotel }</a>
-				<br />
-				<a id="e_Kindergarten">유치원 : ${vo.e_Kindergarten }</a>
-			</c:forEach>
+<%-- 			<c:forEach items="${list}" var="vo"> --%>
+<%-- 				<a id="a_Feed">사료 : ${vo.a_Feed }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="a_Snack">간식 : ${vo.a_Snack }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="b_Diagnosis">진료 : ${vo.b_Diagnosis }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="b_Vaccin">예방주사 : ${vo.b_Vaccin }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="c_Grooming">미용 : ${vo.c_Grooming }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="c_Clothes">옷 : ${vo.c_Clothes }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="d_Nutrients">영양제 : ${vo.d_Nutrients }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="d_Poo">배변 : ${vo.d_Poo }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="e_Trainning">훈련 : ${vo.e_Trainning }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="e_Hotel">호텔 : ${vo.e_Hotel }</a> --%>
+<!-- 				<br /> -->
+<%-- 				<a id="e_Kindergarten">유치원 : ${vo.e_Kindergarten }</a> --%>
+<%-- 			</c:forEach> --%>
 		</div>
 
 		<div class="modal-contents" id="modal-contents1-2">
 			<form name="diary-history" method="post" action="/diary/saveDiary.do">
-				<input class="date-title2" name="date" readonly="readonly" /> 
+				<!-- <input class="date-title2" name="date" readonly="readonly" />  -->
 				<select id="val" name="val" onchange="Change()">
 					<option disabled="disabled" selected="selected" >선택</option>
 					<option value="1">사료</option>
@@ -288,13 +307,68 @@ body {
 				</div>
 
 
-				<input type="hidden" name=id value="<%=id%>" /> <input
-					type="submit" onclick="Submit()">
+				
+					<input type="hidden" name="id" value="<%=id%>">
+					<input type="hidden" name="date" value="<%=year%><%=month+1%><%=day%>">
+				<input type="submit" onclick="Submit()">
 			</form>
 		</div>
 	</div>
+	
+	
+	
 	<script type="module" src="/resources/index.js"></script>
+	
 	<script type="text/javascript">
+		$(function(){
+			$('.dateBtn').on("click",function(){
+				alert('1');
+				var id =  $(this).next().val() ;
+				var dd =  $(this).next().next().val() ;
+				
+				var cal_data = { "id" : id , "date" : dd}; // json : object형
+				
+				// sumbit
+				$.ajax({
+					url : "/diary/selectDiary.do",
+					post : "post",
+					data : cal_data, // 컨트롤러로 이동한 대아터 ( input 태그의 기술 )
+					dataType : "json",
+					success : function(data){
+						
+						console.log("data  " +data);
+						
+						for ( var d in data){
+							$('#modal-contents1-1').children().remove();
+// 							console.log(data[d].a_Feed);
+						$('#modal-contents1-1').append("<a id=a_Feed>사료 : "+data[d].a_Feed+"</a><br />");
+						$('#modal-contents1-1').append("<a id=a_Snack>간식 : "+data[d].a_Snack+"</a><br />");
+						
+						}
+					},
+					error : function(e){
+						alert('error : ' + e);
+					}
+					
+				});
+				
+			})
+		})
+	
+		function dateClick(){
+// 			alert("달력 클릭");
+			/* document.date.submit(); */
+// 			$("#date").submit();
+// 		    console.log('date');
+// 		    alert("제출완료");
+
+// 			var cal_data = { "키": "값" , "키": "값"};
+// 			console.log( $(this) ) ;
+		}
+		
+		
+		
+	
 		/* 1차 선택 - 셀렉트 */
 		function Change() {
 			alert("체인지 이벤트")

@@ -1,17 +1,17 @@
 package com.dang.java.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dang.java.domain.CostVO;
-import com.dang.java.domain.MemberVO;
 import com.dang.java.service.DiaryService;
-import com.dang.java.service.MemberService;
 
 @Controller
 @RequestMapping("/diary/")
@@ -40,12 +40,11 @@ public class DiaryController {
 	}
 	
 	@RequestMapping("/selectDiary.do")
-	public ModelAndView selectDiary(HttpSession session,CostVO vo) {
+	@ResponseBody
+	public List<CostVO> selectDiary(HttpSession session,CostVO vo) {
 		System.out.println("셀렉 컨트롤 호출");
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/user/calendar");
-		mv.addObject("list", diaryService.selectDiary(vo));
-		return mv;
+		
+		return diaryService.selectDiary(vo);
 	}
 
 }
