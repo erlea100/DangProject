@@ -269,6 +269,41 @@ body {
             </div>
 
 
+
+				
+					<input type="hidden" name="id" value="<%=id%>">
+					<input type="hidden" name="date" value="<%=year%><%=month+1%><%=day%>">
+				<input type="submit" onclick="Submit()">
+			</form>
+		</div>
+	</div>
+	
+	
+	
+	<script type="module" src="/resources/index.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.dateBtn').on("click",function(){
+				alert('1');
+				var id =  $(this).next().val() ;
+				var dd =  $(this).next().next().val() ;
+				
+				var cal_data = { "id" : id , "date" : dd}; // json : object형
+				
+				// sumbit
+				$.ajax({
+					url : "/diary/selectDiary.do",
+					post : "post",
+					data : cal_data, // 컨트롤러로 이동한 대아터 ( input 태그의 기술 )
+					dataType : "json",
+					success : function(data){
+						
+						console.log("data  " +data);
+						
+						for ( var d in data){
+							$('#modal-contents1-1').children().remove();
+// 							console.log(data[d].a_Feed);
+
             
                <input type="hidden" name="id" value="<%=id%>">
                <input type="hidden" name="date" value="<%=year%><%=month+1%><%=day%>">
@@ -308,6 +343,7 @@ body {
 					for ( var d in data){
 						$('#modal-contents1-1').children().remove();
 //							console.log(data[d].a_Feed);
+
 						$('#modal-contents1-1').append("<a id=a_Feed>사료 : "+data[d].a_Feed+"</a><br />");
 						$('#modal-contents1-1').append("<a id=a_Snack>간식 : "+data[d].a_Snack+"</a><br />");
 					}
@@ -467,7 +503,6 @@ body {
             document.all["d10"].style.display = "none";
             document.all["d11"].style.display = "none";
          }
-
          if (key == 10) {
             document.all["d1"].style.display = "none";
             document.all["d2"].style.display = "none";
@@ -495,7 +530,6 @@ body {
             document.all["d10"].style.display = "none";
             document.all["d11"].style.display = "block";
          }
-
       }
    </script>
 </body>
