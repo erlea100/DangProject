@@ -38,9 +38,11 @@
 		SUM(E_HOTEL) AS E_HOTEL,
 		SUM(E_KINDERGARTEN) AS E_KINDERGARTEN
 		FROM
-		COST
+		COST 
+<!-- 		WHERE ID = #{id} -->
 	</select>
 	
+<<<<<<< HEAD
 	<!--  -->
 	<select id="find_id" parameterType="String" resultType="String">
 		select id from USER_INFO_TEST where E_MAIL = #{e_mail}
@@ -52,5 +54,8 @@
 	<!--   -->
 	
 </mapper>
+=======
+	</mapper>
+>>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
   
  

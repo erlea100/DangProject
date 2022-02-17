@@ -32,10 +32,14 @@
 	SELECT *
 	FROM COST
 	WHERE ID = #{id} AND SUBMIT_DATE = #{date} 
-<!-- 	WHERE SUBMIT_DATE = #{date} AND ID = #{id}  -->
  </select>
  
- <!-- cost mapper 수정  -->
+ <select id="icon_selectDiary" parameterType="cost" resultType="cost">
+ 		SELECT
+			*
+		FROM COST 
+		WHERE ID = #{id} AND SUBMIT_DATE = #{date} 
+ </select>
  
   </mapper>
   
