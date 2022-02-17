@@ -5,7 +5,7 @@ import java.util.List;
 import com.dang.java.domain.MemberVO;
 
 public interface MemberDAO {
-	
+
 	/**
 	 * 회원가입기능 구현
 	 */
@@ -15,10 +15,9 @@ public interface MemberDAO {
 	 * 로그인 확인 기능 구현
 	 */
 	MemberVO memberLogin(MemberVO vo);
-	
-	
-	
-	
 
+	String find_id(String e_mail) throws Exception;
+
+	String find_password(String e_mail) throws Exception;
 
 }

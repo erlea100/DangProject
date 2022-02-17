@@ -150,31 +150,7 @@ body {
 				
       </div> -->
 		</div>
-		<br> <br> <br> <br> <br> <br>
-		<div class="intro">"Pets, Just Enjoy The Life!" DangDangDiary
-			aims to create a happy lifestyle. We respect and value healthy
-			companionship between pets and people and we continuously strive to
-			sustain this value through sincere communication. DangDangDiary는 즐거운
-			라이프스타일을 지향합니다. 또한 이 가치가 지속 가능하도록 건강한 반려생활을 중시하고 배려하며, 반려 동물 및 반려인들과
-			진정성 있는 소통을 합니다</div>
-		<br> <br> <br>
-		<div class="section1">
-			사이트 소개 DANGDANGDIARY<br /> ―
-			<p>
-				<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
-			</p>
-			<p>mon - fri am 11:00 - pm 4:00</p>
-			<p>lunch time pm 1:00 - pm 2:00</p>
-			<p>
-				<strong>sat, sun, holiday off</strong> DANGDANGDIARY<br /> ―
-			<p>
-				<b>055-293-8813 / 카카오톡-댕댕 다이어리</b>
-			</p>
-			<p>mon - fri am 11:00 - pm 4:00</p>
-			<p>lunch time pm 1:00 - pm 2:00</p>
-			<p>
-				<strong>sat, sun, holiday off</strong>
-		</div>
+
 		<div class="section2">			
 				<div class="infinity-slide">
 					<div id="slide">
@@ -195,7 +171,7 @@ body {
 		<div id="footers"></div>
 	</div>
 </body>
-</html>
+
 <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
 
 <script type="text/javascript"
@@ -336,5 +312,5 @@ body {
 				}
 			});
 </script>
-
+</html>
 
