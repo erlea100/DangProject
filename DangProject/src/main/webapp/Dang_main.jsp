@@ -12,6 +12,19 @@
 	type="text/css" />
 
 <style>
+
+@font-face {
+    font-family: 'HSYuji-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSYuji-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+b:not(#footers b){
+	    font-family: 'HSYuji-Regular';
+	    font-size: 90px;
+}
+
 main {
 	display: flex;
 }	
@@ -58,14 +71,20 @@ table {
 	width: 100%;
 	table-layout: fixed;
 	font-size: 30px;
+	text-align:center;
 }
 
 td{
 	color: #d4a373;
+	text-align:center;
 }
 
 td img{
 	max-width: 100%;
+}
+
+tr{
+	margin:auto;
 }
 
 
@@ -122,31 +141,37 @@ td img{
 				<td>
 				<img src="/resources/imgs/pngwing.com (22).png"
 					></td>
-				<td>어제 샀던 간식이 얼마였더라? <br>댕댕 다이어리는 반려동물을 위한 맞춤 솔루션 가계부입니다! 우리 아이의
-					식비, 예방접종, 유치원 방문 기록까지 데이터를 통해 한눈에 볼 수 있어요.</td>
+				<td><b>어제 샀던 간식이 얼마였더라? </b><br><br>댕댕 다이어리는 반려동물을 위한 맞춤 솔루션 가계부입니다!<br>우리 아이의
+					식비, 예방접종, 유치원 방문 기록까지 <br>데이터를 통해 한눈에 볼 수 있어요.</td>
 			</tr>
 			<tr class="sa sa-down">
-				<td>깔끔한 통계<br>지출패턴을 스마트하게 분석 사용 내역을 다양하게 필터링할 수 있으며 기간별로 깔끔한 통계를 제공합니다.
-					내가 어디에 많이 소비했는지, 얼마나 사용했는지에 대한 통계를 차트로 한눈에 확인해 볼 수 있습니다!</td>
+				<td><b>깔끔한 통계</b><br><br>지출패턴을 스마트하게 필터링할 수 있으며 <br>기간별로 깔끔한 통계를 제공합니다.
+					<br><br>내가 어디에 많이 소비했는지, 얼마나 사용했는지에 대한 통계를 <br>차트로 한눈에 확인해 볼 수 있습니다!</td>
 				<td ><img src="/resources/imgs/pngwing.com (35).png"></td>
 			</tr>
 			<tr class="sa sa-down">
-				<td ><img src="/resources/imgs/cal2.jpg"></td>
+				<td ><img src="/resources/imgs/cal2.jpg" width=755; height=424;></td>
 				<td><img src="/resources/imgs/back2.PNG"></td>
 			</tr>
 			<tr class="sa sa-right">
 				<td><img src="/resources/imgs/pngwing.com (31).png"></td>
-				<td>입력이 쉬워요! 지출을 입력하면 자동으로 어느 항목의 지출이 많은지 가계 지출 관리 및 변동을 간단히
-					파악할 수 있습니다. 심플하고 직관적인 아이콘으로 소비 패턴을 한 눈에 확인할 수 있는 것이 가장 큰 장점입니다.</td>
+				<td><b>입력이 쉬워요!</b><br><br>지출을 입력하면 자동으로 어느 항목의 지출이 많은지 <br>가계 지출 관리 및 변동을 간단히
+					파악할 수 있습니다.<br><br>심플하고 직관적인 아이콘으로 <br>소비 패턴을 한 눈에 확인할 수 있는 것이 가장 큰 장점입니다.</td>
 			</tr>
-			<tr class="sa sa-right">
-				<td>귀여운 우리 아이를 위해, 댕댕 다이어리로 스마트한 집사가 되어보세요!</td>
+			</table>
+			<br><br>
+	<div class="container">
+			<table>
+			<tr class="sa sa-left">
+				<td><h1>귀여운 우리 아이를 위해, <br>댕댕 다이어리로 스마트한 집사가 되어보세요!</h1></td>
+			</tr>
+			<tr class="sa sa-left">
+			
 				<td><img src="/resources/imgs/pngwing.com (29).png"></td>
 			</tr>
 
 		</table>
 
-	<div class="container">
 
 		<div class="section2">
 			<div class="infinity-slide">

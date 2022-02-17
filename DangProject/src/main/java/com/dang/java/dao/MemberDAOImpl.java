@@ -30,13 +30,15 @@ public class MemberDAOImpl implements MemberDAO{
 		return mybatis.selectOne("memberMapper.memberLogin",vo);
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
+	@Override
+	public String find_id(String e_mail) throws Exception{
+		System.out.println("다오요");
+		return mybatis.selectOne("memberMapper.find_id", e_mail);
+	}
+	@Override
+	public String find_password(String e_mail) throws Exception{
+		System.out.println("다오요");
+		return mybatis.selectOne("memberMapper.find_password", e_mail);
+	}
 
 }

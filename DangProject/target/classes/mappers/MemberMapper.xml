@@ -41,7 +41,18 @@
 		COST 
 <!-- 		WHERE ID = #{id} -->
 	</select>
+
+
+	<!--  -->
+
+	<select id="find_id" parameterType="String" resultType="String">
+		select id from USER_INFO_TEST where E_MAIL = #{e_mail}
+	</select>
 	
-	</mapper>
-  
- 
+	<select id="find_password" parameterType="String" resultType="String">
+		select password from USER_INFO_TEST where E_MAIL = #{e_mail}
+	</select>
+	
+
+</mapper>
+
