@@ -47,17 +47,14 @@ td {
 	height: 100px;
 	text-align: center;
 }
-<<<<<<< HEAD
 a {
 	color: #d4a373;
 }
-=======
 
 #modal {
 	transition-delay: 0.4s;
 }
 
->>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
 .week{
 	height:30px;
 	}	
