@@ -8,9 +8,9 @@
 	<insert id="userInsert" parameterType="member">
 		INSERT INTO
 		USER_INFO
-		(SEQ_ID, ID, PASSWORD , NAME , E_MAIL)
+		(ID, PASSWORD , NAME , PH, E_MAIL)
 		VALUES
-		(user_info_id_seq.nextval, #{id} , #{password} , #{name} , #{e_mail})
+		(#{id} , #{password} , #{name} ,  #{ph}, #{e_mail})
 	</insert>
 
 	<select id="memberLogin" parameterType="member"
