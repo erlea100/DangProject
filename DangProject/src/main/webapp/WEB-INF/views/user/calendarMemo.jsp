@@ -70,6 +70,10 @@ body {
 	background-color: #fef9df;
 }
 
+  *{
+  color: brown;
+  }
+  
 a {
 	color: #d4a373;
 }

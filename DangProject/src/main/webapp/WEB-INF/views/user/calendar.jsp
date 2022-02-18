@@ -27,7 +27,6 @@ Object id = session.getAttribute("id");
 <script type="text/javascript">
    $(document).ready(function() {
       $("#headers").load("/resources/header(member).html"); //헤더 인클루드
-      $("#footers").load("/resources/footer.html"); //푸터부분 인클루드
    });
 </script>
 
@@ -36,15 +35,25 @@ Object id = session.getAttribute("id");
    type="text/css" />
       
   <style type="text/css">
+  
+  *{
+  color: brown;
+  }
+  
+  
+
 td {
 	width: 150px;
 	height: 100px;
 	text-align: center;
 }
-
+a {
+	color: #d4a373;
+}
 .week{
 	height:30px;
 	}	
+	
 @font-face {
 	font-family: 'GangwonEdu_OTFBoldA';
 	src:
@@ -201,7 +210,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
          <table border=0>
 
             <!-- 달력 부분 -->
-            <tr>
+            <tr class="none">
                <td colspan="2" width=100>
                   <!-- 년 도--> <a
                   href="/user/calendar.do?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>

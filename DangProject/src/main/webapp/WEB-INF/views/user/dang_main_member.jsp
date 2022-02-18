@@ -30,7 +30,6 @@ Object name = session.getAttribute("name");
 	$(document).ready(function() {
 		$("#headers").load("/resources/header(member).html"); //헤더 인클루드
 		$("#footers").load("/resources/footer.html"); //푸터부분 인클루드
-		$("#containers").load("/resources/container.html"); //푸터부분 인클루드
 	});
 </script>
 
