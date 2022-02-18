@@ -334,47 +334,47 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
             <div id="d1" style="display: none">
                <input type="number" class="selected-d" name="a_Feed" value="0" min="0" max="99999999"
-                  placeholder="사료" />
+                  placeholder="사료" required/>
             </div>
             <div id="d2" style="display: none">
                <input type="number" class="selected-d" name="a_Snack" value="0" min="0" max="99999999"
-                  placeholder="간식" />
+                  placeholder="간식" required/>
             </div>
             <div id="d3" style="display: none">
                <input type="number" class="selected-d" name="b_Diagnosis" value="0" min="0" max="99999999"
-                  placeholder="진료" />
+                  placeholder="진료" required/>
             </div>
             <div id="d4" style="display: none">
                <input type="number" class="selected-d" name="b_Vaccin" value="0" min="0" max="99999999"
-                  placeholder="예방주사" />
+                  placeholder="예방주사" required/>
             </div>
             <div id="d5" style="display: none">
                <input type="number" class="selected-d" name="c_Grooming" value="0" min="0" max="99999999"
-                  placeholder="미용" />
+                  placeholder="미용" required/>
             </div>
             <div id="d6" style="display: none">
                <input type="number" class="selected-d" name="c_Clothes" value="0" min="0" max="99999999"
-                  placeholder="옷" />
+                  placeholder="옷" required/>
             </div>
             <div id="d7" style="display: none">
                <input type="number" class="selected-d" name="d_Nutrients" value="0" min="0" max="99999999"
-                  placeholder="영양제" />
+                  placeholder="영양제" required/>
             </div>
             <div id="d8" style="display: none">
                <input type="number" class="selected-d" name="d_Poo" value="0" min="0" max="99999999"
-                  placeholder="배변" />
+                  placeholder="배변" required/>
             </div>
             <div id="d9" style="display: none">
                <input type="number" class="selected-d" name="e_Trainning" value="0" min="0" max="99999999"
-                  placeholder="훈련" />
+                  placeholder="훈련" required/>
             </div>
             <div id="d10" style="display: none">
                <input type="number" class="selected-d" name="e_Hotel" value="0" min="0" max="99999999"
-                  placeholder="호텔" />
+                  placeholder="호텔" required/>
             </div>
             <div id="d11" style="display: none">
                <input type="number" class="selected-d" name="e_Kindergarten" value="0" min="0" max="99999999"
-                  placeholder="유치원" />
+                  placeholder="유치원" required/>
             </div>
 
                <!-- cost 테이블에 값 넘겨주기  -->
