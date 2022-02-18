@@ -39,11 +39,7 @@
 		SUM(E_KINDERGARTEN) AS E_KINDERGARTEN
 		FROM
 		COST 
-<!-- 		WHERE ID = #{id} -->
 	</select>
-
-
-	<!--  -->
 
 	<select id="find_id" parameterType="String" resultType="String">
 		select id from USER_INFO where E_MAIL = #{e_mail}

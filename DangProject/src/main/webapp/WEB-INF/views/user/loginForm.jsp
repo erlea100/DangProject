@@ -152,9 +152,7 @@ img:hover {
 								class="underline">아이디가 없으신가요? 댕댕 다이어리의 가족이 되어주세요!</button></td>
 					</tr>
 				</table>
-
 			</div>
-
 		</div>
 	</div>
 </body>
@@ -168,24 +166,6 @@ $(function () {
 	$("#find_password_btn").click(function(){
 		location.href='../member/find_password_form.do';
 	})
-	
-	
 })
-
 </script>
-
-
-
-
 </html>
-
-
-<!-- <form  action="login.do" method="post" name="frm">
-           
-                <input id="id" name="id" placeholder="ID입력" type="text" required >
-                 
-                 <input id="password" name="password" placeholder="비밀번호 입력" type="text"  required>
-              
-                <button type="submit">가입완료</button> 
-               
-            </form> -->

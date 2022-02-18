@@ -12,11 +12,9 @@
 <style type="text/css">
 @charset "UTF-8";
 
-
 * {
 	box-sizing: border-box;
 }
-
 
 .content{
 	height:590px;
@@ -138,11 +136,8 @@ label.required::after {
 	}
 }
 </style>
-
-
 </head>
 <body>
-
   <div class="wrap">
       <div class="logo" style="margin-top:30px;"><h1>댕댕 다이어리 지침서</h1></div>
       <div class="contents">
@@ -232,14 +227,11 @@ label.required::after {
 </body>
 
 <script type="text/javascript">
-
   ("use strict");
-
   const form = document.querySelector("#form__wrap");
   const checkAll = document.querySelector(".terms__check__all input");
   const checkBoxes = document.querySelectorAll(".input__check input");
   const submitButton = document.querySelector("button");
-
   const agreements = {
     termsOfService: false,
     privacyPolicy: false,
@@ -247,7 +239,6 @@ label.required::after {
   };
 
   form.addEventListener("submit", (e) => e.preventDefault());
-
   checkBoxes.forEach((item) => item.addEventListener("input", toggleCheckbox));
 
   function toggleCheckbox(e) {
@@ -294,7 +285,4 @@ label.required::after {
     toggleSubmitButton();
   });  
   </script>
-  
- 
-
 </html>
