@@ -39,16 +39,21 @@ if (conn == null) {
 <!-- 이모티콘 i 태그  -->
 <script src="https://kit.fontawesome.com/bd65a83372.js" crossorigin="anonymous"></script>
 <!-- 공통 헤더 , 푸터 , 내부 스타일 시트 적용 시작 -->
+<script src="//code.jquery.com/jquery-1.11.0.min.js">
+</script>
 <script type="text/javascript">
    $(document).ready(function() {
       $("#headers").load("/resources/header(member).html"); //헤더 인클루드
       $("#footers").load("/resources/footer.html"); //푸터부분 인클루드
-      $("#containers").load("/resources/container.html"); //푸터부분 인클루드
    });
-</script>
+   
+   </script>
+
 
 <link rel="stylesheet" href="/resources/css/Dang_main.css?after"
    type="text/css" />
+   
+   
 <style type="text/css">
 td {
    width: 150px;
@@ -56,14 +61,27 @@ td {
    text-align: center;
 }
 
+.week{
+	height:30px;	
+}
+
 body {
    background-color: #fef9df;
+}
+
+
+a{
+	color: #d4a373;
+}
+
+i{
+	color: brown;	
 }
 </style>
 
 <body>
 <!-- 헤더만 연결 -->
-<div id="headers"></div>
+<div id="headers" style="margin-bottom: 60px"></div>
    <%
    java.util.Calendar cal = java.util.Calendar.getInstance(); //Calendar객체 cal생성
    int currentYear = cal.get(java.util.Calendar.YEAR); //현재 날짜 기억
@@ -117,22 +135,23 @@ body {
       </table>
       <table border=1 cellspacing=0>
          <!-- 달력 부분 -->
-         <tr>
-            <td width=100>일</td>
-            <!-- 일=1 -->
-            <td width=100>월</td>
-            <!-- 월=2 -->
-            <td width=100>화</td>
-            <!-- 화=3 -->
-            <td width=100>수</td>
-            <!-- 수=4 -->
-            <td width=100>목</td>
-            <!-- 목=5 -->
-            <td width=100>금</td>
-            <!-- 금=6 -->
-            <td width=100>토</td>
-            <!-- 토=7 -->
-         </tr>
+                     <tr>
+
+               <td width=100 class="week">일</td>
+               <!-- 일=1 -->
+               <td width=100 class="week">월</td>
+               <!-- 월=2 -->
+               <td width=100 class="week">화</td>
+               <!-- 화=3 -->
+               <td width=100 class="week">수</td>
+               <!-- 수=4 -->
+               <td width=100 class="week">목</td>
+               <!-- 목=5 -->
+               <td width=100 class="week">금</td>
+               <!-- 금=6 -->
+               <td width=100 class="week">토</td>
+               <!-- 토=7 -->
+            </tr>
          <tr height=30>
             <%
             cal.set(year, month, 1); //현재 날짜를 현재 월의 1일로 설정
@@ -203,6 +222,8 @@ body {
    </center>
    
 </body>
+   <script>history.scrollRestoration = "manual"</script>
+   <a style="display:scroll;position:fixed;bottom:0px;right:10px; " href="#" title=”맨위로"><img src="/resources/imgs/top.PNG" style="border-radius: 70%;"></a>
 </html>
 <%
 //사용한 자원을 반납한다.
