@@ -44,6 +44,17 @@ td {
 
 .week{
 	height:30px;	
+@font-face {
+   font-family: 'GangwonEdu_OTFBoldA';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+* {
+   font-family: 'GangwonEdu_OTFBoldA';
 }
 
 body {
@@ -55,6 +66,70 @@ a{
 }
 </style>  
 
+<style>
+.modal-tabs > li {
+ list-style: none;
+ float: left;
+ display: block;
+ width: 105px;
+ height: 30px;
+ text-align: center;
+}
+.modal-tabs > li > a {
+ font-size: 20px;
+ text-decoration-line: none; 
+}
+a:link, a:visited, a:hover , a:active {
+  color: black;
+}
+
+#modal-contents1-1 > * {
+ font-size: 18px;
+}
+
+#val {
+	width: 200px;
+	height: 40px;
+	font-size: 15px; 
+	margin-left: 15px;
+	text-align: center;
+}
+
+#submit-box {
+	width: 50px;
+	height: 40px;
+	font-size: 15px; 
+	margin: 15px 10px 10px 15px;
+}
+
+.select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.selected-d {
+	width: 260px;
+	height: 40px;
+	align-self: center;
+	margin: 15px 10px 10px 15px;
+	font-size: 16px;
+	text-align: center;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#dangdang {
+	
+	width: 280px;
+	height: 100px;
+	bottom:0;
+}
+</style>
 </head>
 <body>
 
@@ -184,6 +259,7 @@ a{
          </li>
 
          <li><a href="#modal-contents1-2">추가/수정</a></li>
+         <br>
       </ul>
       <div class="modal-contents" id="modal-contents1-1">
         <!-- 조회 데이터 append  -->
@@ -191,7 +267,7 @@ a{
 
       <div class="modal-contents" id="modal-contents1-2">
          <form name="diary-history" method="post" action="/diary/saveDiary.do">
-            <select id="val" name="val" onchange="Change()">
+            <select id="val" class="select" name="val" onchange="Change()">
                <option disabled="disabled" selected="selected" >선택</option>
                <option value="1">사료</option>
                <option value="2">간식</option>
@@ -206,62 +282,62 @@ a{
                <option value="11">유치원</option>
             </select>
 
+			<input type="submit" id="submit-box" onclick="Submit()" value="저장">
 
             <div id="d1" style="display: none">
-               <input type="number" name="a_Feed" value="0" min="0" max="99999999"
-                  placeholder="사료" required />
+               <input type="number" class="selected-d" name="a_Feed" value="0" min="0" max="99999999"
+                  placeholder="사료" />
             </div>
             <div id="d2" style="display: none">
-               <input type="number" name="a_Snack" value="0" min="0" max="99999999"
-                  placeholder="간식" required/>
+               <input type="number" class="selected-d" name="a_Snack" value="0" min="0" max="99999999"
+                  placeholder="간식" />
             </div>
             <div id="d3" style="display: none">
-               <input type="number" name="b_Diagnosis" value="0" min="0" max="99999999"
-                  placeholder="진료" required/>
+               <input type="number" class="selected-d" name="b_Diagnosis" value="0" min="0" max="99999999"
+                  placeholder="진료" />
             </div>
             <div id="d4" style="display: none">
-               <input type="number" name="b_Vaccin" value="0" min="0" max="99999999"
-                  placeholder="예방주사" required/>
+               <input type="number" class="selected-d" name="b_Vaccin" value="0" min="0" max="99999999"
+                  placeholder="예방주사" />
             </div>
             <div id="d5" style="display: none">
-               <input type="number" name="c_Grooming" value="0" min="0" max="99999999"
-                  placeholder="미용" required/>
+               <input type="number" class="selected-d" name="c_Grooming" value="0" min="0" max="99999999"
+                  placeholder="미용" />
             </div>
             <div id="d6" style="display: none">
-               <input type="number" name="c_Clothes" value="0" min="0" max="99999999"
-                  placeholder="옷" required/>
+               <input type="number" class="selected-d" name="c_Clothes" value="0" min="0" max="99999999"
+                  placeholder="옷" />
             </div>
             <div id="d7" style="display: none">
-               <input type="number" name="d_Nutrients" value="0" min="0" max="99999999"
-                  placeholder="영양제" required/>
+               <input type="number" class="selected-d" name="d_Nutrients" value="0" min="0" max="99999999"
+                  placeholder="영양제" />
             </div>
             <div id="d8" style="display: none">
-               <input type="number" name="d_Poo" value="0" min="0" max="99999999"
-                  placeholder="배변" required/>
+               <input type="number" class="selected-d" name="d_Poo" value="0" min="0" max="99999999"
+                  placeholder="배변" />
             </div>
             <div id="d9" style="display: none">
-               <input type="number" name="e_Trainning" value="0" min="0" max="99999999"
-                  placeholder="훈련" required/>
+               <input type="number" class="selected-d" name="e_Trainning" value="0" min="0" max="99999999"
+                  placeholder="훈련" />
             </div>
             <div id="d10" style="display: none">
-               <input type="number" name="e_Hotel" value="0" min="0" max="99999999"
-                  placeholder="호텔" required/>
+               <input type="number" class="selected-d" name="e_Hotel" value="0" min="0" max="99999999"
+                  placeholder="호텔" />
             </div>
             <div id="d11" style="display: none">
-               <input type="number" name="e_Kindergarten" value="0" min="0" max="99999999"
-                  placeholder="유치원" required/>
+               <input type="number" class="selected-d" name="e_Kindergarten" value="0" min="0" max="99999999"
+                  placeholder="유치원" />
             </div>
 
                <!-- cost 테이블에 값 넘겨주기  -->
                 <input name="id" value="<%=id%>" type="hidden" >
                 <input class="date-title" name="date" type="hidden" />
                 
-                 <input class="yearValue" name="diary_year" type="readonly"/>
-                <input class="monthValue" name="diary_month" type="readonly"/>
-                <input class="dayValue" name="diary_day" type="readonly"/> 
+                <img id="dangdang" src="/resources/imgs/001.gif">
                 
-                
-            <input type="submit" onclick="Submit()">
+                 <input class="yearValue" name="diary_year" type="hidden"/>
+                <input class="monthValue" name="diary_month" type="hidden"/>
+                <input class="dayValue" name="diary_day" type="hidden"/> 
          </form>
       </div>
    </div>
@@ -307,6 +383,7 @@ a{
                   $('#modal-contents1-1').children().remove();
 //                     console.log(data[d].a_Feed);
 
+                  alert("조회시작")
                   /* alert("조회시작") */
                   
                  

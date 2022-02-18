@@ -15,7 +15,7 @@ function showPopup(event) {
 	const year = document.querySelector('.year').innerHTML
 	const month = document.querySelector('.month').innerHTML
 	const modalTitle = document.querySelector('.modal-title')
-	modalTitle.innerHTML = `${year}년${month}월${day}일`
+	modalTitle.innerHTML = `${year}년${month}월 ${day} 일`
 
 	// input에 modal데이터 가져오기
 	const text_year = document.querySelector('.year').innerHTML
