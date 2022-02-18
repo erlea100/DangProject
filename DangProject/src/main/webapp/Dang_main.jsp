@@ -243,8 +243,6 @@ tr{
 
 
    
-   
-   
 </script>
 <script>history.scrollRestoration = "manual"</script>
 <a style="display:scroll;position:fixed;bottom:0px;right:10px; " href="#" title=”맨위로"><img src="/resources/imgs/top.PNG" style="border-radius: 70%;"></a>

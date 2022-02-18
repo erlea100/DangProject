@@ -112,19 +112,19 @@ i{
          <tr>
             <td align=left width=200>
                <!-- 년 도--> <a
-               href="calendar.jsp?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>
+               href="/user/calendarMemo.do?year=<%out.print(year - 1);%>&month=<%out.print(month);%>">◀</a>
                <%
                out.print(year);
                %>년 <a
-               href="calendar.jsp?year=<%out.print(year + 1);%>&month=<%out.print(month);%>">▶</a>
+               href="calendarMemo.do?year=<%out.print(year + 1);%>&month=<%out.print(month);%>">▶</a>
             </td>
             <td align=center width=300>
                <!-- 월 --> <a
-               href="calendar.jsp?year=<%out.print(year);%>&month=<%out.print(month - 1);%>">◀</a>
+               href="/user/calendarMemo.do?year=<%out.print(year);%>&month=<%out.print(month - 1);%>">◀</a>
                <%
                out.print(month + 1);
                %>월 <a
-               href="calendar.jsp?year=<%out.print(year);%>&month=<%out.print(month + 1);%>">▶</a>
+               href="/user/calendarMemo.do?year=<%out.print(year);%>&month=<%out.print(month + 1);%>">▶</a>
             </td>
             <td align=right width=200>
                <%
