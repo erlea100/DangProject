@@ -42,6 +42,10 @@ td {
 	text-align: center;
 }
 
+#modal {
+	transition-delay: 0.4s;
+}
+
 .week{
 	height:30px;
 	}	
