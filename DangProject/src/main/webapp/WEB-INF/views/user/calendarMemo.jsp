@@ -1,8 +1,6 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page contentType="text/html;charset=euc-kr" pageEncoding="UTF-8"
 	import="java.sql.*"%>
-
-
 <%
 request.setCharacterEncoding("UTF-8");
 %>

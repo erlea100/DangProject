@@ -217,10 +217,6 @@ button {
 		});
 	});
 </script>
-
-
-
-
 <script type="text/javascript">
 	$(function() {
 
@@ -254,22 +250,14 @@ button {
 
 	});
 </script>
-
-​
 </head>
 <body>
-
-
 	<div class="test">
-
 		<div class="center">
-
 			<a href="/Dang_main.jsp"><img src="/resources/imgs/dang1.png"></a>
-
 			<div class="table">
 				<form method="post" action="userInsert.do" name="userinput"
 					id="userinput">
-
 					<table>
 						<tr>
 							<td class="small"><input type="text" name="id" id="id"
@@ -279,14 +267,11 @@ button {
 							</td>
 
 						</tr>
-
-
 						<tr>
 							<td colspan="2"><input class="pw" id="password"
 								name="password" type="password" placeholder="비밀번호 입력"
 								type="text" required></td>
 						</tr>
-
 						<tr>
 							<td class="small"><input class="pw" id="password_chk"
 								name="password_chk" type="password" placeholder="비밀번호 확인"
@@ -295,21 +280,15 @@ button {
 								<div class="alert alert-success" id="alert-success"></div>
 								<div class="alert alert-danger" id="alert-danger"></div>
 							</td>
-
 						</tr>
-
 						<tr>
 							<td colspan="2"><input id="name" name="name"
 								placeholder="이름 입력" type="text" required></td>
 						</tr>
-
 						<tr>
 							<td colspan="2"><input id="ph" name="ph"
 								placeholder="핸드폰 번호 입력" type="text" required></td>
 						</tr>
-
-
-
 						<tr>
 							<td class="small"><input id="e_mail" name="e_mail"
 								placeholder="Email 입력" class="userinput2" type="text" required>
@@ -318,22 +297,13 @@ button {
 								<div id="e_mailmessage" style="display: none;"></div>
 							</td>
 						</tr>
-
 					</table>
-
 					<div class=button>
 						<button type="submit" id="submit" disabled="disabled">가입하기</button>
 					</div>
-
-
-
 				</form>
-
-
 			</div>
 		</div>
 	</div>
-
-
 </body>
 </html>

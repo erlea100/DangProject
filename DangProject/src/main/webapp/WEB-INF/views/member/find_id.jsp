@@ -177,7 +177,7 @@ img{
 				<h3>아이디 찾기 검색결과</h3>
 			</div>
 			<div>
-				<h5>
+				<h5 style="text-align: center;">
 					${ id }
 				</h5>
 				<p class="w3-center">
