@@ -424,7 +424,7 @@ input[type="number"]::-webkit-inner-spin-button {
    
       /* 1차 선택 - 셀렉트 */
       function Change() {
-         alert("체인지 이벤트")
+//          alert("체인지 이벤트")
          var key = val.value;
 
          if (key == 1) {
