@@ -82,7 +82,7 @@ a:link, a:visited, a:hover , a:active {
 
 #val {
 	width: 200px;
-	height: 30px;
+	height: 40px;
 	font-size: 15px; 
 	margin-left: 15px;
 	text-align: center;
@@ -90,7 +90,7 @@ a:link, a:visited, a:hover , a:active {
 
 #submit-box {
 	width: 50px;
-	height: 30px;
+	height: 40px;
 	font-size: 15px; 
 	margin: 15px 10px 10px 15px;
 }
