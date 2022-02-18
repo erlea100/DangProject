@@ -66,7 +66,7 @@ section div {
    opacity: 1;
    transform: none;
 }
-
+ 
 table {
    width: 100%;
    table-layout: fixed;
