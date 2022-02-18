@@ -11,7 +11,7 @@ String dbURL="jdbc:oracle:thin:@129.154.201.125:1521:xe";
    Class.forName(driver);
    Connection connection=DriverManager.getConnection(dbURL,user,pass);
    
-   String sql = "select * from USER_INFO where ID='" + request.getParameter("userid")+"'"; // 유저 아이디로 받겠대
+   String sql = "select * from USER_INFO where E_MAIL='" + request.getParameter("useremail")+"'"; // 유저 아이디로 받겠대
    System.out.println(sql);
    Statement stmt = connection.createStatement();
    ResultSet rs = stmt.executeQuery(sql);      

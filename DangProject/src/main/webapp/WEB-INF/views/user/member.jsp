@@ -10,7 +10,7 @@
 	width: 120px;
 }
 
-.userinput, #password_chk { /* id 입력칸 길이 */
+.userinput, #password_chk, #e_mail { /* id 입력칸 길이 */
 	width: 120px;
 }
 
@@ -18,7 +18,7 @@
 	width: 400px;
 }
 
-#idmessage {
+#idmessage #emailmessage{
 	display: inline-block;
 }
 
@@ -217,6 +217,44 @@ button {
 		});
 	});
 </script>
+
+
+
+
+<script type="text/javascript">
+	$(function() {
+
+		$('.userinput2').keyup(function() {
+			var e_mail = $('input[name=e_mail]').val();
+			// 제이쿼리에서 제공하는 메소드. 화면과 무관하게 폼태그에서 강제로 서브밋되는 과정
+			$.ajax({
+				url : 'checkEmail.do', // STS라면 *.do
+				type : 'get',
+				data : {
+					useremail : e_mail
+				}, // 미리 변수화 시켜도 상관없음 input 태그로 만든 변수다. {키:값} 같이..
+				dataType : 'text', // 응답 데이터. VO의 형태면 무조건 json으로 받는다. 내가즈는건 데이터. 받는 건 데이터 타입(서버 응답데이터)
+				success : function(data) { // 저곳의 예스 오어 노가 바로 이거
+
+					// 서버에 접속하여 처리가 다 완료되었을 때 실행.  /cont - db - cont - view 까지 정상적으로 왔을 때
+					if (data.trim() == 'YES') {
+						$('#e_mailmessage').text("이미 사용중입니다.");
+						$('#e_mailmessage').show();
+					} else {
+						$('#e_mailmessage').text("사용 가능합니다.");
+						$('#e_mailmessage').show();
+						$('#submit').attr('disabled', false);
+					}
+				},
+				error : function(err) {
+					alert('에러발생' + err);
+				}
+			});
+		});
+
+	});
+</script>
+
 ​
 </head>
 <body>
@@ -273,9 +311,12 @@ button {
 
 
 						<tr>
-							<td colspan="2"><input id="e_mail" name="e_mail"
-								placeholder="Email 입력" type="text" required>
+							<td class="small"><input id="e_mail" name="e_mail"
+								placeholder="Email 입력" class="userinput2" type="text" required>
+							</td>
 							<td>
+								<div id="e_mailmessage" style="display: none;"></div>
+							</td>
 						</tr>
 
 					</table>
