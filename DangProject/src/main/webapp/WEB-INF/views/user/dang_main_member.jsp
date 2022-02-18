@@ -352,24 +352,19 @@ body {
 	var category3;
 
 	if (first == a) {
-		category1 = '식';
+		category1 = '식대';
 	} else if (first == b) {
 		category1 = '병원';
 	} else if (first == c) {
 		category1 = '미용';
 	} else if (first == d) {
-<<<<<<< HEAD
-		category1 = '기타';
-=======
-		category = '위생';
->>>>>>> branch 'main' of https://github.com/erlea100/DangProject.git
+		category1 = '위생';
 	} else {
 		category1 = '복지';
 	}
 
-
 	if (second == a) {
-		category2 = '식';
+		category2 = '식대';
 	} else if (second == b) {
 		category2 = '병원';
 	} else if (second == c) {
@@ -381,7 +376,7 @@ body {
 	}
 
 	if (third == a) {
-		category3 = '식';
+		category3 = '식대';
 	} else if (third == b) {
 		category3 = '병원';
 	} else if (third == c) {
@@ -392,12 +387,7 @@ body {
 		category3 = '복지';
 	}
 
-	console.log(first);
-	console.log(second);
-	console.log(third);
-	console.log(category1);
-	console.log(category2);
-	console.log(category3);
+	
 	document.getElementById('first').innerHTML = '<br><br><b>다른 집사님들은 <br>'
 			+ category1 + '비에 많이 <br>지출하고 있어요!</b><br>';
 	document.getElementById('second').innerHTML = '두번째는 ' + category2
