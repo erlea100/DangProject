@@ -315,7 +315,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
       <div class="modal-contents" id="modal-contents1-2">
          <form name="diary-history" method="post" action="/diary/saveDiary.do">
-            <select id="val" class="select" name="val" onchange="Change()">
+            <select style="line-height: 30px;" id="val" class="select" name="val" onchange="Change()">
                <option disabled="disabled" selected="selected" >선택</option>
                <option value="1">사료</option>
                <option value="2">간식</option>
