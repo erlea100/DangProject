@@ -55,6 +55,10 @@ td {
    text-align: center;
 }
 
+.week{
+	height:30px;	
+}
+
 body {
    background-color: #fef9df;
 }
@@ -110,19 +114,19 @@ body {
             </tr>
             <tr>
 
-               <td width=100>일</td>
+               <td width=100 class="week">일</td>
                <!-- 일=1 -->
-               <td width=100>월</td>
+               <td width=100 class="week">월</td>
                <!-- 월=2 -->
-               <td width=100>화</td>
+               <td width=100 class="week">화</td>
                <!-- 화=3 -->
-               <td width=100>수</td>
+               <td width=100 class="week">수</td>
                <!-- 수=4 -->
-               <td width=100>목</td>
+               <td width=100 class="week">목</td>
                <!-- 목=5 -->
-               <td width=100>금</td>
+               <td width=100 class="week">금</td>
                <!-- 금=6 -->
-               <td width=100>토</td>
+               <td width=100 class="week">토</td>
                <!-- 토=7 -->
             </tr>
             <tr height=30>
