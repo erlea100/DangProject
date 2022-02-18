@@ -354,10 +354,10 @@ input[type="number"]::-webkit-inner-spin-button {
    <script type="text/javascript">
    
       $(function(){
-    	  alert("호출")
+//     	  alert("호출")
          $('.dateBtn').on("click",function(){
           /*   alert('1'); */
-           alert("호출")
+//            alert("호출")
             var id =  $(this).next().val() ;
             var dd =  $(this).next().next().val() ;
             
@@ -383,7 +383,6 @@ input[type="number"]::-webkit-inner-spin-button {
                   $('#modal-contents1-1').children().remove();
 //                     console.log(data[d].a_Feed);
 
-                  alert("조회시작")
                   /* alert("조회시작") */
                   
                  
@@ -403,7 +402,7 @@ input[type="number"]::-webkit-inner-spin-button {
             }
                },
                error : function(e){
-                  alert('error : ' + e);
+                  alert('에러 : ' + e);
                }
                
             });
@@ -411,7 +410,7 @@ input[type="number"]::-webkit-inner-spin-button {
          })
       })
    
-      function dateClick(){
+//       function dateClick(){
 //          alert("달력 클릭");
          /* document.date.submit(); */
 //          $("#date").submit();
@@ -420,9 +419,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 //          var cal_data = { "키": "값" , "키": "값"};
 //          console.log( $(this) ) ;
-      }
-      
-      
+//       }
       
    
       /* 1차 선택 - 셀렉트 */
