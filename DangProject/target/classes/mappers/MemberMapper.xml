@@ -7,7 +7,7 @@
 
 	<insert id="userInsert" parameterType="member">
 		INSERT INTO
-		USER_INFO_TEST
+		USER_INFO
 		(SEQ_ID, ID, PASSWORD , NAME , E_MAIL)
 		VALUES
 		(user_info_id_seq.nextval, #{id} , #{password} , #{name} , #{e_mail})
@@ -16,7 +16,7 @@
 	<select id="memberLogin" parameterType="member"
 		resultType="member">
 		SELECT *
-		FROM USER_INFO_TEST
+		FROM USER_INFO
 		WHERE ID = #{id} AND PASSWORD =
 		#{password}
 	</select>
@@ -46,11 +46,11 @@
 	<!--  -->
 
 	<select id="find_id" parameterType="String" resultType="String">
-		select id from USER_INFO_TEST where E_MAIL = #{e_mail}
+		select id from USER_INFO where E_MAIL = #{e_mail}
 	</select>
 	
 	<select id="find_password" parameterType="String" resultType="String">
-		select password from USER_INFO_TEST where E_MAIL = #{e_mail}
+		select password from USER_INFO where E_MAIL = #{e_mail}
 	</select>
 	
 
