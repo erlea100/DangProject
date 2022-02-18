@@ -28,7 +28,6 @@ Object id = session.getAttribute("id");
 	$(document).ready(function() {
 		$("#headers").load("/resources/header(member).html"); //헤더 인클루드
 		$("#footers").load("/resources/footer.html"); //푸터부분 인클루드
-		$("#containers").load("/resources/container.html"); //푸터부분 인클루드
 	});
 </script>
 
@@ -43,6 +42,8 @@ td {
    text-align: center;
 }
 
+.week{
+	height:30px;	
 @font-face {
    font-family: 'GangwonEdu_OTFBoldA';
    src:
@@ -60,6 +61,12 @@ body {
    background-color: #fef9df;
 }
 
+a{
+	color: #d4a373;
+}
+</style>  
+
+<style>
 .modal-tabs > li {
  list-style: none;
  float: left;
@@ -127,10 +134,8 @@ input[type="number"]::-webkit-inner-spin-button {
 <body>
 
  <!-- 헤더 -->
-<div id="headers" style="margin-bottom: 100px"></div>
+<div id="headers" style="margin-bottom: 60px"></div>
 
-<!-- 컨테이너 시작지점 -->
-<div id="containers">
    <%
    java.util.Calendar cal = java.util.Calendar.getInstance(); //Calendar객체 cal생성
    int currentYear = cal.get(java.util.Calendar.YEAR); //현재 날짜 기억
@@ -159,7 +164,7 @@ input[type="number"]::-webkit-inner-spin-button {
    
    <center>
       <div>
-         <table border=3 cellspacing=0>
+         <table border=0>
 
             <!-- 달력 부분 -->
             <tr>
@@ -181,21 +186,23 @@ input[type="number"]::-webkit-inner-spin-button {
                   TODAY : <%out.print(currentYear + "-" + (currentMonth + 1) + "-" + currentDate);%>
                </td>
             </tr>
+                  </table>
+      <table border=1 cellspacing=0>
             <tr>
 
-               <td width=100>일</td>
+               <td width=100 class="week">일</td>
                <!-- 일=1 -->
-               <td width=100>월</td>
+               <td width=100 class="week">월</td>
                <!-- 월=2 -->
-               <td width=100>화</td>
+               <td width=100 class="week">화</td>
                <!-- 화=3 -->
-               <td width=100>수</td>
+               <td width=100 class="week">수</td>
                <!-- 수=4 -->
-               <td width=100>목</td>
+               <td width=100 class="week">목</td>
                <!-- 목=5 -->
-               <td width=100>금</td>
+               <td width=100 class="week">금</td>
                <!-- 금=6 -->
-               <td width=100>토</td>
+               <td width=100 class="week">토</td>
                <!-- 토=7 -->
             </tr>
             <tr height=30>
@@ -335,23 +342,22 @@ input[type="number"]::-webkit-inner-spin-button {
       </div>
    </div>
    
-   <!-- 컨테이너 종료지점 -->
-   </div>
+
    
     <!-- 조회용 달력 이동 -->
    <center>
   <a href="/user/calendarMemo.do">달력 한눈에 보기</a>
    </center>
    
-   <script type="module" src="/resources/index.js"></script>
+ 	  <script type="module" src="/resources/index.js"></script>
    <script src="https://kit.fontawesome.com/bd65a83372.js" crossorigin="anonymous"></script>
    <script type="text/javascript">
    
       $(function(){
-    	  alert("호출")
+//     	  alert("호출")
          $('.dateBtn').on("click",function(){
           /*   alert('1'); */
-           alert("호출")
+//            alert("호출")
             var id =  $(this).next().val() ;
             var dd =  $(this).next().next().val() ;
             
@@ -377,7 +383,6 @@ input[type="number"]::-webkit-inner-spin-button {
                   $('#modal-contents1-1').children().remove();
 //                     console.log(data[d].a_Feed);
 
-                  alert("조회시작")
                   /* alert("조회시작") */
                   
                  
@@ -397,7 +402,7 @@ input[type="number"]::-webkit-inner-spin-button {
             }
                },
                error : function(e){
-                  alert('error : ' + e);
+                  alert('에러 : ' + e);
                }
                
             });
@@ -405,7 +410,7 @@ input[type="number"]::-webkit-inner-spin-button {
          })
       })
    
-      function dateClick(){
+//       function dateClick(){
 //          alert("달력 클릭");
          /* document.date.submit(); */
 //          $("#date").submit();
@@ -414,14 +419,12 @@ input[type="number"]::-webkit-inner-spin-button {
 
 //          var cal_data = { "키": "값" , "키": "값"};
 //          console.log( $(this) ) ;
-      }
-      
-      
+//       }
       
    
       /* 1차 선택 - 셀렉트 */
       function Change() {
-         alert("체인지 이벤트")
+//          alert("체인지 이벤트")
          var key = val.value;
 
          if (key == 1) {
@@ -581,5 +584,10 @@ input[type="number"]::-webkit-inner-spin-button {
 
       }
    </script>
+
+  
 </body>
+	 <script>history.scrollRestoration = "manual"</script>
+    <a style="display:scroll;position:fixed;bottom:0px;right:10px; " href="#" title=”맨위로"><img src="/resources/imgs/top.PNG" style="border-radius: 70%;"></a>
+    
 </html>
