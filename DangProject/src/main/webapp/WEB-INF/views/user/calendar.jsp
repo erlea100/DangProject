@@ -19,12 +19,24 @@ Object id = session.getAttribute("id");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>calendar</title>
+
+
+<!-- 공통 헤더 , 푸터 , 내부 스타일 시트 적용 시작 -->
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/css/main.css">
-</head>
-<style type="text/css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#headers").load("/resources/header(member).html"); //헤더 인클루드
+		$("#footers").load("/resources/footer.html"); //푸터부분 인클루드
+		$("#containers").load("/resources/container.html"); //푸터부분 인클루드
+	});
+</script>
 
+<link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet" href="/resources/css/Dang_main.css?after"
+	type="text/css" />
+		
+  <style type="text/css">
 td {
    width: 150px;
    height: 100px;
@@ -110,9 +122,15 @@ input[type="number"]::-webkit-inner-spin-button {
 	height: 100px;
 	bottom:0;
 }
-
 </style>
+</head>
 <body>
+
+ <!-- 헤더 -->
+<div id="headers" style="margin-bottom: 100px"></div>
+
+<!-- 컨테이너 시작지점 -->
+<div id="containers">
    <%
    java.util.Calendar cal = java.util.Calendar.getInstance(); //Calendar객체 cal생성
    int currentYear = cal.get(java.util.Calendar.YEAR); //현재 날짜 기억
@@ -137,6 +155,8 @@ input[type="number"]::-webkit-inner-spin-button {
       }
    }
    %>
+   
+   
    <center>
       <div>
          <table border=3 cellspacing=0>
@@ -214,10 +234,12 @@ input[type="number"]::-webkit-inner-spin-button {
                while ((br++) % 7 != 0) //말일 이후 빈칸출력
                out.println("<td>&nbsp;</td>");
                %>
+                
             </tr>
          </table>
       </div>
    </center>
+
 
    <div class="modal-overlay hidden" id="modal" />
    <div class="modal hidden" id="modal">
@@ -306,52 +328,30 @@ input[type="number"]::-webkit-inner-spin-button {
                 
                 <img id="dangdang" src="/resources/imgs/001.gif">
                 
+                 <input class="yearValue" name="diary_year" type="hidden"/>
+                <input class="monthValue" name="diary_month" type="hidden"/>
+                <input class="dayValue" name="diary_day" type="hidden"/> 
          </form>
       </div>
    </div>
    
-   
-   
-   <script type="module" src="/resources/index.js"></script>
-   <script type="text/javascript">
-      $(function(){
-         $('.dateBtn').on("click",function(){
-            alert('1');
-            var id =  $(this).next().val() ;
-            var dd =  $(this).next().next().val() ;
-            
-            var cal_data = { "id" : id , "date" : dd}; // json : object형
-            
-            // sumbit
-            $.ajax({
-               url : "/diary/selectDiary.do",
-               post : "post",
-               data : cal_data, // 컨트롤러로 이동한 대아터 ( input 태그의 기술 )
-               dataType : "json",
-               success : function(data){
-                  
-                  console.log("data  " +data);
-                  
-                  for ( var d in data){
-                     $('#modal-contents1-1').children().remove();
-//                      console.log(data[d].a_Feed);
-
-            
-               <input type="hidden" name="id" value="<%=id%>">
-               <input type="hidden" name="date" value="<%=year%><%=month+1%><%=day%>">
-            <input type="submit" onclick="Submit()">
-         </form>
-      </div>
+   <!-- 컨테이너 종료지점 -->
    </div>
    
-   
+    <!-- 조회용 달력 이동 -->
+   <center>
+  <a href="/user/calendarMemo.do">달력 한눈에 보기</a>
+   </center>
    
    <script type="module" src="/resources/index.js"></script>
    <script src="https://kit.fontawesome.com/bd65a83372.js" crossorigin="anonymous"></script>
    <script type="text/javascript">
+   
       $(function(){
+    	  alert("호출")
          $('.dateBtn').on("click",function(){
-            alert('1');
+          /*   alert('1'); */
+           alert("호출")
             var id =  $(this).next().val() ;
             var dd =  $(this).next().next().val() ;
             
@@ -378,19 +378,20 @@ input[type="number"]::-webkit-inner-spin-button {
 //                     console.log(data[d].a_Feed);
 
                   alert("조회시작")
+                  /* alert("조회시작") */
                   
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Feed>사료 | "+data[d].a_Feed+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+" | <a id=a_Snack>간식 | "+data[d].a_Snack+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=b_Diagnosis>진료 | "+data[d].b_Diagnosis+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+" | <a id=b_Vaccin>예방주사 | "+data[d].b_Vaccin+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>"+" | <a id=c_Grooming>미용 | "+data[d].c_Grooming+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>   >"+" | <a id=c_Clothes>옷 | "+data[d].c_Clothes+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+" | <a id=d_Nutrients>영양제 | "+data[d].d_Nutrients+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+" | <a id=d_Poo>배변 | "+data[d].d_Poo+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Trainning>훈련 | "+data[d].e_Trainning+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Hotel>호텔 | "+data[d].e_Hotel+" 원"+"</a>"+"<br />");
-                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+" | <a id=e_Kindergarten>유치원 | "+data[d].e_Kindergarten+" 원"+"</a>"+"<br />");
-                  
+                 
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+"<a id=a_Feed>사료"+data[d].a_Feed+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+"<a id=a_Snack>간식"+data[d].a_Snack+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+"<a id=b_Diagnosis>진료"+data[d].b_Diagnosis+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+"<a id=b_Vaccin>예방주사"+data[d].b_Vaccin+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>"+"<a id=c_Grooming>미용"+data[d].c_Grooming+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>"+"<a id=c_Clothes>옷"+data[d].c_Clothes+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+"<a id=d_Nutrients>영양제"+data[d].d_Nutrients+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+" <a id=d_Poo>배변"+data[d].d_Poo+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+"<a id=e_Trainning>훈련"+data[d].e_Trainning+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+"<a id=e_Hotel>호텔"+data[d].e_Hotel+" 원"+"</a>"+"<br />");
+                  $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+"<a id=e_Kindergarten>유치원"+data[d].e_Kindergarten+" 원"+"</a>"+"<br />");
                
                }
             }

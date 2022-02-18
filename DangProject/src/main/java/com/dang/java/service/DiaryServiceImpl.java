@@ -35,5 +35,13 @@ public class DiaryServiceImpl implements DiaryService{
 	   public void deleteDiary(CostVO vo) {
 		   diaryDAO.deleteDiary(vo);
 	   }
+
+
+	@Override
+	public List<CostVO> icon_selectDiary(CostVO vo) {
+		System.out.println("아이콘 select 호출");
+		
+		return diaryDAO.icon_selectDiary(vo);
+	}
 	
 }

@@ -122,7 +122,7 @@ img:hover {
 <body>
 	<div class="test">
 		<div class="center">
-			<a href="/Dang_main.html"><img src="/resources/imgs/dang1.png"></a>
+			<a href="/Dang_main.jsp"><img src="/resources/imgs/dang1.png"></a>
 			<div class="table">
 				<form action="login.do" method="post" name="frm">
 					<table width="300" height="120">
@@ -143,6 +143,11 @@ img:hover {
 				</form>
 				<table>
 					<tr>
+						<td><button class="w3-right w3-button w3-hover-white" id="find_id_btn">아이디 찾기</button>
+						<button 
+								 class="w3-right w3-button w3-hover-white" id="find_password_btn">/&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 찾기</button></td>
+					</tr>
+					<tr>
 						<td><button onclick="location.href='/user/member.do'"
 								class="underline">아이디가 없으신가요? 댕댕 다이어리의 가족이 되어주세요!</button></td>
 					</tr>
@@ -153,6 +158,25 @@ img:hover {
 		</div>
 	</div>
 </body>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function () {
+	$("#find_id_btn").click(function(){
+		location.href='../member/find_id_form.do';
+	})
+	$("#find_password_btn").click(function(){
+		location.href='../member/find_password_form.do';
+	})
+	
+	
+})
+
+</script>
+
+
+
+
 </html>
 
 

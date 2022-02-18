@@ -14,7 +14,7 @@ public class DiaryDAOImpl implements DiaryDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 
-
+	
 	@Override
 	public void insertDiary(CostVO vo) {
 		System.out.println("다오호출");
@@ -27,16 +27,22 @@ public class DiaryDAOImpl implements DiaryDAO{
 	public List<CostVO> selectDiary(CostVO vo) {
 		System.out.println("셀렉 다오 호출");
 		
-	
-		
 		return mybatis.selectList("costMapper.selectDiary",vo);
 	}
 	
-	//다오임플
+	//삭제 다오
 	@Override
 		public void deleteDiary(CostVO vo) {
 			mybatis.delete("costMapper.deleteDiary",vo);
 			
 		}
+
+	
+	@Override
+	public List<CostVO> icon_selectDiary(CostVO vo) {
+		System.out.println("아이콘 셀렉 다오 호출");
+			
+		return mybatis.selectList("costMapper.icon_selectDiary",vo);
+	}
 	
 }
