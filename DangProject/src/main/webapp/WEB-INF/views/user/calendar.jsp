@@ -260,7 +260,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
                int day = 0;
                for (int i = 1; i <= end; i++) { //날짜출력
                   day = i;
-                  out.println("<td>" + "<button id='date' class='dateBtn' onclick='dateClick()' value =" + i + ">" + i + "</button>");
+                  out.println("<td>" + "<button id='date' class='dateBtn' value =" + i + ">" + i + "</button>");
                   //메모(일정) 추가 부
                %>
                
@@ -423,19 +423,40 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
                   /* alert("조회시작") */
                   
-                 
+                  console.log(data[d].a_Feed);
+                  if(data[d].a_Feed != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+"<a id=a_Feed>&nbsp;사료&nbsp;"+data[d].a_Feed+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].a_Snack != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-bone'></i>"+"<a id=a_Snack>&nbsp;간식&nbsp;"+data[d].a_Snack+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].b_Diagnosis != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+"<a id=b_Diagnosis>&nbsp;진료&nbsp;"+data[d].b_Diagnosis+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].b_Vaccin != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-syringe'></i>"+"<a id=b_Vaccin>&nbsp;예방주사&nbsp;"+data[d].b_Vaccin+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].c_Grooming != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>"+"<a id=c_Grooming>&nbsp;미용&nbsp;"+data[d].c_Grooming+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].c_Clothes != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-dog'></i>"+"<a id=c_Clothes>&nbsp;옷&nbsp;"+data[d].c_Clothes+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].d_Nutrients != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+"<a id=d_Nutrients>&nbsp;영양제&nbsp;"+data[d].d_Nutrients+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].d_Poo != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-poop'></i>"+" <a id=d_Poo>&nbsp;배변&nbsp;"+data[d].d_Poo+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].e_Trainning != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+"<a id=e_Trainning>&nbsp;훈련&nbsp;"+data[d].e_Trainning+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].e_Hotel != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+"<a id=e_Hotel>&nbsp;호텔&nbsp;"+data[d].e_Hotel+"원"+"</a>"+"<br />");
+                  }
+                  if(data[d].e_Kindergarten != 0){
                   $('#modal-contents1-1').append("<i class='fa-solid fa-heart'></i>"+"<a id=e_Kindergarten>&nbsp;유치원&nbsp;"+data[d].e_Kindergarten+"원"+"</a>"+"<br />");
-               
+                  }
                }
             }
                },
@@ -448,17 +469,6 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
          })
       })
    
-//       function dateClick(){
-//          alert("달력 클릭");
-         /* document.date.submit(); */
-//          $("#date").submit();
-//           console.log('date');
-//           alert("제출완료");
-
-//          var cal_data = { "키": "값" , "키": "값"};
-//          console.log( $(this) ) ;
-//       }
-      
    
       /* 1차 선택 - 셀렉트 */
       function Change() {

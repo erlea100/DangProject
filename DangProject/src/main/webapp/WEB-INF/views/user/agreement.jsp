@@ -12,16 +12,14 @@
 <style type="text/css">
 @charset "UTF-8";
 
-/* header  */
-.header .navi ul li a {
-	color: #d4a373 !important;
-	height: 105px;
-	display: block;
-	padding: 0 35px;
-}
 
 * {
 	box-sizing: border-box;
+}
+
+
+.content{
+	height:590px;
 }
 
 html, body {
@@ -57,7 +55,7 @@ ul {
 }
 
 .wrap .contents {
-	padding: 50px;
+	padding: 35px;
 	background-color: #ffffff;
 	border: 1px solid #dadada;
 	border-radius: 5px;
@@ -144,16 +142,7 @@ label.required::after {
 
 </head>
 <body>
-<div class="header">
-      <div class="navi" style="margin-top:50px;">
-         <ul style="margin-top:-20px;">
-            <li><a href="/Dang_main.jsp" style="margin-top:-30px;" ><img src="/resources/imgs/dang1.png"></a></li>
-            <li><a href="/user/calendar.do">달력</a></li>
-            <li><a href="/user/loginForm.do">로그인</a></li>
-            <li><a href='/user/agreement.do'>회원가입</a></li>
-         </ul>
-      </div>
-   </div>
+
   <div class="wrap">
       <div class="logo" style="margin-top:30px;"><h1>댕댕 다이어리 지침서</h1></div>
       <div class="contents">

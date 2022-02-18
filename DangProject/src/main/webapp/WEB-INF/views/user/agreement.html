@@ -5,9 +5,14 @@
 
     <title>댕댕 다이어리 약관동의</title>
     
+    
+    
+    
+    
     <meta charset="UTF-8" /> 
-    <link rel="stylesheet" href="/resources/css/Dang_main.css?after"
-	type="text/css" />
+
+    
+    
     
     <style type="text/css">
     @charset "UTF-8";
@@ -20,6 +25,85 @@
 	padding: 0 35px;
 }
   
+
+
+
+
+
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0);
+	z-index: 1000;
+	height: 100px;
+	overflow: hidden;
+	line-height: 100px;
+	-webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	transition: height 0.3s;
+}
+
+
+
+
+.header .navi {
+	width: 1200px;
+	margin: 0 auto;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	background: rgba(0, 0, 0, 0);
+}
+
+
+
+.header h1 {
+	float: left;
+}
+
+.navi ul {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+}
+
+.navi ul li {
+	float: left;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.header .navi ul li a {
+	color: white;
+	height: 105px;
+	display: block;
+	padding: 0 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * {
   box-sizing: border-box;
@@ -42,6 +126,12 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+
+}
+
+.header .navi ul{
+display: flex !important;
+	justify-content: flex-end !important;
 }
 
 .wrap {
@@ -151,9 +241,18 @@ label.required::after {
   
  
 	
+	<div class="header">
+				<a onclick="reload()"><img src="/resources/imgs/dang1.png"></a>
+		<div class="navi">
+			<ul>
+				<li><a href="user/calendar.do">달력</a></li>
+				<li><a href="user/loginForm.do">로그인</a></li>
+				<li><a href='user/agreement.do'>회원가입</a></li>
+			</ul>
+		</div>
+	</div>
 	
-<div id="headers"></div>
-  
+	
     <!-- 약관동의  -->
     <div class="wrap" style="margin-top: 120px">
       <div class="logo"><h1>댕댕 다이어리 회원 지침서</h1></div>
@@ -311,14 +410,6 @@ label.required::after {
   });  
   </script>
   
- <script src="//code.jquery.com/jquery-1.11.0.min.js">
-</script>
-<script type="text/javascript">
-   $(document).ready(function() {
-      $("#headers").load("/resources/header.html"); //헤더 인클루드
-      $("#footers").load("/resources/footer.html"); //푸터부분 인클루드
-   });
-   
-   </script>
+
 
 </html>
