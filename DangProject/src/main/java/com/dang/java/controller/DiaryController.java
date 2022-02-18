@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,13 +46,22 @@ public class DiaryController {
 
 	
 
-	@RequestMapping(value="/icon_selectDiary.do")
-	public ModelAndView icon_selectDiary(HttpSession session,CostVO vo) {
-		System.out.println("셀렉 컨트롤 호출");
+	@RequestMapping("/icon_selectDiary.do")
+//	@ResponseBody
+//	public List<CostVO> icon_selectDiary(HttpSession session,CostVO vo) {
+//		System.out.println("아이콘 셀렉 컨트롤 호출");
+//		return diaryService.selectDiary(vo);
+//	}
+	
+	public ModelAndView icon_selectDiary( CostVO vo) {
+		System.out.println("아이콘 셀렉 컨트롤 호출");
 		ModelAndView mv = new ModelAndView();
 		
 		mv.setViewName("/user/calendar");
-		mv.addObject("list", diaryService.selectDiary(vo));
+		mv.addObject("ddList", diaryService.selectDiary(vo));
+		
+		mv.addObject("dddList","1232");
+		
 		return mv;
 	}
 }

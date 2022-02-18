@@ -18,12 +18,39 @@ public class CostVO {
 	private int e_Hotel;
 	private int e_Kindergarten;
 	private String date;
+	private int diary_day;
+	private int diary_month;
+	private int diary_year;
 
 
 
 	
 
 	
+
+	public int getDiary_day() {
+		return diary_day;
+	}
+
+	public void setDiary_day(int diary_day) {
+		this.diary_day = diary_day;
+	}
+
+	public int getDiary_month() {
+		return diary_month;
+	}
+
+	public void setDiary_month(int diary_month) {
+		this.diary_month = diary_month;
+	}
+
+	public int getDiary_year() {
+		return diary_year;
+	}
+
+	public void setDiary_year(int diary_year) {
+		this.diary_year = diary_year;
+	}
 
 	public String getId() {
 		return id;

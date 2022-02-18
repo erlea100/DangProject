@@ -27,7 +27,7 @@ b:not(#footers b){
 
 main {
 	display: flex;
-}
+}	
 
 section {
 	display: flex;
