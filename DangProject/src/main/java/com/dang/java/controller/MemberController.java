@@ -53,11 +53,6 @@ public class MemberController {
 
 	}
 
-//	@RequestMapping("logOut.do" )
-//	public String logout(HttpSession session){
-//		session.invalidate();
-//		return "dang_main_non";
-//	}
 	// 로그인
 	@RequestMapping("login.do")
 	public String login(MemberVO vo, HttpSession session,  Model model) throws Exception {
@@ -66,7 +61,6 @@ public class MemberController {
 
 		if (result == null) {
 			System.out.println("로그인 실패");
-//			System.out.println("[" + result.getId() + "]" + "로그인 실패");
 			return "/user/loginForm";
 		} else {
 			System.out.println("[" + result.getId() + "]" + "로그인 성공");

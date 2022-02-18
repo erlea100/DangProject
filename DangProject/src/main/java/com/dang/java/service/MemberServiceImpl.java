@@ -34,8 +34,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public String find_id(String e_mail) throws Exception {
-//		response.setContentType("text/html;charset=utf-8");
-//		PrintWriter out = response.getWriter();
+
 		String id = manager.find_id(e_mail);
 		
 		if (id == null) {
@@ -43,7 +42,6 @@ public class MemberServiceImpl implements MemberService {
 			System.out.println("alert('가입된 아이디가 없습니다.');");
 			System.out.println("history.go(-1);");
 			System.out.println("</script>");
-//			out.close();
 			return null;
 		} else {
 			return id;
@@ -52,8 +50,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public String find_password(String e_mail) throws Exception {
-//		response.setContentType("text/html;charset=utf-8");
-//		PrintWriter out = response.getWriter();
+
 		String password = manager.find_password(e_mail);
 		
 		if (password == null) {
@@ -61,7 +58,6 @@ public class MemberServiceImpl implements MemberService {
 			System.out.println("alert('가입된 아이디가 없습니다.');");
 			System.out.println("history.go(-1);");
 			System.out.println("</script>");
-//			out.close();
 			return null;
 		} else {
 			return password;

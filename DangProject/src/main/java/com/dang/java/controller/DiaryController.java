@@ -47,12 +47,6 @@ public class DiaryController {
 	
 
 	@RequestMapping("/icon_selectDiary.do")
-//	@ResponseBody
-//	public List<CostVO> icon_selectDiary(HttpSession session,CostVO vo) {
-//		System.out.println("아이콘 셀렉 컨트롤 호출");
-//		return diaryService.selectDiary(vo);
-//	}
-	
 	public ModelAndView icon_selectDiary( CostVO vo) {
 		System.out.println("아이콘 셀렉 컨트롤 호출");
 		ModelAndView mv = new ModelAndView();

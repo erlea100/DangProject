@@ -20,25 +20,20 @@ public class MemberDAOImpl implements MemberDAO{
 	
 	@Override
 	public int memberInsert(MemberVO vo) {
-		System.out.println("===> memberMapper userInsert 호출");
 		return mybatis.insert("memberMapper.userInsert",vo);	
 	}
 
 	@Override
 	public MemberVO memberLogin(MemberVO vo) {
-		System.out.println("===> memberMapper memberLogin 호출");
 		return mybatis.selectOne("memberMapper.memberLogin",vo);
 	}
 
 	@Override
 	public String find_id(String e_mail) throws Exception{
-		System.out.println("다오요");
 		return mybatis.selectOne("memberMapper.find_id", e_mail);
 	}
 	@Override
 	public String find_password(String e_mail) throws Exception{
-		System.out.println("다오요");
 		return mybatis.selectOne("memberMapper.find_password", e_mail);
 	}
-
 }

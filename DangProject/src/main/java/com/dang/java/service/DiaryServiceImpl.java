@@ -17,30 +17,21 @@ public class DiaryServiceImpl implements DiaryService{
 
 	@Override
 	public void insertDiary(CostVO vo) {
-		System.out.println("서비스호출");
 		diaryDAO.insertDiary(vo);
-		
 	}
-	
 	
 	@Override
 	public List<CostVO> selectDiary(CostVO vo) {
-		System.out.println("select 호출");
-		
 		return diaryDAO.selectDiary(vo);
 	}
-	
-	// 서비스 임플
+
 	@Override
 	   public void deleteDiary(CostVO vo) {
 		   diaryDAO.deleteDiary(vo);
 	   }
 
-
 	@Override
 	public List<CostVO> icon_selectDiary(CostVO vo) {
-		System.out.println("아이콘 select 호출");
-		
 		return diaryDAO.icon_selectDiary(vo);
 	}
 	
