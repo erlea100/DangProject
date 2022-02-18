@@ -198,7 +198,7 @@ body {
 			{
 				type : 'bar', // 차트의 형태
 				data : { // 차트에 들어갈 데이터
-					labels : [ '식대', '병원', '미용', '복지', '기타' ],
+					labels : [ '식대', '병원', '미용', '복지', '위생' ],
 					datasets : [ { //데이터
 						label : '카테고리별 소비 동향', //차트 제목
 						fill : false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
@@ -259,7 +259,7 @@ body {
 				data : { // 차트에 들어갈 데이터
 					labels : [
 					//x 축
-					'식대', '병원', '미용', '복지', '기타' ],
+					'식대', '병원', '미용', '복지', '위생' ],
 					datasets : [ { //데이터
 						label : '카테고리별 소비 동향', //차트 제목
 						fill : false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
@@ -347,7 +347,7 @@ body {
 	} else if (first == c) {
 		category1 = '미용';
 	} else if (first == d) {
-		category = '기타';
+		category = '위생';
 	} else {
 		category1 = '복지';
 	}
@@ -359,7 +359,7 @@ body {
 	} else if (second == c) {
 		category2 = '미용';
 	} else if (second == d) {
-		category2 = '기타';
+		category2 = '위생';
 	} else {
 		category2 = '복지';
 	}
@@ -371,7 +371,7 @@ body {
 	} else if (third == c) {
 		category3 = '미용';
 	} else if (third == d) {
-		category3 = '기타';
+		category3 = '위생';
 	} else {
 		category3 = '복지';
 	}
