@@ -1,164 +1,163 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-  <head>
-  
+<head>
+<meta charset="UTF-8">
+<title>댕댕 다다이어리 약관동의</title>
 
-    <title>댕댕 다이어리 약관동의</title>
-    
-    <meta charset="UTF-8" /> 
-    <link rel="stylesheet" href="/resources/css/Dang_main.css?after"
+<link rel="stylesheet" href="/resources/css/Dang_main.css?after"
 	type="text/css" />
-    
-    <style type="text/css">
-    @charset "UTF-8";
- 
- /* header  */    
- .header .navi ul li a {
+
+<style type="text/css">
+@charset "UTF-8";
+
+/* header  */
+.header .navi ul li a {
 	color: #d4a373 !important;
 	height: 105px;
 	display: block;
 	padding: 0 35px;
 }
-  
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
+html, body {
+	height: 100%;
 }
 
 body {
-  display: flex;
-  margin: 0;
-  background-color: #fefae0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	display: flex;
+	margin: 0;
+	background-color: #fefae0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .wrap {
-  margin: auto;
+	margin: auto;
 }
 
 .wrap .logo {
-  text-align: center;
-  margin-bottom: 10px;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
 .wrap .logo h1 {
-  margin: 0;
-  font-size: 50px;
+	margin: 0;
+	font-size: 50px;
 }
 
 .wrap .contents {
-  padding: 50px;
-  background-color: #ffffff;
-  border: 1px solid #dadada;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+	padding: 50px;
+	background-color: #ffffff;
+	border: 1px solid #dadada;
+	border-radius: 5px;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px
+		rgba(0, 0, 0, 0.08);
 }
 
 #form__wrap {
-  margin: 0 auto;
-  width: 460px;
-  font-size: 14px;
+	margin: 0 auto;
+	width: 460px;
+	font-size: 14px;
 }
 
 #form__wrap .terms__check__all {
-  display: flex;
-  margin-bottom: 35px;
+	display: flex;
+	margin-bottom: 35px;
 }
 
 #form__wrap .terms__check__all label {
-  margin-left: 3px;
-  text-decoration: underline;
+	margin-left: 3px;
+	text-decoration: underline;
 }
 
 .terms__list .terms__box {
-  margin: 20px 0;
+	margin: 20px 0;
 }
 
 .contents label {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 label.required::after {
-  margin-left: 4px;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 24px;
-  color: #0086ff;
-  content: "(필수)";
+	margin-left: 4px;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #0086ff;
+	content: "(필수)";
 }
 
-
-
 .terms__list .terms__content {
-  height: 88px;
-  overflow: auto;
-  margin-top: 8px;
-  padding: 12px;
- border: 1px solid #dadada;
-  background: #fff;
-  font-size: 12px;
+	height: 88px;
+	overflow: auto;
+	margin-top: 8px;
+	padding: 12px;
+	border: 1px solid #dadada;
+	background: #fff;
+	font-size: 12px;
 }
 
 .next-button {
-  width: 100%;
-  height: 40px;
-  outline: none;
-  cursor: pointer;
-  background-color: #242222;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  transition-duration: 0.2s;
+	width: 100%;
+	height: 40px;
+	outline: none;
+	cursor: pointer;
+	background-color: #242222;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	transition-duration: 0.2s;
 }
 
 .next-button:hover:enabled {
-  background-color: #a3a2a2;
+	background-color: #a3a2a2;
 }
 
 .next-button:disabled {
-  opacity: 0.2;
-  cursor: not-allowed;
+	opacity: 0.2;
+	cursor: not-allowed;
 }
 
-@media (max-width: 768px) {
-  .wrap {
-    min-width: 280px;
-    padding: 20px;
-  }
-
-  #form__wrap {
-    max-width: 460px;
-    width: auto;
-  }
+@media ( max-width : 768px) {
+	.wrap {
+		min-width: 280px;
+		padding: 20px;
+	}
+	#form__wrap {
+		max-width: 460px;
+		width: auto;
+	}
 }
 </style>
-    
-   
- </head>
-  <body>
-  
- 
-	
-	
-<div id="headers"></div>
-  
-    <!-- 약관동의  -->
-    <div class="wrap" style="margin-top: 120px">
-      <div class="logo"><h1>댕댕 다이어리 회원 지침서</h1></div>
+
+
+</head>
+<body>
+<div class="header">
+      <div class="navi" style="margin-top:50px;">
+         <ul style="margin-top:-20px;">
+            <li><a href="/Dang_main.jsp" style="margin-top:-30px;" ><img src="/resources/imgs/dang1.png"></a></li>
+            <li><a href="/user/calendar.do">달력</a></li>
+            <li><a href="/user/loginForm.do">로그인</a></li>
+            <li><a href='/user/agreement.do'>회원가입</a></li>
+         </ul>
+      </div>
+   </div>
+  <div class="wrap">
+      <div class="logo" style="margin-top:30px;"><h1>댕댕 다이어리 지침서</h1></div>
       <div class="contents">
-        <form action="/user/member.do" method="POST" id="form__wrap">
+        <form action="user/member" method="POST" id="form__wrap">
           <div class="terms__check__all">
             <input type="checkbox" name="checkAll" id="checkAll"" />
             <label for="checkAll"
@@ -225,7 +224,7 @@ label.required::after {
                   id="allowPromotions"
                   value="allowPromotions"
                 />
-                <label for="allowPromotions" class="promotion">프로모션 정보 수신 동의&nbsp;<div style="display:inline-block; font-size: 13px;">(선택)</div></label>
+                <label for="allowPromotions">프로모션 정보 수신 동의</label><a style="color: #0086ff ">&nbsp;(선택)</a>
               </div>
               <div class="terms__content">
                 댕댕 다이어리에서 제공하는 이벤트/혜택 등 다양한 정보를 휴대전화(댕댕 다이어리앱
@@ -237,17 +236,13 @@ label.required::after {
               </div>
             </li>
           </ul>
-          <button type="submit" class="next-button" disabled>확인</button>
+          <button type="submit" class="next-button"  onClick="location.href='/user/member.do'" disabled>확인</button>
         </form>
       </div>
     </div>
-    
- 
-    
-    
-  </body>
-  
-  <script type="text/javascript">
+</body>
+
+<script type="text/javascript">
 
   ("use strict");
 
@@ -311,14 +306,6 @@ label.required::after {
   });  
   </script>
   
- <script src="//code.jquery.com/jquery-1.11.0.min.js">
-</script>
-<script type="text/javascript">
-   $(document).ready(function() {
-      $("#headers").load("/resources/header.html"); //헤더 인클루드
-      $("#footers").load("/resources/footer.html"); //푸터부분 인클루드
-   });
-   
-   </script>
+ 
 
 </html>
